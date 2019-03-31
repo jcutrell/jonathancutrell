@@ -1,13 +1,9 @@
 ---
-id: 198
 title: Letter to Liam, Inauguration Day 2017
 date: 2017-01-20T21:23:48+00:00
 author: Jonathan Cutrell
-templateKey: blog-post
-tags:
-  - Personal
-  - Thoughts
 ---
+
 Liam,
 
 You aren't here yet, and I'm not sure what your voice will sound like. But today is an important day in history.
@@ -17,9 +13,6 @@ There are a lot of words in our language that have no particular bend to them. "
 And today is an important day in history, where many people realized the result of a big surprise.
 
 Last year, about a month after you were conceived, Donald Trump was elected president. Today was his inauguration. We saw the peaceful transition of power - watched the Obama family wave their final goodbye, and the signing of the first presidential orders by the 45th president.
-
-<img src="http://jonathancutrell.com/wp-content/uploads/2017/01/1712044_1280x720.jpg" alt="" class="alignnone size-full wp-image-200" />
-<small><i>Photo credit: ABC News</i></small>
 
 This letter isn't here to steer you towards or away from liking Donald Trump; that's your decision, and ultimately you probably won't have much of an opinion about him for a long time.
 
@@ -37,7 +30,7 @@ These are the things we value intrinsically, without being told we should, becau
 
 This is no different from animals. Animals protect their own. They protect their space, their domain. It's survival.
 
-But as we evolve - as we learn how to survive <em>better</em>, we also have a newfound sense of perspective and awareness. We learn about <strong>empathy.</strong> You may have heard this word before, but for the sake of this letter, we'll use the definition of "understanding and caring about the situations and perspectives of people other than yourself."
+But as we evolve - as we learn how to survive _better_, we also have a newfound sense of perspective and awareness. We learn about _empathy._ You may have heard this word before, but for the sake of this letter, we'll use the definition of "understanding and caring about the situations and perspectives of people other than yourself."
 
 Empathy isn't something we stumble upon - it is something we practice. It's hard work.
 
@@ -71,12 +64,6 @@ As a side note, many people do live this lie. Perhaps not intentionally, but rat
 
 My prayer is that you don't ignore this disparity between you and those around you, and equally that you don't seek to coerce them into conforming to your way of life. Instead, I pray that you develop perspective, and breed empathy. To open your eyes and see people how Christ would see them, in the light of their suffering rather than in the light of your own survival and benefit.
 
-Remember that empathy is a marker of maturity. Develop a worldview that takes into account the realities of others' experiences. To understand and work on behalf of others <em>as well as</em> yourself.
-
-I'll end this letter with this very simple quote from the comedian Louis C.K.:
-
-<blockquote>
-The only time you look in your neighbor’s bowl is to make sure that they have enough. You don’t look in your neighbor’s bowl to see if you have as much as them.
-</blockquote>
+Remember that empathy is a marker of maturity. Develop a worldview that takes into account the realities of others' experiences. To understand and work on behalf of others _as well as_ yourself.
 
 I love you, son, and I believe you will keep your heart, mind, and eyes open to what is happening for your neighbor as much as for yourself.

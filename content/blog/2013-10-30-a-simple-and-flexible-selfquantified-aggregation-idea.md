@@ -28,7 +28,8 @@ tags:
 
 <p>Here is the Ruby code:</p>
 
-<pre><code>#!/Users/jonathancutrell/.rvm/rubies/ruby-2.0.0-p247/bin/ruby
+```ruby
+#!/Users/jonathancutrell/.rvm/rubies/ruby-2.0.0-p247/bin/ruby
 require 'yaml'
 y = YAML::load_file(File.join(__dir__, "stretchr.yml"))
 if (rand(10).to_f/10.0).round == 1
@@ -48,7 +49,7 @@ end
 File.open('stretchr.yml', 'w+') do |file|
   puts file.write(y.to_yaml)
 end
-</code></pre>
+```
 
 <p>And here’s the yaml file.</p>
 

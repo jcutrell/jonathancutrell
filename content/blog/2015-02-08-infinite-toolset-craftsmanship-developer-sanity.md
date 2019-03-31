@@ -5,20 +5,17 @@ date: 2015-02-08T18:34:18+00:00
 author: Jonathan Cutrell
 templateKey: blog-post
 
-
 dsq_thread_id:
-  - "3497216912"
+  - '3497216912'
 tags:
   - Habits
-
 ---
+
 I've been using the metaphor of blacksmith and cobbler recently in discussions about craftsmanship. Why?
 
 Blacksmiths and cobblers are renowned as dedicated to their craft. Repeating the motions every day. They both take raw materials, perform a process of actions using a set of tools to refine those materials, and consistently produce something of practical value that is ready to use. For blacksmiths, the tools and materials are quite different from the cobbler's, but they share a lot of the same fundamental disciplines in practice.
 
 With a little bit of Google research, you can find that a blacksmith today uses basically the same tools as blacksmiths before the industrial revolution, and those tools went largely unchanged for centuries. Of course, the Industrial Revolution changed our reliance on the local blacksmith, but the toolset of any blacksmith of any period would be quite similar to any blacksmith from any other period.
-
-<img src="http://hackingtheimpossible.com/wp-content/uploads/2015/02/5249580870_b64a07d62a_b.jpg" alt="5249580870_b64a07d62a_b" width="1024" height="683" class="alignnone size-full wp-image-153" />
 
 Similarly, the cobbler's tools have remained relatively unchanged. When new tools have come into the scene, they come by absolute necessity. The blacksmith and the cobbler wouldn't spend all of their time searching out new tools, constantly on the lookout for something to bend iron in a new way. More likely, the blacksmith would always be on the lookout for great scrap iron, and the cobbler on the lookout for good deals on leather, or building relationships with the people who fashion the cloth and buy the boots he makes.
 

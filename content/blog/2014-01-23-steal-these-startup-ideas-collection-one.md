@@ -5,13 +5,12 @@ date: 2014-01-23T16:57:09+00:00
 author: JCutrell
 templateKey: blog-post
 
-
 dsq_thread_id:
-  - "2999968473"
+  - '2999968473'
 tags:
   - Thoughts
-
 ---
+
 <h1>I want you to steal these ideas.</h1>
 
 <p>Seriously. Make these things a reality.</p>
@@ -68,8 +67,8 @@ tags:
 
 <h2>A REAL, widely accepted solution to this:</h2>
 
-<p><a href="http://img.svbtle.com/crjckw4d9b4hma.jpg"><img src="https://d23f6h5jpj26xu.cloudfront.net/crjckw4d9b4hma_small.jpg" alt="convoluted_mess.jpg"/></a>
-<a href="http://img.svbtle.com/3vvrvr9xtipruw.jpg"><img src="https://d23f6h5jpj26xu.cloudfront.net/3vvrvr9xtipruw_small.jpg" alt="remotes.jpg"/></a>
+<p><a href="http://img.svbtle.com/crjckw4d9b4hma.jpg"><img src="https://d23f6h5jpj26xu.cloudfront.net/crjckw4d9b4hma_small.jpg" alt="convoluted_mess.jpg"></img></a>
+<a href="http://img.svbtle.com/3vvrvr9xtipruw.jpg"><img src="https://d23f6h5jpj26xu.cloudfront.net/3vvrvr9xtipruw_small.jpg" alt="remotes.jpg"></img></a>
 But seriously, how is this not completely done yet? I know the XBox One is heading this direction, but how close is it? I’ll answer your question with a question: when will my Dad buy an XBox One? Now, provide a simple, beautiful solution to the problem of discrete boxes doing discrete things that can benefit from all of the automation and remote-ness (read: not remote control) of the cloud. Give me a way to schedule EVERYTHING.</p>
 
 <p>Give me a way to throw away Comcast’s horrible channel surfing interface. I still want the things cable provides me, like reliable sports - but please, for the love of God, make things look better than TiVo circa 1999. FIFTEEN YEARS, guys. And if you think your one Raspberry Pi with XBMC is enough, then you probably don’t watch sports. And you’re probably not willing to keep paying for cable and Netflix, but I am. Someone make a Nest for my home entertainment system, and I’ll buy. Now, do a deal with cable companies and/or Netflix to be the single solution for any home, and you win the long term game.</p>

@@ -3,24 +3,17 @@ id: 161
 title: 'Why Developers Underestimate: One Reason That Will Change the Way You See Projects Forever'
 date: 2014-08-27T17:01:21+00:00
 author: Jonathan Cutrell
-templateKey: blog-post
-
-
-dsq_thread_id:
-  - "2999724573"
-tags:
-  - Thoughts
-
 ---
+
 <p>I, like many developers and tech consultants, am a chronic underestimator. When I make an estimate, I do so believing that the estimate encompasses the effort necessary for me to accomplish each and every goal for that project.</p>
 
 <p>And I’m wrong, nearly every time.</p>
 
-<p><img src="http://imgs.xkcd.com/comics/estimation.png" alt=""/></p>
+<p><img src="http://imgs.xkcd.com/comics/estimation.png"></img></p>
 
 <p>People have a completely skewed perception of time. Checkout this excerpt from a Huffington Post <a href="http://www.huffingtonpost.com/jon-hotchkiss/how-bad-is-our-perception_b_3955696.html">article from last year</a>.</p>
 
-<blockquote class="large">
+<blockquote className="large">
 <p>This vs That’s initial research is in line with previous research into time estimation, which has revealed that our ability to accurately estimate time is influenced by our emotional state, how hungry we are, how tired we are, whether our eyes are open or closed, what we are doing, among many other factors.</p>
 </blockquote>
 
@@ -46,4 +39,4 @@ tags:
 
 <p>Stop thinking about how easy a project is, and start thinking about how long it takes you to make one sandwich.</p>
 
-<p><img src="http://37.media.tumblr.com/42320ccdaf3a99dc2c4257752ae975c7/tumblr_mpxo0kExi61rom85wo1_500.gif" alt=""/></p>
+<p><img src="http://37.media.tumblr.com/42320ccdaf3a99dc2c4257752ae975c7/tumblr_mpxo0kExi61rom85wo1_500.gif" alt=""></img></p>

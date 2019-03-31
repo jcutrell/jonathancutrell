@@ -5,14 +5,13 @@ date: 2014-03-17T16:50:08+00:00
 author: JCutrell
 templateKey: blog-post
 
-
 dsq_thread_id:
-  - "3000720865"
+  - '3000720865'
 tags:
   - Thoughts
-
 ---
-<blockquote class="large">
+
+<blockquote className="large">
 <p>When you make a design decision, understand that there is no single more important guideline to follow than an equal balance of your own intention and the consumer’s situation.</p>
 </blockquote>
 
@@ -32,9 +31,9 @@ tags:
 
 <p>The answer is fairly simple: contextually, the disk icon means save (maybe even more than it means “disk”) to most users. Of course, we are moving more towards the symbolic understanding of cloud over disk, but all of this is representation.</p>
 
-<p><img src="http://2.bp.blogspot.com/-ETwjbcA56Vk/UVj7IF0b3VI/AAAAAAAAEzk/ro_3mUmiyWY/s1600/Cloud+Save+Icon.png" alt=""/></p>
+<p><img src="http://2.bp.blogspot.com/-ETwjbcA56Vk/UVj7IF0b3VI/AAAAAAAAEzk/ro_3mUmiyWY/s1600/Cloud+Save+Icon.png" alt=""></img></p>
 
-<blockquote class="large">
+<blockquote className="large">
 <p>A cloud disk drive, found via Google Image Search. Literally.</p>
 </blockquote>
 

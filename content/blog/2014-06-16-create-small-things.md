@@ -4,15 +4,9 @@ title: Create Small Things
 date: 2014-06-16T16:49:26+00:00
 author: Jonathan Cutrell
 templateKey: blog-post
-
-
-dsq_thread_id:
-  - "3003785491"
-tags:
-  - Thoughts
-
 ---
-<blockquote class="large">
+
+<blockquote className="large">
 <p>Great things are done by a series of small things brought together.
 <strong>- Vincent Van Gogh</strong></p>
 
