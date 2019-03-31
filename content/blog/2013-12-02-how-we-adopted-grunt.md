@@ -3,15 +3,8 @@ id: 49
 title: How We Adopted an Agency-wide Grunt Workflow
 date: 2013-12-02T16:52:10+00:00
 author: JCutrell
-templateKey: blog-post
-
-
-dsq_thread_id:
-  - "3000709380"
-tags:
-  - Thoughts
-
 ---
+
 <p><strong>tldr;</strong> When adopting tools, do so to eliminate waste. It’s not worth adopting a tool for the sake of the clout of adopting it. For development, automate things you do the same often (or should/could do the same often). Build shareable processes that require little training overhead. Identify pieces of your process that require a common language; these places are usually where tools can be introduced to solidify that common language.</p>
 
 <h2>Don’t mess with my flow.</h2>
@@ -50,7 +43,8 @@ tags:
 
 <p>Who wants to install Wordpress? Wouldn’t it be nice if we could automate the whole process from front to back, and have a few prompts with configuration options along the way? Of course it would. So I made this script. Running this on a configured machine with the right tools does everything to open up the project, watching and ready to be edited. It’s also a lot of fun to run it, considering the colors <code>lolcat</code> provides. :) It utilizes a few tools here and there, particularly <code>wpcli</code>, to get things going. This could probably be grunt-ified, but ask yourself: why would that be valuable?</p>
 
-<pre><code>#!/bin/bash
+```
+#!/bin/bash
 command -v lolcat &gt;/dev/null 2&gt;&amp;1 || { echo &gt;&amp;2 "I require lolcat but it's not installed. Run gem install lolcat."; exit 1; }
 command -v wp &gt;/dev/null 2&gt;&amp;1 || { echo &gt;&amp;2 "I require Wordpress CLI but it's not installed. \n Run the following:\n curl https://raw.github.com/wp-cli/wp-cli.github.com/master/installer.sh | bash
 ."; exit 1; }
@@ -210,7 +204,7 @@ open $siteurl
 
 echo "Done!"
 echo '
-  ______   _______  _______  _______  _______ 
+  ______   _______  _______  _______  _______
 (  ___ \ (  ___  )(  ___  )(  ___  )(       )
 | (   ) )| (   ) || (   ) || (   ) || () () |
 | (__/ / | |   | || |   | || |   | || || || |
@@ -223,7 +217,7 @@ echo '
  ' | lolcat
 subl ../../..
 grunt watch
-</code></pre>
+```
 
 <h2>Do What Keeps You Moving</h2>
 

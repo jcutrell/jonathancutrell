@@ -5,13 +5,12 @@ date: 2013-10-30T16:55:03+00:00
 author: JCutrell
 templateKey: blog-post
 
-
 dsq_thread_id:
-  - "3018589615"
+  - '3018589615'
 tags:
   - Thoughts
-
 ---
+
 <p>The quantified self is really quite a hot topic. Ivan Kirigin talks about it in his post <a href="http://blog.kirigin.com/personal-analytics">here</a> as a potential startup idea. I’ve created something simple I’d like to share with all of you.</p>
 
 <p>It is really quite simple, but also very flexible. Before I explain what it is, I’ll cover some of the conceptual reasoning behind the solution.</p>
@@ -53,7 +52,8 @@ end
 
 <p>And here’s the yaml file.</p>
 
-<pre><code>---
+```
+---
 msgs:
 - Stand up and stretch.
 - Live healthy, think healthy
@@ -75,11 +75,12 @@ questions:
 - On a scale from 1 to 10, how productive do you feel today?
 - How many hours did you sleep last night?
 answers: {}
-</code></pre>
+```
 
 <p>And finally the plist.</p>
 
-<pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+```
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;
 &lt;plist version="1.0"&gt;
 &lt;dict&gt;
@@ -93,7 +94,7 @@ answers: {}
     &lt;integer&gt;480&lt;/integer&gt;
 &lt;/dict&gt;
 &lt;/plist&gt;
-</code></pre>
+```
 
 <p>Some of these you can clearly see come from personal goals. Some of them, though, are much more related to aggregating some sort of arbitrary data. Later, I hope to gain some kind of insights from this into very specific areas of my life.</p>
 
@@ -103,10 +104,11 @@ answers: {}
 
 <p>It would be easy to take this YAML data somewhere else, like for instance to JSON to be fed into something like D3:</p>
 
-<pre><code>require 'yaml'
+```
+require 'yaml'
 require 'json'
 y = YAML::load_file(File.join(__dir__, "stretchr.yml")) # I think this may be v&gt;=2.0
 puts y.to_json
-</code></pre>
+```
 
 <p>Interested in doing something similar? Or interested in making this more than it is? Let me know. I’d love to let this grow.</p>
