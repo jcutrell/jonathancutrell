@@ -15,24 +15,27 @@ function Bio() {
             style={{
               display: `flex`,
               marginBottom: rhythm(2.5),
+              alignItems: 'center',
             }}
           >
             <Image
               fixed={data.avatar.childImageSharp.fixed}
               alt={author}
               style={{
-                marginRight: rhythm(1 / 2),
+                marginRight: rhythm(1),
                 marginBottom: 0,
-                minWidth: 50,
+                minWidth: 100,
+                width: 100,
+                height: 100,
                 borderRadius: `100%`,
               }}
             />
-            <p>
+            <p style={{ margin: 0, maxWidth: '32rem' }}>
               Written by <strong>{author}</strong>, engineer and podcast host
               amongst other things.
               {` `}
               <a href={`https://twitter.com/${social.twitter}`}>
-                You can follow him on Twitter at @jcutrell
+                You can follow him on Twitter at @jcutrell.
               </a>
             </p>
           </div>
@@ -46,7 +49,7 @@ const bioQuery = graphql`
   query BioQuery {
     avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
       childImageSharp {
-        fixed(width: 50, height: 50) {
+        fixed(width: 120, height: 120) {
           ...GatsbyImageSharpFixed
         }
       }

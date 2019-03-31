@@ -7,7 +7,7 @@ StAnnes.overrideThemeStyles = ({ rhythm }) => {
       boxShadow: `none`,
     },
     a: {
-      color: '#5BB9BC',
+      color: '#8FA8CB',
     },
     'a:hover': {
       color: '#E99444',
@@ -15,11 +15,23 @@ StAnnes.overrideThemeStyles = ({ rhythm }) => {
   }
 }
 
+StAnnes.baseFontSize = '20px'
+
 const typography = new Typography({
   ...StAnnes,
   bodyColor: '#262740',
   headerColor: '#262740',
-  headerWeight: 400,
+  headerWeight: '400',
+  headerLineHeight: 1.2,
+  headerFontFamily: ['Playfair Display'],
+  baseLineHeight: 1.925,
+  googleFonts: [
+    ...StAnnes.googleFonts,
+    {
+      name: 'Playfair Display',
+      styles: ['400'],
+    },
+  ],
 })
 
 // Hot reload typography in development.
