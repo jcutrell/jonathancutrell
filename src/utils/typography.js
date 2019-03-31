@@ -12,6 +12,9 @@ StAnnes.overrideThemeStyles = ({ rhythm }) => {
     'a:hover': {
       color: '#E99444',
     },
+    blockquote: {
+      borderColor: 'rgb(229, 236, 247)',
+    },
   }
 }
 
