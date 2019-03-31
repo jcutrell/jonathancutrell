@@ -6,13 +6,11 @@ author: Jonathan Cutrell
 templateKey: blog-post
 ---
 
-<blockquote className="large">
-<p>Great things are done by a series of small things brought together.
-<strong>- Vincent Van Gogh</strong></p>
+> Great things are done by a series of small things brought together.
+> **- Vincent Van Gogh**
 
-<p>Rule of Parsimony: Write a big program only when it is clear by demonstration that nothing else will do.
-<strong>- The Unix philosophy</strong></p>
-</blockquote>
+> Rule of Parsimony: Write a big program only when it is clear by demonstration that nothing else will do.
+> **- The Unix philosophy**
 
 <p>How many of your successes came from complex, massive projects?</p>
 
