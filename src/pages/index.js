@@ -23,7 +23,9 @@ class BlogIndex extends React.Component {
             `clearbit`,
           ]}
         />
-        <Bio />
+        <sidebar>
+          <Bio />
+        </sidebar>
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (

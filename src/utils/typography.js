@@ -22,17 +22,19 @@ StAnnes.baseFontSize = '20px'
 
 const typography = new Typography({
   ...StAnnes,
+  bodyFontFamily: ['Nunito Sans'],
   bodyColor: '#262740',
   headerColor: '#262740',
-  headerWeight: '400',
+  headerWeight: '300',
+  bodyWeight: '300',
+  baseFontSize: '16px',
   headerLineHeight: 1.2,
-  headerFontFamily: ['Playfair Display'],
-  baseLineHeight: 1.925,
+  headerFontFamily: ['Nunito Sans'],
+  baseLineHeight: 1.95,
   googleFonts: [
-    ...StAnnes.googleFonts,
     {
-      name: 'Playfair Display',
-      styles: ['400'],
+      name: 'Nunito Sans',
+      styles: ['300'],
     },
   ],
 })

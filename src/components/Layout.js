@@ -55,14 +55,14 @@ class Layout extends React.Component {
         style={{
           width: '100vw',
           minHeight: '100vh',
-          backgroundColor: 'rgb(243, 247, 253)',
+          backgroundColor: '#FCFDFF',
         }}
       >
         <div
           style={{
             marginLeft: `auto`,
             marginRight: `auto`,
-            maxWidth: rhythm(24),
+            maxWidth: rhythm(16),
             padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
           }}
         >
