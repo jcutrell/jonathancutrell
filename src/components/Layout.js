@@ -10,26 +10,6 @@ class Layout extends React.Component {
     let header
 
     if (location.pathname === rootPath) {
-      header = (
-        <h1
-          style={{
-            ...scale(1.5),
-            marginBottom: rhythm(1.5),
-            marginTop: 0,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/`}
-          >
-            {title}
-          </Link>
-        </h1>
-      )
     } else {
       header = (
         <h3
@@ -53,27 +33,11 @@ class Layout extends React.Component {
     return (
       <div
         style={{
-          width: '100vw',
-          minHeight: '100vh',
-          backgroundColor: '#FCFDFF',
+          marginLeft: `auto`,
+          marginRight: `auto`,
         }}
       >
-        <div
-          style={{
-            marginLeft: `auto`,
-            marginRight: `auto`,
-            maxWidth: rhythm(16),
-            padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-          }}
-        >
-          {header}
-          {children}
-          <footer>
-            © {new Date().getFullYear()}, Built with
-            {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
-          </footer>
-        </div>
+        {children}
       </div>
     )
   }

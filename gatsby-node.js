@@ -64,5 +64,13 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       node,
       value,
     })
+
+    const parent = getNode(node.parent)
+    console.log(parent)
+    createNodeField({
+      name: `sourceName`,
+      node,
+      value: parent.sourceInstanceName,
+    })
   }
 }
