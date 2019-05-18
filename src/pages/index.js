@@ -111,8 +111,11 @@ const Header = ({ data, picRef }) => {
 
 const ExperienceWrap = styled.section`
   background: #fff;
-  padding: 5rem 10rem;
+  padding: 4rem 2rem;
   color: #888;
+  @media only screen and (min-width: 40rem){
+    padding: 5rem;
+  }
   @media only screen and (min-width: 60rem){
     & > div {
       display: flex;
@@ -124,7 +127,7 @@ const ExperienceWrap = styled.section`
       max-width: 45%;
     }
     h5 {
-      margin-top: 3rem;
+      margin-top: 5rem;
       margin-bottom: 3rem;
     }
   }
@@ -132,29 +135,43 @@ const ExperienceWrap = styled.section`
     font-size: 1.4rem;
     margin-top: 0px;
   }
-}`
+  }
+  @media only screen and (min-width: 80rem){
+    padding: 5rem 10rem;
+  }
+`
 
 const IconWrap = styled.div`
   position: absolute;
   opacity: 0.14;
-  top: 3rem;
-  left: -5rem;
+  top: -3rem;
+  left: -6rem;
   z-index: 50;
-  transform: rotateZ(${props => '-' + Math.round(Math.random() * 30) - 10}deg);
-  width: 100%;
+  width: 75%;
+  transform: rotateZ(-20deg);
+  transition: transform 0.2s;
+  transform-origin: top left;
+  @media only screen and (min-width: 60rem) {
+    top: 2rem;
+    left: -8rem;
+    width: 100%;
+  }
 `
 const CurrentWork = styled.div`
   & > div {
+    color: #234156;
     border: 1px solid #f0f0f0;
-    padding: 4rem;
+    padding: 2.5rem;
     border-radius: 16px;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.01);
     transition: box-shadow 0.3s;
+    margin-bottom: 1rem;
     &:hover {
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      ${IconWrap} {
+        transform: rotateZ(-25deg) scale(0.8);
+      }
     }
-  }
-  & > div > div {
   }
 `
 
@@ -197,10 +214,9 @@ const Experience = () => {
             <h4>
               Co-founder, <a href="https://spec.fm">Spec.fm</a>
             </h4>
-            I co-founded a podcast network called Spec targeting designers and
+            I co-founded a podcast network called Spec for designers and
             developers who want to level up in their careers. Spec hosts
-            episodes from 13 different podcasts today, with millions of
-            cumulative listens.
+            episodes from 13 different podcasts today, with millions of listens.
             <IconWrap>
               <SpecLogo />
             </IconWrap>

@@ -1,6 +1,6 @@
 import React from 'react'
 const Icon = () => (
-  <svg viewBox="100 100 412 412" version="1.1">
+  <svg viewBox="120 120 392 392" version="1.1">
     <defs />
     <g
       id="Page-1"
