@@ -11,6 +11,18 @@ import Testimonials from '../components/Testimonials'
 import { rhythm } from '../utils/typography'
 import styled, { keyframes } from 'styled-components'
 
+const Testimonial = styled.div`
+  padding: 4rem;
+`
+
+const TestimonialContainer = styled.div`
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: 33% 33% 33%;
+  grid-auto-flow: row;
+  width: 80rem;
+`
+
 export const query = graphql`
   query {
     site {
@@ -48,9 +60,17 @@ class BlogIndex extends React.Component {
         query={query}
         render={data => {
           const posts = data.allMdx.edges.map(edge => edge.node)
-          return posts.map(post => {
-            return <MDXRenderer>{post.code.body}</MDXRenderer>
-          })
+          return (
+            <TestimonialContainer>
+              {posts.map(post => {
+                return (
+                  <Testimonial>
+                    <MDXRenderer>{post.code.body}</MDXRenderer>
+                  </Testimonial>
+                )
+              })}
+            </TestimonialContainer>
+          )
         }}
       />
     )

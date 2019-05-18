@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 
 import Bio from '../components/Bio'
-import Layout from '../components/Layout'
+import BlogLayout from '../components/BlogLayout'
 import SEO from '../components/seo'
 import Sidebar from '../components/Sidebar'
 import { rhythm } from '../utils/typography'
@@ -14,10 +14,7 @@ class BlogIndex extends React.Component {
     const posts = data.allMdx.edges
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
-        <Sidebar>
-          <Bio />
-        </Sidebar>
+      <BlogLayout location={this.props.location} title={siteTitle}>
         <SEO
           title="All posts"
           keywords={[
@@ -48,7 +45,7 @@ class BlogIndex extends React.Component {
             </div>
           )
         })}
-      </Layout>
+      </BlogLayout>
     )
   }
 }
@@ -62,7 +59,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMdx(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { fields: { sourceName: { eq: "blog" } } }
+    ) {
       edges {
         node {
           excerpt

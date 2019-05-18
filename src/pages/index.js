@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, graphql } from 'gatsby'
 import Image from 'gatsby-image'
+import ClearbitLogo from '../components/icons/clearbit-logo'
+import DtLogo from '../components/icons/dt-logo'
+import SpecLogo from '../components/icons/spec-logo'
 
 import Bio from '../components/Bio'
 import Layout from '../components/Layout'
@@ -23,7 +26,6 @@ const PicHeader = styled.div`
   left: 0;
   z-index: -1;
   background-image: url(${props => props.backgroundImageUrl});
-  opacity: 0.7;
   filter: grayscale(50%);
 `
 const HomeHeader = styled.div`
@@ -73,10 +75,18 @@ const SubHeader = styled.h2`
 const Skill = styled.span`
   display: inline-block;
   padding: 0 2rem 1rem 0;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 `
 
-const Header = ({ data }) => {
+const Nav = styled.nav`
+  position: relative;
+  font-size: 1.4rem;
+  a {
+    color: #234156;
+  }
+`
+
+const Header = ({ data, picRef }) => {
   return (
     <HomeHeader>
       <HeaderContent>
@@ -86,14 +96,20 @@ const Header = ({ data }) => {
         <SubHeader>
           I help developers find clarity, perspective, and purpose in their
           careers.
+          <Nav style={{ marginTop: '2rem' }}>
+            <Link to="/blog">Read Blog</Link>
+          </Nav>
         </SubHeader>
       </HeaderContent>
-      <PicHeader backgroundImageUrl={data.avatar.childImageSharp.fixed.src} />
+      <PicHeader
+        ref={picRef}
+        backgroundImageUrl={data.avatar.childImageSharp.fixed.src}
+      />
     </HomeHeader>
   )
 }
 
-const Experience = styled.section`
+const ExperienceWrap = styled.section`
   background: #fff;
   padding: 5rem 10rem;
   color: #888;
@@ -105,138 +121,118 @@ const Experience = styled.section`
       margin-right: 2rem;
       padding-right: 3rem;
       min-width: 30%;
-      max-width: 38%;
+      max-width: 45%;
     }
     h5 {
-      margin-top: 2rem;
+      margin-top: 3rem;
+      margin-bottom: 3rem;
     }
   }
   h4 {
+    font-size: 1.4rem;
     margin-top: 0px;
   }
 }`
 
-class BlogIndex extends React.Component {
-  constructor() {
-    super()
-    this.state = {}
+const IconWrap = styled.div`
+  position: absolute;
+  opacity: 0.14;
+  top: 3rem;
+  left: -5rem;
+  z-index: 50;
+  transform: rotateZ(${props => '-' + Math.round(Math.random() * 30) - 10}deg);
+  width: 100%;
+`
+const CurrentWork = styled.div`
+  & > div {
+    border: 1px solid #f0f0f0;
+    padding: 4rem;
+    border-radius: 16px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.01);
+    transition: box-shadow 0.3s;
+    &:hover {
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
   }
-  render() {
-    const { data } = this.props
-    const siteTitle = data.site.siteMetadata.title
-    const posts = data.allMdx.edges
+  & > div > div {
+  }
+`
 
-    return (
-      <Layout location={this.props.location} title={siteTitle}>
-        <Header data={data} />
-        <Experience>
-          <h5>Current Work</h5>
-          <div>
-            <div>
-              <h4>
-                Senior Engineer,{' '}
-                <a href="https://clearbit.com/about" target="_blank">
-                  Clearbit
-                </a>
-              </h4>
-              Building next-generation business data platforms and world-class
-              user experiences.
-              <a
-                href="#clearbit"
-                onClick={e => {
-                  e.preventDefault()
-                  this.setState({ showClearbit: !this.state.showClearbit })
-                }}
-              >
-                {this.state.showClearbit ? ' Hide' : ' Show More'}
+const Experience = () => {
+  return (
+    <ExperienceWrap>
+      <h5>Current Work</h5>
+      <CurrentWork>
+        <div style={{ position: 'relative', overflow: 'hidden' }}>
+          <div style={{ position: 'relative', zIndex: 100 }}>
+            <h4>
+              Senior Engineer,{' '}
+              <a href="https://clearbit.com/about" target="_blank">
+                Clearbit
               </a>
-              {this.state.showClearbit && (
-                <div>
-                  <ul style={{ marginTop: '2rem' }}>
-                    <li>
-                      Migrated the{' '}
-                      <a href="https://connect.clearbit.com/">
-                        Clearbit Connect
-                      </a>{' '}
-                      extension to a modern React codebase.
-                    </li>
-                    <li>
-                      Primary responsible person for Connect extension front and
-                      back end.
-                    </li>
-                    <li>
-                      Built an embeddable snippet that allows users to
-                      dynamically configure complex data mappings
-                    </li>
-                    <li>Documentation restructuring efforts</li>
-                  </ul>
-                </div>
-              )}
-            </div>
-            <div>
-              <h4>
-                Host,{' '}
-                <a href="https://spec.fm/pocdasts/developer-tea">
-                  Developer Tea
-                </a>
-              </h4>
-              Developer Tea is a top-100 podcast in the Technology category on
-              iTunes. The podcast is approaching 13m all-time downloads by
-              listeners in over 200 countries.
-            </div>
-            <div>
-              <h4>
-                Co-founder, <a href="https://spec.fm">Spec.fm</a>
-              </h4>
-              I co-founded a podcast network called Spec targeting designers and
-              developers who want to level up in their careers. Spec hosts
-              episodes from 13 different podcasts today, with millions of
-              cumulative listens.
-            </div>
+            </h4>
+            Building next-generation business data interfaces and world-class
+            user experiences.
           </div>
-
-          <h5>Skills</h5>
-          <section>
-            <Skill>Leadership and Coaching</Skill>
-            <Skill>Speaking / Presentation</Skill>
-            <Skill>Technical Writing</Skill>
-            <Skill>Software Design</Skill>
-            <Skill>JavaScript (React, ES6)</Skill>
-            <Skill>Ruby (Sinatra, Rails)</Skill>
-            <Skill>Front-end Development (SCSS, build processes)</Skill>
-            <Skill>Decision Science</Skill>
-          </section>
-
-          <h5>Previously</h5>
-          <div>
-            <div>
-              I started building digital products in 2007. (Those first ones
-              weren't very good though.) I helped start a music company and then{' '}
-              <a href="https://tutsplus.com/authors/jonathan-cutrell">
-                freelanced as a technical writer
-              </a>{' '}
-              and frontend developer. I helped grow Whiteboard, an agency
-              servicing clients with web projects all over the spectrum. As CTO,
-              I worked with companies from non-profit to Fortune 500 to
-              pre-funding startup.
-              <br />
-            </div>
-            <div>
-              Notable experiences:
-              <ul>
-                <li>
-                  Architecting an app to power a conference experience for over
-                  5,000 attendees
-                </li>
-                <li>
-                  Bootstrapping a startup to provide a platform for hosting
-                  family memories captured in their home movies
-                </li>
-              </ul>
-              Each of these experiences came with their own technical and human
-              challenges, and I'm grateful to have learned from them all.
-            </div>
+          <IconWrap>
+            <ClearbitLogo />
+          </IconWrap>
+        </div>
+        <div style={{ position: 'relative', overflow: 'hidden' }}>
+          <div style={{ position: 'relative', zIndex: 100 }}>
+            <h4>
+              Host,{' '}
+              <a href="https://spec.fm/pocdasts/developer-tea">Developer Tea</a>
+            </h4>
+            Developer Tea is a top-100 podcast in the Technology category on
+            iTunes. The podcast is approaching 13m all-time downloads by
+            listeners in over 200 countries.
           </div>
+          <IconWrap>
+            <DtLogo />
+          </IconWrap>
+        </div>
+        <div style={{ position: 'relative', overflow: 'hidden' }}>
+          <div style={{ position: 'relative', zIndex: 100 }}>
+            <h4>
+              Co-founder, <a href="https://spec.fm">Spec.fm</a>
+            </h4>
+            I co-founded a podcast network called Spec targeting designers and
+            developers who want to level up in their careers. Spec hosts
+            episodes from 13 different podcasts today, with millions of
+            cumulative listens.
+            <IconWrap>
+              <SpecLogo />
+            </IconWrap>
+          </div>
+        </div>
+      </CurrentWork>
+
+      <h5>Skills</h5>
+      <section>
+        <Skill>Leadership and Coaching</Skill>
+        <Skill>Speaking / Presentation</Skill>
+        <Skill>Technical Writing</Skill>
+        <Skill>Software Design</Skill>
+        <Skill>JavaScript (React, ES6)</Skill>
+        <Skill>Ruby (Sinatra, Rails)</Skill>
+        <Skill>Front-end Development (SCSS, build processes)</Skill>
+        <Skill>Decision Science</Skill>
+      </section>
+
+      <div>
+        <div>
+          <h5>Notable experiences:</h5>
+          <ul>
+            <li>
+              Architecting an app to power a conference experience for over
+              5,000 attendees
+            </li>
+            <li>
+              Bootstrapping a startup to provide a platform for hosting family
+              memories captured in their home movies
+            </li>
+          </ul>{' '}
           <h5>Education</h5>
           <div>
             <div>
@@ -245,8 +241,51 @@ class BlogIndex extends React.Component {
               M.S. Digital Media, Georgia Institute of Technology, 4.0 GPA
             </div>
           </div>
-        </Experience>
-        <Testimonials />
+        </div>
+        <div>
+          <h5>Previously</h5>I started building digital products in 2007. (Those
+          first ones weren't very good though.) I helped start a music company
+          and then{' '}
+          <a href="https://tutsplus.com/authors/jonathan-cutrell">
+            freelanced as a technical writer
+          </a>{' '}
+          and frontend developer. I helped grow Whiteboard, an agency servicing
+          clients with web projects all over the spectrum. As CTO, I worked with
+          companies from non-profit to Fortune 500 to pre-funding startup.
+          <br />
+        </div>
+      </div>
+    </ExperienceWrap>
+  )
+}
+
+class BlogIndex extends React.Component {
+  constructor() {
+    super()
+    this.state = {}
+    this.headerPicRef = React.createRef()
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll)
+  }
+
+  handleScroll = e => {
+    window.requestAnimationFrame(() => {
+      const scroll = window.scrollY
+      this.headerPicRef.current.style.opacity = 1 - scroll / window.innerHeight
+    })
+  }
+
+  render() {
+    const { data } = this.props
+    const siteTitle = data.site.siteMetadata.title
+    const posts = data.allMdx.edges
+
+    return (
+      <Layout location={this.props.location} title={siteTitle}>
+        <Header data={data} picRef={this.headerPicRef} />
+        <Experience scroll={this.state.scroll} />
       </Layout>
     )
   }
