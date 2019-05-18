@@ -41,7 +41,6 @@ class Layout extends React.Component {
         <h2>
           <Link to="/">Jonathan Cutrell</Link>
         </h2>
-        <h3>Blog</h3>
         {children}
       </div>
     )

@@ -97,7 +97,7 @@ const Header = ({ data, picRef }) => {
           I help developers find clarity, perspective, and purpose in their
           careers.
           <Nav style={{ marginTop: '2rem' }}>
-            <Link to="/blog">Read Blog</Link>
+            <Link to="/blog">Read Articles</Link>
           </Nav>
         </SubHeader>
       </HeaderContent>
