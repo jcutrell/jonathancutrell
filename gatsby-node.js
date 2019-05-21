@@ -20,6 +20,7 @@ exports.createPages = ({ graphql, actions }) => {
               }
               frontmatter {
                 title
+                subtitle
               }
               code {
                 scope
@@ -66,7 +67,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     })
 
     const parent = getNode(node.parent)
-    console.log(parent)
     createNodeField({
       name: `sourceName`,
       node,

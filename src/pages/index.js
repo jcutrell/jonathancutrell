@@ -21,7 +21,6 @@ const PicHeader = styled.div`
   @media only screen and (min-width: 80rem) {
     background-position: 0% 20%;
   }
-  background-size: cover;
   top: 0;
   left: 0;
   z-index: -1;
@@ -80,10 +79,20 @@ const Skill = styled.span`
 
 const Nav = styled.nav`
   position: relative;
-  font-size: 1.4rem;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
   a {
     color: #234156;
+    display: inline-block;
+    margin-right: 2rem;
   }
+`
+
+const Footer = styled.footer`
+  text-align: center;
+  padding: 1rem 0;
 `
 
 const Header = ({ data, picRef }) => {
@@ -97,7 +106,8 @@ const Header = ({ data, picRef }) => {
           I help developers find clarity, perspective, and purpose in their
           careers.
           <Nav style={{ marginTop: '2rem' }}>
-            <Link to="/blog">Read Articles</Link>
+            <Link to="/blog">Blog</Link>
+            <Link to="/testimonials">Testimonials</Link>
           </Nav>
         </SubHeader>
       </HeaderContent>
@@ -238,37 +248,68 @@ const Experience = () => {
 
       <div>
         <div>
+          <h5>Previously</h5>I helped grow{' '}
+          <a href="https://whitebaord.is">Whiteboard</a>, an agency servicing
+          clients with web projects all over the spectrum. As CTO at the agency,
+          I worked with companies from non-profit to Fortune 500 to pre-funding
+          startup. Before that, I started building digital products in 2007.
+          (Those first ones weren't very good though.) I helped start a music
+          company and then{' '}
+          <a href="https://tutsplus.com/authors/jonathan-cutrell">
+            freelanced as a technical writer
+          </a>{' '}
+          and frontend developer.
+          <br />
+        </div>
+        <div>
           <h5>Notable experiences:</h5>
+          <p>
+            <em>
+              Note that this is a small selection from a much larger list of
+              over 100 projects I've worked on in the past.
+            </em>
+          </p>
           <ul>
             <li>
               Architecting an app to power a conference experience for over
               5,000 attendees
             </li>
             <li>
-              Bootstrapping a startup to provide a platform for hosting family
-              memories captured in their home movies
+              Help co-found a startup to reimagine the experience around
+              memories captured in old VHS home movies
+            </li>
+            <li>
+              Built{' '}
+              <a href="https://whiteboard.is/case-studies/understory/">
+                proof-of-concept experience for an ed-tech startup
+              </a>{' '}
+              (and earned a patent for it)
+            </li>
+            <li>
+              Strategize and build system powering{' '}
+              <a href="https://purposity.com">Purposity</a>, a donor-to-need
+              matching platform
             </li>
           </ul>{' '}
+        </div>
+        <div>
           <h5>Education</h5>
           <div>
             <div>
-              B.A. Communications, Graduated Magna Cum Laude, Lee University
-              <br />
-              M.S. Digital Media, Georgia Institute of Technology, 4.0 GPA
+              <ul>
+                <li>
+                  B.A. Communications, Graduated Magna Cum Laude, Lee University
+                </li>
+                <li>
+                  M.S. Digital Media, Georgia Institute of Technology, 4.0 GPA
+                </li>
+                <li>
+                  Certificate, Management of Technology, Georgia Institute of
+                  Technology
+                </li>
+              </ul>
             </div>
           </div>
-        </div>
-        <div>
-          <h5>Previously</h5>I started building digital products in 2007. (Those
-          first ones weren't very good though.) I helped start a music company
-          and then{' '}
-          <a href="https://tutsplus.com/authors/jonathan-cutrell">
-            freelanced as a technical writer
-          </a>{' '}
-          and frontend developer. I helped grow Whiteboard, an agency servicing
-          clients with web projects all over the spectrum. As CTO, I worked with
-          companies from non-profit to Fortune 500 to pre-funding startup.
-          <br />
         </div>
       </div>
     </ExperienceWrap>
@@ -293,6 +334,10 @@ class BlogIndex extends React.Component {
     })
   }
 
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll)
+  }
+
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
@@ -302,6 +347,12 @@ class BlogIndex extends React.Component {
       <Layout location={this.props.location} title={siteTitle}>
         <Header data={data} picRef={this.headerPicRef} />
         <Experience scroll={this.state.scroll} />
+        <Footer>
+          &copy; 2019 -{' '}
+          <a href="mailto:jonathan.cutrell+footer@gmail.com">
+            Contact Jonathan
+          </a>
+        </Footer>
       </Layout>
     )
   }
