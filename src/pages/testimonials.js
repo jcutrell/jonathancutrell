@@ -48,6 +48,8 @@ const Tag = styled.a`
   background: ${props => (props.active ? '#f4f8ff' : 'transparent')};
 `
 
+const flatMap = (f, xs) => xs.reduce((acc, x) => acc.concat(f(x)), [])
+
 class PostFilter extends React.Component {
   constructor(props) {
     super(props)
@@ -80,7 +82,12 @@ class PostFilter extends React.Component {
 
   render() {
     const tags = Array.from(
-      new Set(this.props.posts.flatMap(post => post.node.frontmatter.tags))
+      new Set(
+        [].concat.apply(
+          [],
+          (this.props.posts || []).map(post => post.node.frontmatter.tags)
+        )
+      )
     )
     tags.unshift('All')
     const posts = this.filterPosts(this.props.posts)
