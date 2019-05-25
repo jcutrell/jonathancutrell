@@ -4,10 +4,6 @@ title: 'Re: Voice Interfaces'
 date: 2014-09-16T15:55:20+00:00
 author: Jonathan Cutrell
 templateKey: blog-post
-
-
-dsq_thread_id:
-  - "3023721039"
 tags:
   - Thoughts
 

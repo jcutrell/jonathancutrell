@@ -4,14 +4,12 @@ title: 7 Tips for Hyper-productive Wunderlist-ing
 date: 2014-08-08T16:47:29+00:00
 author: Jonathan Cutrell
 templateKey: blog-post
-
-
-dsq_thread_id:
-  - "3002934164"
 tags:
   - Thoughts
 
 ---
+_Update: Looks like Wunderlist was bought by Microsoft, so maybe take this all with a grain of salt._
+
 <p>I’m loving the newest version of Wunderlist. Honestly, I’m not even sure what all has changed, but here’s what I know: Wunderlist is probably my favorite ToDo management application thus far.</p>
 
 <p>That’s a big deal, you know… there’s about a thousand ToDo managers.</p>

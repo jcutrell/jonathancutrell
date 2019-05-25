@@ -11,6 +11,9 @@ tags:
   - Thoughts
 ---
 
+## Update: I've abandoned this project for now.
+It's important to know when to leave something behind.
+
 <p>I’m more than excited to announce that I will be publishing a book soon that’s all about the work I do on a day-to-day basis with some incredibly creative people here at <a href="http://whiteboard.is">Whiteboard</a>.</p>
 
 <p>In the book, you’ll find ideas that I believe could change the way developers and visionaries work together, and I’m really excited to share it with you.</p>

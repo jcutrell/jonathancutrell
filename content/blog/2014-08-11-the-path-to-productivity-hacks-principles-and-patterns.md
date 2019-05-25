@@ -4,10 +4,6 @@ title: 'The Path to Productivity: 7 Hacks, Principles, and Patterns'
 date: 2014-08-11T16:59:33+00:00
 author: Jonathan Cutrell
 templateKey: blog-post
-
-
-dsq_thread_id:
-  - "3000330957"
 tags:
   - Thoughts
 

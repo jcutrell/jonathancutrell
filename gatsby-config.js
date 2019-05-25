@@ -65,6 +65,18 @@ module.exports = {
         //trackingId: `ADD YOUR TRACKING ID HERE`,
       },
     },
+		{
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `https://rss.simplecast.com/podcasts/363/rss`,
+        name: `DeveloperTea`,
+        parserOption: {
+          customFields: {
+            item: ['itunes:duration']
+          }
+        }
+      }
+    },
     {
       resolve: `gatsby-plugin-feed`,
       options: {

@@ -4,7 +4,8 @@ title: Contagious
 date: 2017-01-30T05:55:42+00:00
 author: Jonathan Cutrell
 templateKey: blog-post
-
+tags:
+  - Personal
 ---
 I just got over what we are pretty sure was the [norovirus](https://www.cdc.gov/norovirus/). No vulgarity necessary - I slept in the bathroom one night, and basically forgot what day it was.
 

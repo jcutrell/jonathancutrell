@@ -62,7 +62,7 @@ export const pageQuery = graphql`
     }
     allMdx(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { fields: { sourceName: { eq: "blog" } } }
+      filter: { fields: { sourceName: { eq: "blog" }}, frontmatter: {tags: { nin: ["Personal"]}} }
     ) {
       edges {
         node {
@@ -73,6 +73,7 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
+            tags
           }
         }
       }

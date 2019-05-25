@@ -185,7 +185,7 @@ const CurrentWork = styled.div`
   }
 `
 
-const Experience = () => {
+const Experience = ({ data }) => {
   return (
     <ExperienceWrap>
       <h5>Current Work</h5>
@@ -213,7 +213,8 @@ const Experience = () => {
             </h4>
             Developer Tea is a top-100 podcast in the Technology category on
             iTunes. The podcast is approaching 13m all-time downloads by
-            listeners in over 200 countries.
+            listeners in over 200 countries.<br/>
+            <Link to={'/developer-tea'}>Latest episode: {data.allFeedDeveloperTea.edges[0].node.title}</Link>
           </div>
           <IconWrap>
             <DtLogo />
@@ -346,7 +347,7 @@ class BlogIndex extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <Header data={data} picRef={this.headerPicRef} />
-        <Experience scroll={this.state.scroll} />
+        <Experience scroll={this.state.scroll} data={data} />
         <Footer>
           &copy; 2019 -{' '}
           <a href="mailto:jonathan.cutrell+footer@gmail.com">
@@ -372,6 +373,13 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+      }
+    }
+    allFeedDeveloperTea(limit: 1) {
+      edges {
+        node {
+          title
+        }
       }
     }
     allMdx(sort: { fields: [frontmatter___date], order: DESC }) {

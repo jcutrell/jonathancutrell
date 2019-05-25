@@ -4,10 +4,6 @@ title: 'Make Me Work for It: Challenge Psychology'
 date: 2014-06-19T16:53:50+00:00
 author: Jonathan Cutrell
 templateKey: blog-post
-
-
-dsq_thread_id:
-  - "3016316157"
 tags:
   - Thoughts
 

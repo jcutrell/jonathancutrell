@@ -2,6 +2,8 @@
 title: Letter to Liam, Inauguration Day 2017
 date: 2017-01-20T21:23:48+00:00
 author: Jonathan Cutrell
+tags:
+  - Personal
 ---
 
 Liam,

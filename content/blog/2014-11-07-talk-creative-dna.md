@@ -4,10 +4,6 @@ title: 'Talk: Creative DNA'
 date: 2014-11-07T03:15:05+00:00
 author: Jonathan Cutrell
 templateKey: blog-post
-
-
-dsq_thread_id:
-  - "3200223412"
 tags:
   - Video
   - Talks
