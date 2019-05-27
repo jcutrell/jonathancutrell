@@ -17,6 +17,10 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {},
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/assets`,
@@ -65,17 +69,17 @@ module.exports = {
         //trackingId: `ADD YOUR TRACKING ID HERE`,
       },
     },
-		{
+    {
       resolve: `gatsby-source-rss-feed`,
       options: {
         url: `https://rss.simplecast.com/podcasts/363/rss`,
         name: `DeveloperTea`,
         parserOption: {
           customFields: {
-            item: ['itunes:duration']
-          }
-        }
-      }
+            item: ['itunes:duration'],
+          },
+        },
+      },
     },
     {
       resolve: `gatsby-plugin-feed`,
