@@ -17,7 +17,7 @@ const PicHeader = styled.div`
   width: 150vw;
   height: 100vh;
   position: fixed;
-  background-position: 30% 20%;
+  background-position: 45% 20%;
   @media only screen and (min-width: 80rem) {
     background-position: 0% 20%;
   }
@@ -106,7 +106,7 @@ const Header = ({ data, picRef }) => {
           I help developers find clarity, perspective, and purpose in their
           careers.
           <Nav style={{ marginTop: '2rem' }}>
-            <Link to="/blog">Blog</Link>
+            <Link to="/writing">Writing</Link>
             <Link to="/testimonials">Testimonials</Link>
           </Nav>
         </SubHeader>
@@ -200,6 +200,10 @@ const Experience = ({ data }) => {
             </h4>
             Building next-generation business data interfaces and world-class
             user experiences.
+            <br />
+            <a href="https://connect.clearbit.com">
+              Here's a project I worked on recently.
+            </a>
           </div>
           <IconWrap>
             <ClearbitLogo />
@@ -213,8 +217,11 @@ const Experience = ({ data }) => {
             </h4>
             Developer Tea is a top-100 podcast in the Technology category on
             iTunes. The podcast is approaching 13m all-time downloads by
-            listeners in over 200 countries.<br/>
-            <Link to={'/developer-tea'}>Latest episode: {data.allFeedDeveloperTea.edges[0].node.title}</Link>
+            listeners in over 200 countries.
+            <br />
+            <Link to={'/developer-tea'}>
+              Latest episode: {data.allFeedDeveloperTea.edges[0].node.title}
+            </Link>
           </div>
           <IconWrap>
             <DtLogo />
@@ -264,20 +271,14 @@ const Experience = ({ data }) => {
         </div>
         <div>
           <h5>Notable experiences:</h5>
-          <p>
-            <em>
-              Note that this is a small selection from a much larger list of
-              over 100 projects I've worked on in the past.
-            </em>
-          </p>
           <ul>
             <li>
-              Architecting an app to power a conference experience for over
-              5,000 attendees
+              Architected an app to power a conference experience for over 5,000
+              attendees
             </li>
             <li>
-              Help co-found a startup to reimagine the experience around
-              memories captured in old VHS home movies
+              Help build a startup to reimagine the experience around memories
+              captured in old VHS home movies
             </li>
             <li>
               Built{' '}

@@ -26,15 +26,14 @@ function Bio() {
                 marginBottom: 0,
                 minWidth: 100,
                 width: 400,
-                height: 400,
+                height: 300,
               }}
             />
             <p style={{ margin: 0, maxWidth: '32rem' }}>
               Written by <strong>{author}</strong>, engineer at{' '}
               <a href="https://clearbit.com/">Clearbit</a> and podcast host at{' '}
               <a href="https://spec.fm/podcasts/developer-tea">Developer Tea</a>
-              , amongst other things.
-              {` `}
+              .{` `}
               <a href={`https://twitter.com/${social.twitter}`}>
                 You can follow him on Twitter at @jcutrell.
               </a>

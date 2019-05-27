@@ -24,7 +24,7 @@ class BlogIndex extends React.Component {
             `clearbit`,
           ]}
         />
-        <h3>Blog</h3>
+        <h3>Writing</h3>
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
@@ -62,7 +62,10 @@ export const pageQuery = graphql`
     }
     allMdx(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { fields: { sourceName: { eq: "blog" }}, frontmatter: {tags: { nin: ["Personal"]}} }
+      filter: {
+        fields: { sourceName: { eq: "blog" } }
+        frontmatter: { tags: { nin: ["Personal"] } }
+      }
     ) {
       edges {
         node {
