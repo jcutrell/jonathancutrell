@@ -14,21 +14,37 @@ import { rhythm } from '../utils/typography'
 import styled, { keyframes } from 'styled-components'
 
 const PicHeader = styled.div`
-  width: 150vw;
+  width: 100vw;
   height: 100vh;
   position: fixed;
-  background-position: 45% 20%;
-  @media only screen and (min-width: 80rem) {
-    background-position: 0% 20%;
-  }
+  background-size: cover;
+  background-position: 95% 80%;
   top: 0;
   left: 0;
   z-index: -1;
   background-image: url(${props => props.backgroundImageUrl});
-  filter: grayscale(50%);
+  filter: brightness(140%) contrast(80%) blur(2px);
+  @media only screen and (min-width: 40rem) {
+    filter: none;
+    background-position: 75% 10%;
+  }
 `
 const HomeHeader = styled.div`
-  height: 80vh;
+  height: 88vh;
+  overflow: hidden;
+  position: relative;
+  &:after {
+    position: absolute;
+    left: 0;
+    bottom: -250px;
+    width: 105%;
+    height: 250px;
+    content: '';
+    background: white;
+    transform-origin: top left;
+    transform: rotateZ(-2deg);
+    box-shadow: 0 0 70px rgba(0, 0, 0, 0.2);
+  }
 `
 
 const wave = keyframes`
@@ -58,11 +74,12 @@ const HeaderTitle = styled.h1`
   position: relative;
   padding-top: 25vh;
   margin-top: 0;
-  font-size: 3rem;
-  @media only screen and (min-width: 60rem) {
+  font-size: 2.6rem;
+  text-shadow: 0 0 30px rgba(42, 65, 84, 0.2);
+  @media only screen and (min-width: 40rem) {
+    color: #fff;
     font-size: 5rem;
   }
-  color: #184258;
 `
 
 const SubHeader = styled.h2`
@@ -364,9 +381,9 @@ export default BlogIndex
 
 export const pageQuery = graphql`
   query {
-    avatar: file(absolutePath: { regex: "/bb_jc.jpg/" }) {
+    avatar: file(absolutePath: { regex: "/jc-ethereal.jpg/" }) {
       childImageSharp {
-        fixed(width: 2020, height: 1420) {
+        fixed(width: 2000, height: 1400) {
           ...GatsbyImageSharpFixed
         }
       }
