@@ -105,11 +105,11 @@ const Nav = styled.nav`
     display: block;
     margin-right: 2rem;
     float: left;
-    padding: 16px;
+    padding: 14px 16px;
     position: relative;
     z-index: 500;
     &:hover span {
-      transform: skewX(-1deg) skewY(-1deg) scaleX(1);
+      transform: skewY(-1deg) scaleX(1);
     }
   }
 `
@@ -124,7 +124,7 @@ const SlantButton = styled.span`
   width: 100%;
   height: 100%;
   background: white;
-  transform: skewX(-1deg) skewY(-1deg) scaleX(0.95);
+  transform: skewY(-1deg) scaleX(0.95);
   transition: transform 0.2s;
   z-index: -1;
 `
