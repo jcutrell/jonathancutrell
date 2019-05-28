@@ -102,9 +102,31 @@ const Nav = styled.nav`
   text-transform: uppercase;
   a {
     color: #234156;
-    display: inline-block;
+    display: block;
     margin-right: 2rem;
+    float: left;
+    padding: 16px;
+    position: relative;
+    z-index: 500;
+    &:hover span {
+      transform: skewX(-1deg) skewY(-1deg) scaleX(1);
+    }
   }
+`
+const SlantButton = styled.span`
+  text-align: center;
+  display: block;
+  position: relative;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  transform: skewX(-1deg) skewY(-1deg) scaleX(0.95);
+  transition: transform 0.2s;
+  z-index: -1;
 `
 
 const Footer = styled.footer`
@@ -123,8 +145,14 @@ const Header = ({ data, picRef }) => {
           I help developers find clarity, perspective, and purpose in their
           careers.
           <Nav style={{ marginTop: '2rem' }}>
-            <Link to="/writing">Writing</Link>
-            <Link to="/testimonials">Testimonials</Link>
+            <Link to="/writing">
+              Writing
+              <SlantButton />
+            </Link>
+            <Link to="/testimonials">
+              Testimonials
+              <SlantButton />
+            </Link>
           </Nav>
         </SubHeader>
       </HeaderContent>
@@ -275,11 +303,11 @@ const Experience = ({ data }) => {
         <div>
           <h5>Previously</h5>I helped grow{' '}
           <a href="https://whitebaord.is">Whiteboard</a>, an agency servicing
-          clients with web projects all over the spectrum. As <strong>CTO</strong> at Whiteboard,
-          I worked with companies from non-profit to Fortune 500 to pre-funding
-          startup. Before that, I started building digital products in 2007.
-          (Those first ones weren't very good though.) I helped start a music
-          company and then{' '}
+          clients with web projects all over the spectrum. As{' '}
+          <strong>CTO</strong> at Whiteboard, I worked with companies from
+          non-profit to Fortune 500 to pre-funding startup. Before that, I
+          started building digital products in 2007. (Those first ones weren't
+          very good though.) I helped start a music company and then{' '}
           <a href="https://tutsplus.com/authors/jonathan-cutrell">
             freelanced as a technical writer
           </a>{' '}
