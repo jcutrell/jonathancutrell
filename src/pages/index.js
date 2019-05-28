@@ -275,7 +275,7 @@ const Experience = ({ data }) => {
         <div>
           <h5>Previously</h5>I helped grow{' '}
           <a href="https://whitebaord.is">Whiteboard</a>, an agency servicing
-          clients with web projects all over the spectrum. As CTO at the agency,
+          clients with web projects all over the spectrum. As <strong>CTO</strong> at Whiteboard,
           I worked with companies from non-profit to Fortune 500 to pre-funding
           startup. Before that, I started building digital products in 2007.
           (Those first ones weren't very good though.) I helped start a music
@@ -294,7 +294,7 @@ const Experience = ({ data }) => {
               attendees
             </li>
             <li>
-              Help build a startup to reimagine the experience around memories
+              Helped build a startup to reimagine the experience around memories
               captured in old VHS home movies
             </li>
             <li>
@@ -305,7 +305,7 @@ const Experience = ({ data }) => {
               (and earned a patent for it)
             </li>
             <li>
-              Strategize and build system powering{' '}
+              Strategized and built system powering{' '}
               <a href="https://purposity.com">Purposity</a>, a donor-to-need
               matching platform
             </li>
