@@ -15,6 +15,8 @@ const TestimonialWrap = styled.section`
   justify-content: center;
   align-items: center;
   blockquote {
+    border-image: linear-gradient(180deg, #eb9d6e, #c86dd7) 1;
+    border-width: 5px;
   }
 `
 

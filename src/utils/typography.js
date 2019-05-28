@@ -7,10 +7,10 @@ StAnnes.overrideThemeStyles = ({ rhythm }) => {
       boxShadow: `none`,
     },
     a: {
-      color: '#8FA8CB',
+      color: '#533187',
     },
     'a:hover': {
-      color: '#E99444',
+      color: '#c86dd7',
     },
     blockquote: {
       borderColor: 'rgb(229, 236, 247)',

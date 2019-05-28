@@ -22,8 +22,8 @@ const PicHeader = styled.div`
   top: 0;
   left: 0;
   z-index: -1;
-  background-image: url(${props => props.backgroundImageUrl});
-  filter: brightness(140%) contrast(80%) blur(2px);
+  background-image: url(/header.jpg);
+  filter: brightness(140%) saturate(60%) contrast(70%) blur(2px);
   @media only screen and (min-width: 40rem) {
     filter: none;
     background-position: 75% 10%;
@@ -383,7 +383,7 @@ export const pageQuery = graphql`
   query {
     avatar: file(absolutePath: { regex: "/jc-ethereal.jpg/" }) {
       childImageSharp {
-        fixed(width: 2000, height: 1400) {
+        fixed(width: 2000, height: 1400, quality: 100) {
           ...GatsbyImageSharpFixed
         }
       }
