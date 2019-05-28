@@ -395,7 +395,8 @@ class BlogIndex extends React.Component {
         <Header data={data} picRef={this.headerPicRef} />
         <Experience scroll={this.state.scroll} data={data} />
         <Footer>
-          &copy; 2019 -{' '}
+          <Link to="/writing">Writing</Link>&nbsp;
+          <Link to="/testimonials">Testimonials</Link>&nbsp; &copy; 2019 -{' '}
           <a href="mailto:jonathan.cutrell+footer@gmail.com">
             Contact Jonathan
           </a>
