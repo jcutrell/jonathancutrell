@@ -10,23 +10,25 @@ import styled from 'styled-components'
 const TestimonialWrap = styled.section`
   display: flex;
   flex-wrap: wrap;
-  width: 80rem;
+  max-width: 80rem;
   margin: 0 auto;
   justify-content: center;
   align-items: center;
+  blockquote {
+  }
 `
 
 const Tags = styled.div`
   display: flex;
   flex-wrap: wrap;
-  width: 40rem;
+  max-width: 40rem;
   margin: 0 auto;
 `
 
 const Testimonial = styled.div`
   padding: 2rem;
   margin-bottom: 2rem;
-  width: 40rem;
+  max-width: 40rem;
   blockquote {
     overflow: hidden;
   }

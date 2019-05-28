@@ -26,6 +26,12 @@ const NavLink = styled(Link).attrs({ activeNavItemClass })`
   }
 `
 
+const GradientText = styled.span`
+  background: -webkit-linear-gradient(180deg, #eb9d6e, #c86dd7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+`
+
 class Layout extends React.Component {
   isActive = ({ isCurrent }) => {
     return isCurrent ? { isActive: true } : { isActive: false }
@@ -36,27 +42,6 @@ class Layout extends React.Component {
     const rootPath = `${__PATH_PREFIX__}/`
     let header
 
-    if (location.pathname === rootPath) {
-    } else {
-      header = (
-        <h3
-          style={{
-            marginTop: 0,
-            marginBottom: rhythm(-1),
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-            }}
-            to={`/`}
-          >
-            {title}
-          </Link>
-        </h3>
-      )
-    }
     return (
       <div
         style={{
@@ -67,7 +52,9 @@ class Layout extends React.Component {
         }}
       >
         <h2>
-          <Link to="/">Jonathan Cutrell</Link>
+          <Link to="/">
+            <GradientText>Jonathan Cutrell</GradientText>
+          </Link>
         </h2>
         <Nav style={{ marginTop: '2rem' }}>
           <NavLink activeClassName={activeNavItemClass} to="/writing">
