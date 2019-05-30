@@ -17,15 +17,16 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-styled-components`,
-      options: {},
-    },
-    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/assets`,
         name: `assets`,
       },
+    },
+
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {},
     },
     {
       resolve: `gatsby-source-filesystem`,
@@ -42,7 +43,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590,
+              maxWidth: 800,
             },
           },
           {
