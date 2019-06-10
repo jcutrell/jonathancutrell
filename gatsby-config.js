@@ -90,6 +90,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `https://www.teabreakchallenge.com/feed.rss`,
+        name: `TeaBreakChallenge`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-feed`,
       options: {
         query: `
