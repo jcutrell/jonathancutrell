@@ -114,9 +114,7 @@ class BlogIndex extends React.Component {
 
     return (
       <React.Fragment>
-        <BlogLayout location={this.props.location} title={siteTitle}>
-          <p>Some people have said nice things about my work. Here's a few.</p>
-        </BlogLayout>
+        <BlogLayout location={this.props.location} title={siteTitle} />
         <div>
           {data.allMdx.edges.map(({ node }) => {
             const { title, subtitle } = node.frontmatter
