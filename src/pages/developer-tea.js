@@ -44,7 +44,7 @@ class BlogIndex extends React.Component {
         />
         <h3>Developer Tea Episodes</h3>
 				<p>I'm very thankful that we've been able to publish {episodes.length} episodes of Developer Tea so far!</p>
-				<p>P.S. If you want to give back and support Developer Tea, <a href="https://itunes.apple.com/us/podcast/developer-tea/id955596067?mt=2">leave a review on iTunes!</a></p>
+				<p>P.S. If you want to give back and support Developer Tea, <a href="https://itunes.apple.com/us/podcast/developer-tea/id955596067?mt=2">leave a review on iTunes!</a> You can also email me at <a href="mailto:developertea@gmail.com">developertea@gmail.com</a> to talk about the show.</p>
         {episodes.slice(0, showCount).map(({ node }, i) => {
           const title = node.title
           return (
@@ -67,7 +67,13 @@ class BlogIndex extends React.Component {
             </div>
           )
         })}
-				<a onClick={e => this.setState({ showAll: true })}>Show All Episodes</a>
+        <div 
+          style={{
+            marginBottom: rhythm(1 / 4),
+          }}
+        >
+          {!this.state.showAll && <a onClick={e => this.setState({ showAll: true })}>Show All Episodes</a>}
+        </div>
       </BlogLayout>
     )
   }
