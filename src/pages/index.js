@@ -258,7 +258,7 @@ const Experience = ({ data }) => {
           <div style={{ position: 'relative', zIndex: 100 }}>
             <h4>
               Host,{' '}
-              <a href="https://spec.fm/pocdasts/developer-tea">Developer Tea</a>
+              <a href="https://spec.fm/podcasts/developer-tea">Developer Tea</a>
             </h4>
             Developer Tea is a top-100 podcast in the Technology category on
             iTunes. The podcast is approaching 13m all-time downloads by
