@@ -11,13 +11,16 @@ import styled from 'styled-components'
 const TestimonialWrap = styled.section`
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
   max-width: 80rem;
   margin: 0 auto;
   justify-content: center;
   align-items: center;
   blockquote {
+    border: none;
     border-image: linear-gradient(180deg, #eb9d6e, #c86dd7) 1;
-    border-width: 5px;
+    border-width: 0;
+    border-left-width: 5px;
   }
 `
 
@@ -31,18 +34,21 @@ const Tags = styled.div`
 const Testimonial = styled.div`
   padding: 2rem;
   margin-bottom: 2rem;
-  max-width: 40rem;
+  width: 100%;
   blockquote {
     overflow: hidden;
   }
   cite {
     margin-bottom: 0;
   }
+  h1,
+  h2,
+  h3,
+  h4,
   h5 {
     margin-top: 0;
   }
   p {
-    margin: 0;
   }
 `
 
@@ -55,58 +61,6 @@ const Tag = styled.a`
 
 const flatMap = (f, xs) => xs.reduce((acc, x) => acc.concat(f(x)), [])
 
-class PostFilter extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      filter: 'All',
-    }
-  }
-
-  clickTag = tag => {
-    this.setState({ filter: tag })
-  }
-
-  renderTag = (tag, onClick) => {
-    return (
-      <Tag onClick={() => this.clickTag(tag)} active={this.state.filter == tag}>
-        {tag}
-      </Tag>
-    )
-  }
-
-  filterPosts = posts => {
-    if (this.state.filter && this.state.filter !== 'All') {
-      return posts.filter(post =>
-        post.node.frontmatter.tags.includes(this.state.filter)
-      )
-    } else {
-      return posts
-    }
-  }
-
-  render() {
-    const tags = Array.from(
-      new Set(
-        [].concat.apply(
-          [],
-          (this.props.posts || []).map(post => post.node.frontmatter.tags)
-        )
-      )
-    )
-    tags.unshift('All')
-    const posts = this.filterPosts(this.props.posts)
-    return (
-      <React.Fragment>
-        <Tags>{tags.map(this.renderTag)}</Tags>
-        <TestimonialWrap>
-          {this.props.children({ ...this.props, posts: posts })}
-        </TestimonialWrap>
-      </React.Fragment>
-    )
-  }
-}
-
 class BlogIndex extends React.Component {
   render() {
     const { data } = this.props
@@ -115,25 +69,25 @@ class BlogIndex extends React.Component {
     return (
       <React.Fragment>
         <BlogLayout location={this.props.location} title={siteTitle} />
-        <div>
-          {data.allMdx.edges.map(({ node }) => {
-            const { title, subtitle } = node.frontmatter
-            return (
-              <Testimonial key={node.fields.slug}>
-                <h2>
-                  {title || humanizeString(node.fields.slug.replace(/\//g, ''))}
-                </h2>
-                <blockquote>
-                  <MDXRenderer>{node.code.body}</MDXRenderer>
-                </blockquote>
-                <cite>
-                  <br />
-                </cite>
-                <i>{subtitle}</i>
-              </Testimonial>
-            )
-          })}
-        </div>
+        <TestimonialWrap>
+          {data.allMdx.edges
+            .filter(({ node }) => node.rawBody.length)
+            .map(({ node }) => {
+              const { subtitle } = node.frontmatter
+              return (
+                <Testimonial key={node.fields.slug}>
+                  <h2>{humanizeString(node.fields.slug.replace(/\//g, ''))}</h2>
+                  <blockquote>
+                    <MDXRenderer>{node.code.body}</MDXRenderer>
+                  </blockquote>
+                  <cite>
+                    <br />
+                  </cite>
+                  <i>{subtitle}</i>
+                </Testimonial>
+              )
+            })}
+        </TestimonialWrap>
       </React.Fragment>
     )
   }
@@ -154,6 +108,7 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
+          rawBody
           code {
             body
           }
@@ -161,7 +116,6 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            title
             subtitle
             tags
             priority
