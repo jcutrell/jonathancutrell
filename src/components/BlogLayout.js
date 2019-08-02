@@ -27,7 +27,7 @@ const NavLink = styled(Link).attrs({ activeNavItemClass })`
 `
 
 const GradientText = styled.span`
-  background: -webkit-linear-gradient(180deg, #eb9d6e, #c86dd7);
+  background: -webkit-linear-gradient(0deg, #008aed, #b35fff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 `
