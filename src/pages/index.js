@@ -14,36 +14,54 @@ import { rhythm } from '../utils/typography'
 import styled, { keyframes } from 'styled-components'
 
 const PicHeader = styled.div`
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
   background-size: cover;
-  background-position: 95% 80%;
-  top: 0;
-  left: 0;
-  z-index: -1;
+  background-position: center;
   background-image: url(/header.jpg);
-  filter: brightness(140%) saturate(60%) contrast(70%) blur(2px);
-  @media only screen and (min-width: 40rem) {
+  position: relative;
+  width: 100vw;
+  margin-top: 5vh;
+  height: 40vh;
+  @media only screen and (min-width: 60rem) {
+    width: 50vw;
+    height: 75vh;
+    position: fixed;
+    top: 0;
+    right: 0;
     filter: none;
-    background-position: 75% 10%;
+    background-position: 65% 0%;
   }
 `
 const HomeHeader = styled.div`
-  height: 88vh;
+  height: 75vh;
   overflow: hidden;
   position: relative;
-  &:after {
-    position: absolute;
-    left: 0;
-    bottom: -250px;
-    width: 105%;
-    height: 250px;
-    content: '';
-    background: white;
-    transform-origin: top left;
-    transform: rotateZ(-2deg);
-    box-shadow: 0 0 70px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  background: linear-gradient(180deg, #eb9d6e, #c86dd7);
+  @media only screen and (min-width: 60rem) {
+    &:before {
+      position: absolute;
+      left: 0;
+      bottom: -250px;
+      width: 105%;
+      height: 250px;
+      content: '';
+      background: white;
+      transform-origin: top left;
+      transform: rotateZ(-2deg);
+      box-shadow: 0 0 70px rgba(0, 0, 0, 0.2);
+      z-index: 5;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 50vw;
+      height: 75vh;
+      display: block;
+      background: linear-gradient(0deg, #eb9d6e, #c86dd7);
+      opacity: .5;
+    }
   }
 `
 
@@ -72,13 +90,14 @@ const HeaderContent = styled.div`
 `
 const HeaderTitle = styled.h1`
   position: relative;
-  padding-top: 25vh;
+  padding-top: 10vh;
   margin-top: 0;
-  font-size: 2.6rem;
+  font-size: 2.4rem;
   text-shadow: 0 0 30px rgba(42, 65, 84, 0.2);
-  @media only screen and (min-width: 40rem) {
-    color: #fff;
-    font-size: 5rem;
+  @media only screen and (min-width: 60rem) {
+    padding-top: 25vh;
+    color: #FFF;
+    font-size: 3.5rem;
   }
 `
 
@@ -89,9 +108,8 @@ const SubHeader = styled.h2`
   font-weight: 200;
 `
 const Skill = styled.span`
-  display: inline-block;
   padding: 0 2rem 1rem 0;
-  font-size: 1.2rem;
+  font-size: 1rem;
 `
 
 const Nav = styled.nav`
@@ -104,7 +122,7 @@ const Nav = styled.nav`
     color: #234156;
     display: block;
     margin-right: 2rem;
-    float: left;
+    display: inline-block;
     padding: 14px 16px;
     position: relative;
     z-index: 500;
@@ -130,6 +148,8 @@ const SlantButton = styled.span`
 `
 
 const Footer = styled.footer`
+  position: relative;
+  z-index: 1000;
   text-align: center;
   padding: 1rem 0;
 `
@@ -168,6 +188,8 @@ const ExperienceWrap = styled.section`
   background: #fff;
   padding: 4rem 2rem;
   color: #888;
+  position: relative;
+  z-index: 1000;
   @media only screen and (min-width: 40rem){
     padding: 5rem;
   }
