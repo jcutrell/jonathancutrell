@@ -21,7 +21,10 @@ const PicHeader = styled.div`
   width: 100vw;
   margin-top: 5vh;
   height: 40vh;
+  opacity: .5;
   @media only screen and (min-width: 60rem) {
+    opacity: 1;
+    margin-top: 0;
     width: 50vw;
     height: 75vh;
     position: fixed;
@@ -32,12 +35,23 @@ const PicHeader = styled.div`
   }
 `
 const HomeHeader = styled.div`
-  height: 75vh;
   overflow: hidden;
   position: relative;
   z-index: 100;
-  background: linear-gradient(180deg, #eb9d6e, #c86dd7);
+  background: linear-gradient(180deg, #008aed, #b35fff);
+  &:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50vw;
+    height: 100%;
+    display: block;
+    background: linear-gradient(90deg, rgba(255,255,255,0),rgba(179,95,255,1));
+    opacity: .4;
+  }
   @media only screen and (min-width: 60rem) {
+    height: 75vh;
     &:before {
       position: absolute;
       left: 0;
@@ -59,8 +73,8 @@ const HomeHeader = styled.div`
       width: 50vw;
       height: 75vh;
       display: block;
-      background: linear-gradient(0deg, #eb9d6e, #c86dd7);
-      opacity: .5;
+      background: linear-gradient(0deg, #008aed,#b35fff);
+      opacity: .4;
     }
   }
 `
@@ -92,18 +106,21 @@ const HeaderTitle = styled.h1`
   position: relative;
   padding-top: 10vh;
   margin-top: 0;
-  font-size: 2.4rem;
+  font-size: 3rem;
+  color: #FFF;
   text-shadow: 0 0 30px rgba(42, 65, 84, 0.2);
   @media only screen and (min-width: 60rem) {
     padding-top: 25vh;
-    color: #FFF;
-    font-size: 3.5rem;
+    font-size: 2.5rem;
+  }
+  @media only screen and (min-width: 80rem) {
+    font-size: 3.6rem;
   }
 `
 
 const SubHeader = styled.h2`
   font-size: 2rem;
-  color: #184258;
+  color: #fff;
   max-width: 400px;
   font-weight: 200;
 `
