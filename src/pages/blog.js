@@ -24,7 +24,7 @@ class BlogIndex extends React.Component {
             `clearbit`,
           ]}
         />
-        <h3>Writing</h3>
+        <h3>Blog</h3>
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (

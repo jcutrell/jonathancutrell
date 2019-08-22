@@ -21,7 +21,7 @@ const PicHeader = styled.div`
   width: 100vw;
   margin-top: 5vh;
   height: 40vh;
-  opacity: .5;
+  opacity: 0.5;
   @media only screen and (min-width: 60rem) {
     opacity: 1;
     margin-top: 0;
@@ -47,8 +47,12 @@ const HomeHeader = styled.div`
     width: 50vw;
     height: 100%;
     display: block;
-    background: linear-gradient(90deg, rgba(255,255,255,0),rgba(179,95,255,1));
-    opacity: .4;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0),
+      rgba(179, 95, 255, 1)
+    );
+    opacity: 0.4;
   }
   @media only screen and (min-width: 60rem) {
     height: 75vh;
@@ -73,8 +77,8 @@ const HomeHeader = styled.div`
       width: 50vw;
       height: 75vh;
       display: block;
-      background: linear-gradient(0deg, #008aed,#b35fff);
-      opacity: .4;
+      background: linear-gradient(0deg, #008aed, #b35fff);
+      opacity: 0.4;
     }
   }
 `
@@ -107,7 +111,7 @@ const HeaderTitle = styled.h1`
   padding-top: 10vh;
   margin-top: 0;
   font-size: 3rem;
-  color: #FFF;
+  color: #fff;
   text-shadow: 0 0 30px rgba(42, 65, 84, 0.2);
   @media only screen and (min-width: 60rem) {
     padding-top: 25vh;
@@ -182,8 +186,8 @@ const Header = ({ data, picRef }) => {
           I help developers find clarity, perspective, and purpose in their
           careers.
           <Nav style={{ marginTop: '2rem' }}>
-            <Link to="/writing">
-              Writing
+            <Link to="/blog">
+              Blog
               <SlantButton />
             </Link>
             <Link to="/testimonials">
@@ -198,6 +202,20 @@ const Header = ({ data, picRef }) => {
         backgroundImageUrl={data.avatar.childImageSharp.fixed.src}
       />
     </HomeHeader>
+  )
+}
+
+const RecentPost = ({ post }) => {
+  return (
+    <div style={{ position: 'relative', overflow: 'hidden' }}>
+      <a
+        style={{ position: 'relative', display: 'block', zIndex: 100 }}
+        href={post.fields.slug}
+      >
+        <h4>{post.frontmatter.title}</h4>
+        <p>{post.excerpt}</p>
+      </a>
+    </div>
   )
 }
 
@@ -272,6 +290,8 @@ const CurrentWork = styled.div`
 const Experience = ({ data }) => {
   return (
     <ExperienceWrap>
+      <h5>Most Recent Post</h5>
+      <RecentPost post={data.allMdx.edges[0].node} />
       <h5>Current Work</h5>
       <CurrentWork>
         <div style={{ position: 'relative', overflow: 'hidden' }}>
@@ -325,18 +345,6 @@ const Experience = ({ data }) => {
           </div>
         </div>
       </CurrentWork>
-
-      <h5>Skills</h5>
-      <section>
-        <Skill>Leadership and Coaching</Skill>
-        <Skill>Speaking / Presentation</Skill>
-        <Skill>Technical Writing</Skill>
-        <Skill>Software Design</Skill>
-        <Skill>JavaScript (React, ES6)</Skill>
-        <Skill>Ruby (Sinatra, Rails)</Skill>
-        <Skill>Front-end Development (SCSS, build processes)</Skill>
-        <Skill>Decision Science</Skill>
-      </section>
 
       <div>
         <div>
@@ -398,6 +406,17 @@ const Experience = ({ data }) => {
           </div>
         </div>
       </div>
+      <h5>Skills</h5>
+      <section>
+        <Skill>Leadership and Coaching</Skill>
+        <Skill>Speaking / Presentation</Skill>
+        <Skill>Technical Writing</Skill>
+        <Skill>Software Design</Skill>
+        <Skill>JavaScript (React, ES6)</Skill>
+        <Skill>Ruby (Sinatra, Rails)</Skill>
+        <Skill>Front-end Development (SCSS, build processes)</Skill>
+        <Skill>Decision Science</Skill>
+      </section>
     </ExperienceWrap>
   )
 }
@@ -468,7 +487,14 @@ export const pageQuery = graphql`
         }
       }
     }
-    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMdx(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: {
+        fields: { sourceName: { eq: "blog" } }
+        frontmatter: { tags: { nin: ["Personal"] } }
+      }
+      limit: 1
+    ) {
       edges {
         node {
           excerpt
