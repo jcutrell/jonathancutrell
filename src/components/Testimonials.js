@@ -20,7 +20,7 @@ const TestimonialContainer = styled.div`
   margin: 0 auto;
   grid-template-columns: 33% 33% 33%;
   grid-auto-flow: row;
-  width: 80rem;
+  width: 45rem;
 `
 
 export const query = graphql`

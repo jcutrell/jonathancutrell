@@ -10,7 +10,7 @@ import styled from 'styled-components'
 const TestimonialWrap = styled.section`
   display: flex;
   flex-wrap: wrap;
-  max-width: 80rem;
+  max-width: 45rem;
   margin: 0 auto;
   justify-content: center;
   align-items: center;
