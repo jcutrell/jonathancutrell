@@ -57,8 +57,8 @@ class Layout extends React.Component {
           </Link>
         </h2>
         <Nav style={{ marginTop: '2rem' }}>
-          <NavLink activeClassName={activeNavItemClass} to="/writing">
-            Writing
+          <NavLink activeClassName={activeNavItemClass} to="/blog">
+            Blog
           </NavLink>
           <NavLink activeClassName={activeNavItemClass} to="/developer-tea">
             Podcast
