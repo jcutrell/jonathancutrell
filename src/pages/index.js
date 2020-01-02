@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link, graphql } from 'gatsby'
 import Image from 'gatsby-image'
-import ClearbitLogo from '../components/icons/clearbit-logo'
+import TesorioLogo from '../components/icons/tesorio-logo'
 import DtLogo from '../components/icons/dt-logo'
 import SpecLogo from '../components/icons/spec-logo'
 
@@ -297,20 +297,15 @@ const Experience = ({ data }) => {
         <div style={{ position: 'relative', overflow: 'hidden' }}>
           <div style={{ position: 'relative', zIndex: 100 }}>
             <h4>
-              Senior Engineer,{' '}
+              Engineering Manager,{' '}
               <a href="https://clearbit.com/about" target="_blank">
-                Clearbit
+                Tesorio
               </a>
             </h4>
-            Building next-generation business data interfaces and world-class
-            user experiences.
-            <br />
-            <a href="https://connect.clearbit.com">
-              Here's a project I worked on recently.
-            </a>
+            Building a fearless team of developers focused on creating the world's best cashflow management platform.
           </div>
           <IconWrap>
-            <ClearbitLogo />
+            <TesorioLogo />
           </IconWrap>
         </div>
         <div style={{ position: 'relative', overflow: 'hidden' }}>
@@ -319,8 +314,8 @@ const Experience = ({ data }) => {
               Host,{' '}
               <a href="https://spec.fm/podcasts/developer-tea">Developer Tea</a>
             </h4>
-            Developer Tea is a top-100 podcast in the Technology category on
-            iTunes. The podcast is approaching 13m all-time downloads by
+            A top-100 tech podcast
+            with over 13m all-time downloads by
             listeners in over 200 countries.
             <br />
             <Link to={'/developer-tea'}>
@@ -348,8 +343,11 @@ const Experience = ({ data }) => {
 
       <div>
         <div>
-          <h5>Previously</h5>I helped grow{' '}
-          <a href="https://whitebaord.is">Whiteboard</a>, an agency servicing
+          <h5>Previously</h5>
+          I worked as a senior engineer at <a href="">Clearbit</a>, primarily focused on
+          building <a href="https://clearbit.com/x">Clearbit X</a>.
+          Before that, I helped grow{' '}
+          <a href="https://whiteboard.is">Whiteboard</a>, an agency servicing
           clients with web projects all over the spectrum. As{' '}
           <strong>CTO</strong> at Whiteboard, I worked with companies from
           non-profit to Fortune 500 to pre-funding startup. Before that, I
