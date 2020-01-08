@@ -334,10 +334,10 @@ const Experience = ({ data }) => {
             I co-founded a podcast network called Spec for designers and
             developers who want to level up in their careers. Spec hosts
             episodes from 13 different podcasts today, with millions of listens.
-            <IconWrap>
-              <SpecLogo />
-            </IconWrap>
           </div>
+          <IconWrap>
+            <SpecLogo />
+          </IconWrap>
         </div>
       </CurrentWork>
 
