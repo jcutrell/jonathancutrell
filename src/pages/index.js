@@ -183,15 +183,14 @@ const Header = ({ data, picRef }) => {
           <Hand>👋</Hand> I'm Jonathan.
         </HeaderTitle>
         <SubHeader>
-          I help developers find clarity, perspective, and purpose in their
-          careers.
+          I am an empathetic engineering manager with over 10 years of industry experience with a bias for long-term thinking.
           <Nav style={{ marginTop: '2rem' }}>
             <Link to="/blog">
               Blog
               <SlantButton />
             </Link>
             <Link to="/testimonials">
-              Testimonials
+              What People Say About Me
               <SlantButton />
             </Link>
           </Nav>
