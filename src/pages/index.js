@@ -474,6 +474,8 @@ class BlogIndex extends React.Component {
         <Footer>
           <Link to="/blog">Blog</Link>&nbsp;
           <Link to="/testimonials">Testimonials</Link>&nbsp; &copy; 2019 -{' '}
+          <Link to="https://linkedin.com/in/jcutrell">LinkedIn</Link>&nbsp;
+          <Link to="https://twitter.com/jcutrell">Twitter</Link>&nbsp;
           <a href="mailto:jonathan.cutrell+footer@gmail.com">
             Contact Jonathan
           </a>
