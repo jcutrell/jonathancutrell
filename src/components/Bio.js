@@ -30,8 +30,8 @@ function Bio() {
               }}
             />
             <p style={{ margin: 0, maxWidth: '32rem' }}>
-              Written by <strong>{author}</strong>, engineer at{' '}
-              <a href="https://clearbit.com/">Clearbit</a> and podcast host at{' '}
+              Written by <strong>{author}</strong>, engineering manager at{' '}
+              <a href="https://tesorio.com/">Tesorio</a> and podcast host at{' '}
               <a href="https://spec.fm/podcasts/developer-tea">Developer Tea</a>
               .{` `}
               <a href={`https://twitter.com/${social.twitter}`}>
