@@ -392,7 +392,7 @@ const Experience = ({ data }) => {
             <li><a href="https://clearbit.com">Clearbit, Senior Engineer</a><br/><em>Aug 2018 &mdash; Oct 2019</em></li>
             <li><a href="https://whiteboard.is">Whiteboard, CTO</a> <br/><em>May 2010 &mdash; Aug 2018</em></li>
             <li>Medium (now-defunct agency), Frontend Engineer <br/><em>Jan 2010 &mdash; Jan 2011</em></li>
-            <li>Managing Editor, FuelYourInterface.com<br/><em>Jul 2009 &mdash; Jan 2019</em></li>
+            <li>Managing Editor, FuelYourInterface.com<br/><em>Jul 2009 &mdash; Jan 2010</em></li>
             <li>Freelance Frontend Engineer / Designer<br/><em>2008 &mdash; 2011</em></li>
           </ul>
         </div>
