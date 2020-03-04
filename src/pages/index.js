@@ -28,7 +28,7 @@ const PicHeader = styled.div`
   position: absolute;
   right: 0;
   top: 0;
-  height: 100%;
+  height: 110%;
   width: 100vw;
   background-position: left center;
   background-size: 160%;
@@ -36,8 +36,8 @@ const PicHeader = styled.div`
     padding: 0 10rem;
     width: 50vw;
     background-position: center center;
-    border-radius: 500px/650px 0 0 800px;
-    box-shadow: 0 -35px rgba(0, 148, 255, 0.52),
+    border-radius: 600px 0 500px 300px /650px 0 300px 300px;
+    box-shadow: 0 -35px rgba(0, 148, 255, 0.42),
       20px 30px rgba(0, 255, 198, 0.52),
       -24px 0 rgba(255, 0, 163, 0.52),
       -54px -10px 0 -10px rgba(225, 10, 220, 0.52),
@@ -50,12 +50,14 @@ const PicHeader = styled.div`
       transform: rotateZ(-15deg);
       width: 70vh;
       height: 70vh;
-      background-color: rgba(255, 30, 30, 0.22);
+      background-color: rgba(255, 30, 30, 0.18);
       position: absolute;
       right: 13vh;
       top: 8vh;
-      box-shadow: 5vh 100px 0 20px rgba(133, 67, 218, 0.35),
-                  -90px 80px 0 -20px rgba(159, 218, 67, 0.62);
+      box-shadow: 5vh 100px 0 20px rgba(133, 67, 218, 0.18),
+                  -90px 80px 0 -20px rgba(159, 218, 67, 0.22),
+                  250px 120px 0 -10px rgba(159, 159, 67, 0.22),
+                  -90px 80px 0 -20px rgba(159, 218, 67, 0.22);
     }
   }
 `
@@ -72,8 +74,9 @@ const WorkItem = styled.div`
 const HomeHeader = styled.div`
   position: relative;
   z-index: 100;
-  padding: 4rem 0;
+  padding: 6rem 0;
   min-height: 78vh;
+  margin-bottom: 3rem;
   &:after {
     content: '';
     position: absolute;
@@ -180,7 +183,7 @@ const Header = ({ data, picRef }) => {
     <HomeHeader>
       <HeaderContent>
         <HeaderTitle>
-          Hello, I'm Jonathan Cutrell.
+          Hello, I'm Jonathan&nbsp;Cutrell.
         </HeaderTitle>
         <SubHeader>
           I am an empathetic engineering manager with over 10 years of experience and a chosen bias for long-term thinking.
