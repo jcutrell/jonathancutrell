@@ -15,6 +15,9 @@ StAnnes.overrideThemeStyles = ({ rhythm }) => {
     blockquote: {
       borderColor: 'rgb(229, 236, 247)',
     },
+    p: {
+      lineHeight: 1.6,
+    },
     h5: {
       textTransform: 'uppercase',
       fontSize: '.8rem',
@@ -26,18 +29,14 @@ StAnnes.baseFontSize = '20px'
 
 const typography = new Typography({
   ...StAnnes,
-  bodyFontFamily: ['Nunito Sans'],
+  bodyFontFamily: ['-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
   bodyColor: '#262740',
   headerColor: '#262740',
   baseFontSize: '16px',
   headerLineHeight: 1.2,
-  headerFontFamily: ['Nunito Sans'],
+  headerFontFamily: ['-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
   baseLineHeight: 1.95,
   googleFonts: [
-    {
-      name: 'Nunito Sans',
-      styles: ['200', '400', '700'],
-    },
   ],
 })
 
