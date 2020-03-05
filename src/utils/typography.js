@@ -17,6 +17,7 @@ StAnnes.overrideThemeStyles = ({ rhythm }) => {
     },
     p: {
       lineHeight: 1.6,
+      letterSpacing: '0.03em',
     },
     h5: {
       textTransform: 'uppercase',
