@@ -22,6 +22,24 @@ StAnnes.overrideThemeStyles = ({ rhythm }) => {
       textTransform: 'uppercase',
       fontSize: '.8rem',
     },
+    h1: {
+      fontSize: rhythm(1.4)
+    },
+    h2: {
+      fontSize: rhythm(1.2)
+    },
+    h3: {
+      fontSize: rhythm(1)
+    },
+    h4: {
+      fontSize: rhythm(.8)
+    },
+    h5: {
+      fontSize: rhythm(.6)
+    },
+    'h1,h2,h3,h4,h6': {
+      fontWeight: 200
+    }
   }
 }
 

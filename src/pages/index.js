@@ -28,42 +28,51 @@ const PicHeader = styled.div`
   position: absolute;
   right: 0;
   top: 0;
-  height: 110%;
   width: 100vw;
   background-position: left center;
   background-size: 160%;
+  z-index: -1;
+  height: 100%;
   @media only screen and (min-width: 80rem) {
+    height: 110%;
+    z-index: 400;
     padding: 0 10rem;
     width: 50vw;
     background-position: center center;
-    border-radius: 600px 0 500px 300px /650px 0 300px 300px;
-    box-shadow: 0 -35px rgba(0, 148, 255, 0.42),
-      20px 30px rgba(0, 255, 198, 0.52),
-      -24px 0 rgba(255, 0, 163, 0.52),
-      -54px -10px 0 -10px rgba(225, 10, 220, 0.52),
-      -30px -25px 0 40px rgba(255, 198, 33, 0.52);
+    border-radius: 820px 0 610px 300px / 500px 0 230px 460px;
     &:after {
-      animation: ${rotateHue} 8s infinite;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       content: '';
       display: block;
-      border-radius: 50%;
-      transform: rotateZ(-15deg);
-      width: 70vh;
-      height: 70vh;
-      background-color: rgba(255, 30, 30, 0.18);
-      position: absolute;
-      right: 13vh;
-      top: 8vh;
-      box-shadow: 5vh 100px 0 20px rgba(133, 67, 218, 0.18),
-                  -90px 80px 0 -20px rgba(159, 218, 67, 0.22),
-                  250px 120px 0 -10px rgba(159, 159, 67, 0.22),
-                  -90px 80px 0 -20px rgba(159, 218, 67, 0.22);
+      animation: ${rotateHue} 10s infinite linear;
+      border-radius: 820px 0 610px 300px / 500px 0 230px 460px;
+      box-shadow: 0 -35px rgba(0, 148, 255, 0.42),
+        20px 30px rgba(0, 255, 198, 0.52),
+        -24px 0 rgba(255, 0, 163, 0.52),
+        -54px -10px 0 -10px rgba(225, 10, 220, 0.52),
+        -20px -25px 0 40px rgba(255, 198, 33, 0.52);
     }
   }
 `
-const Lead = styled.div`
-  font-size: 2rem;
-  font-weight: 200;
+const Lead = styled.h3`
+  margin-top: 0;
+  padding-top: 1rem;
+`
+const Value = styled.h4``
+const LinkWithArrow = styled(Link)`
+  &:after {
+    content: '→';
+    display: inline-block;
+    margin-left: 4px;
+    transition: all .1s;
+  }
+  &:hover:after {
+    margin-left: 6px;
+  }
 `
 
 const WorkItem = styled.div`
@@ -86,14 +95,19 @@ const HomeHeader = styled.div`
     height: 100%;
     display: block;
     background: linear-gradient(
-      270deg,
-      rgba(179, 95, 255, .5),
-      rgba(0, 138, 237, 1)
+      225deg,
+      rgba(179, 95, 255, .7),
+      rgba(0, 138, 237, .95)
     );
     width: 100vw;
     opacity: 1;
     @media only screen and (min-width: 80rem) {
       opacity: 0.4;
+      background: linear-gradient(
+        225deg,
+        rgba(179, 95, 255, .7),
+        rgba(0, 138, 237, .5)
+      );
     }
   }
 }
@@ -112,15 +126,13 @@ const HeaderTitle = styled.h1`
   position: relative;
   padding-top: 5rem;
   margin-top: 0;
-  font-size: 3rem;
   color: #fff;
+  display: inline-block;
   @media only screen and (min-width: 60rem) {
-    padding-top: 5rem;
-    font-size: 3.6rem;
+    padding-top: 8rem;
   }
   @media only screen and (min-width: 80rem) {
     color: #234156;
-    font-size: 3rem;
   }
 `
 
@@ -141,7 +153,6 @@ const Skill = styled.span`
 const Nav = styled.nav`
   position: relative;
   font-size: 1rem;
-  font-weight: 700;
   letter-spacing: 0.05rem;
   text-transform: uppercase;
   a {
@@ -151,6 +162,15 @@ const Nav = styled.nav`
     display: inline-block;
     position: relative;
     z-index: 500;
+    &:after {
+      content: '→';
+      display: inline-block;
+      margin-left: 4px;
+      transition: all .1s;
+    }
+    &:hover:after {
+      margin-left: 6px;
+    }
     @media only screen and (min-width: 80rem) {
       color: #234156;
     }
@@ -249,7 +269,9 @@ const LongTermWrap = styled.div`
 `
 
 const FlexWrap = styled(Wrap)`
-  display: flex;
+  @media only screen and (min-width: 80rem){
+    display: flex;
+  }
 `
 
 const ExperienceWrap = styled(Wrap)`
@@ -318,12 +340,14 @@ const CurrentWork = styled.div`
 
 const RecentPost = ({ post }) => {
   return (
-    <div style={{ position: 'relative', overflow: 'hidden', maxWidth: '600px' }}>
+    <div style={{ position: 'relative',
+      overflow: 'hidden',
+      maxWidth: '600px' }}>
       <a
         style={{ position: 'relative', display: 'block', zIndex: 100 }}
         href={post.fields.slug}
       >
-        <h4>{post.frontmatter.title}</h4>
+        <h4 style={{ marginTop: 0, paddingTop: '1rem'}}>{post.frontmatter.title}</h4>
         <p>{post.excerpt}</p>
       </a>
     </div>
@@ -385,9 +409,11 @@ const Experience = ({ data }) => {
       <div>
         <div>
           <h5>My Values</h5>
-          Optimize for the Long-Term<br/>
-          Cultivate Understanding<br/>
-          Go Happy
+          <Value>Optimize for the Long-Term</Value>
+          <Value>Cultivate Understanding</Value>
+          <Value>Fearless Bravery</Value>
+          <Value>Go Happy</Value>
+          <LinkWithArrow to="/values">Read more about my values</LinkWithArrow>
         </div>
         <div>
           <h5>A Brief History</h5>

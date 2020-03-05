@@ -117,8 +117,8 @@ class BlogIndex extends React.Component {
     return (
       <React.Fragment>
         <BlogLayout location={this.props.location} title={siteTitle}>
-          <h3>Testimonials</h3>
-          <p>Some people have said nice things about my work. Here's a few.</p>
+          <h3>What People Say</h3>
+          <p>Here's what some people have said about working with me.</p>
         </BlogLayout>
         <div>
           <PostFilter {...this.props} posts={data.allMdx.edges}>
