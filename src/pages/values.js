@@ -43,7 +43,7 @@ export const pageQuery = graphql`
       }
     }
     allMdx(
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { fields: [frontmatter___date], order: ASC }
       filter: {
         fields: { sourceName: { eq: "values" } }
         frontmatter: { tags: { nin: ["Personal"] } }
