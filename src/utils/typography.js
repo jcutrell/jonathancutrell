@@ -48,14 +48,22 @@ StAnnes.baseFontSize = '20px'
 
 const typography = new Typography({
   ...StAnnes,
-  bodyFontFamily: ['-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+  bodyFontFamily: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
   bodyColor: '#262740',
   headerColor: '#262740',
   baseFontSize: '16px',
   headerLineHeight: 1.2,
-  headerFontFamily: ['-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+  headerFontFamily: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
   baseLineHeight: 1.95,
   googleFonts: [
+    {
+      name: 'Inter',
+      styles: [
+        '200',
+        '400',
+        '700',
+      ],
+    },
   ],
 })
 
