@@ -32,7 +32,7 @@ class PodcastEpisodeTemplate extends React.Component {
             marginTop: rhythm(2),
           }}
         />
-        <div dangerouslySetInnerHTML={{ __html: episode.content.encoded}} />
+        <div dangerouslySetInnerHTML={{ __html: episode?.content?.encoded}} />
       </SiteLayout>
     )
   }
