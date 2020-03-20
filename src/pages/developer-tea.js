@@ -5,6 +5,7 @@ import Bio from '../components/Bio'
 import SiteLayout from '../components/SiteLayout'
 import SEO from '../components/seo'
 import Sidebar from '../components/Sidebar'
+import Footer from '../components/footer'
 import { rhythm } from '../utils/typography'
 
 const PlayerUrl = (audioUrl) => audioUrl.replace('audio.', 'embed.').replace('.mp3', '');
@@ -74,6 +75,7 @@ class PodcastIndex extends React.Component {
         >
           {!this.state.showAll && <a onClick={e => this.setState({ showAll: true })}>Show All Episodes</a>}
         </div>
+        <Footer />
       </SiteLayout>
     )
   }

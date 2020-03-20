@@ -4,6 +4,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 
 import Bio from '../components/Bio'
 import SiteLayout from '../components/SiteLayout'
+import Footer from '../components/Footer'
 import SEO from '../components/seo'
 import { rhythm, scale } from '../utils/typography'
 
@@ -33,6 +34,7 @@ class PodcastEpisodeTemplate extends React.Component {
           }}
         />
         <div dangerouslySetInnerHTML={{ __html: episode?.content?.encoded}} />
+        <Footer />
       </SiteLayout>
     )
   }

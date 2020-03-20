@@ -4,6 +4,7 @@ import Image from 'gatsby-image'
 import TesorioLogo from '../components/icons/tesorio-logo'
 import DtLogo from '../components/icons/dt-logo'
 import SpecLogo from '../components/icons/spec-logo'
+import Footer from '../components/footer';
 
 import Bio from '../components/Bio'
 import Layout from '../components/Layout'
@@ -189,13 +190,6 @@ const SlantButton = styled.span`
   transform: skewY(-1deg) scaleX(0.95);
   transition: transform 0.2s;
   z-index: -1;
-`
-
-const Footer = styled.footer`
-  position: relative;
-  z-index: 1000;
-  text-align: center;
-  padding: 1rem 0;
 `
 
 const Header = ({ data, picRef }) => {
@@ -500,15 +494,7 @@ class BlogIndex extends React.Component {
           </div>
         </FlexWrap>
         <Experience scroll={this.state.scroll} data={data} />
-        <Footer>
-          <Link to="/blog">Blog</Link>&nbsp;
-          <Link to="/testimonials">Testimonials</Link>&nbsp; &copy; 2019 -{' '}
-          <Link to="https://linkedin.com/in/jcutrell">LinkedIn</Link>&nbsp;
-          <Link to="https://twitter.com/jcutrell">Twitter</Link>&nbsp;
-          <a href="mailto:jonathan.cutrell+footer@gmail.com">
-            Contact Jonathan
-          </a>
-        </Footer>
+        <Footer />
       </Layout>
     )
   }

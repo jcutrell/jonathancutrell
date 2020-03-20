@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 
 import Bio from '../components/Bio'
+import Footer from '../components/Footer'
 import SiteLayout from '../components/SiteLayout'
 import SEO from '../components/seo'
 import Sidebar from '../components/Sidebar'
@@ -46,6 +47,7 @@ class BlogIndex extends React.Component {
             </div>
           )
         })}
+        <Footer />
       </SiteLayout>
     )
   }

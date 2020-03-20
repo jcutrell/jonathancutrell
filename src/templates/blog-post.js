@@ -5,6 +5,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import Bio from '../components/Bio'
 import SiteLayout from '../components/SiteLayout'
 import SEO from '../components/seo'
+import Footer from '../components/footer'
 import { rhythm, scale } from '../utils/typography'
 
 class BlogPostTemplate extends React.Component {
@@ -60,6 +61,7 @@ class BlogPostTemplate extends React.Component {
             )}
           </li>
         </ul>
+        <Footer />
       </SiteLayout>
     )
   }
