@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 
 import Bio from '../components/Bio'
-import BlogLayout from '../components/BlogLayout'
+import SiteLayout from '../components/SiteLayout'
 import SEO from '../components/seo'
 import Sidebar from '../components/Sidebar'
 import { rhythm } from '../utils/typography'
@@ -15,7 +15,7 @@ const Player = ({ url }) => (
 	</div>
 )
 
-class BlogIndex extends React.Component {
+class PodcastIndex extends React.Component {
 	constructor(props){
 		super(props);
 		this.state={ showEps: [] }
@@ -32,7 +32,7 @@ class BlogIndex extends React.Component {
 		const showCount = this.state.showAll ? episodes.length : 100;
 
     return (
-      <BlogLayout location={this.props.location} title={siteTitle}>
+      <SiteLayout location={this.props.location} title={siteTitle}>
         <SEO
           title="All posts"
           keywords={[
@@ -54,7 +54,7 @@ class BlogIndex extends React.Component {
                   marginBottom: rhythm(1 / 4),
                 }}
               >
-							{title}
+							<a href={`/${node.fields.slug}`}>{title}</a>
               </h3>
               <small>{node.isoDate}</small>
               <br />
@@ -74,12 +74,12 @@ class BlogIndex extends React.Component {
         >
           {!this.state.showAll && <a onClick={e => this.setState({ showAll: true })}>Show All Episodes</a>}
         </div>
-      </BlogLayout>
+      </SiteLayout>
     )
   }
 }
 
-export default BlogIndex
+export default PodcastIndex
 
 export const pageQuery = graphql`
   query 
@@ -96,6 +96,9 @@ export const pageQuery = graphql`
 				isoDate(formatString: "MMMM Do, YYYY")
 				guid
         contentSnippet
+        fields {
+          slug
+        }
         enclosure {
           url
         } 

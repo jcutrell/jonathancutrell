@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-import MDXRenderer from 'gatsby-mdx/mdx-renderer'
+import {MDXRenderer} from 'gatsby-plugin-mdx'
 
 import Bio from '../components/Bio'
-import BlogLayout from '../components/BlogLayout'
+import SiteLayout from '../components/SiteLayout'
 import SEO from '../components/seo'
 import { rhythm, scale } from '../utils/typography'
 
@@ -15,11 +15,11 @@ class Values extends React.Component {
     console.log(posts);
 
     return (
-      <BlogLayout location={this.props.location} title={siteTitle}>
+      <SiteLayout location={this.props.location} title={siteTitle}>
         <SEO title="Jonathan Cutrell :: My Values" />
         <h1>My values</h1>
         {posts.map(({node}) => (
-          <MDXRenderer>{node.code.body}</MDXRenderer>
+          <MDXRenderer>{node.body}</MDXRenderer>
         ))}
         <hr
           style={{
@@ -28,7 +28,7 @@ class Values extends React.Component {
           }}
         />
         <Bio />
-      </BlogLayout>
+      </SiteLayout>
     )
   }
 }
@@ -51,9 +51,7 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          code {
-            body
-          }
+          body
           excerpt
           fields {
             slug

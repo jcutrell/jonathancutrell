@@ -60,6 +60,9 @@ class Layout extends React.Component {
           <NavLink activeClassName={activeNavItemClass} to="/blog">
             Blog
           </NavLink>
+          <NavLink activeClassName={activeNavItemClass} to="/books">
+            Books
+          </NavLink>
           <NavLink activeClassName={activeNavItemClass} to="/developer-tea">
             Podcast
           </NavLink>

@@ -9,6 +9,11 @@ module.exports = {
     },
   },
   plugins: [
+    `gatsby-transformer-yaml`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-offline`,
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -50,7 +55,14 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-mdx`,
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/books/`,
+        name: `books`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: ['.mdx', '.md'],
         gatsbyRemarkPlugins: [
@@ -76,8 +88,6 @@ module.exports = {
         ],
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
@@ -176,8 +186,6 @@ module.exports = {
         icon: `content/assets/gatsby-icon.png`,
       },
     },
-    `gatsby-plugin-offline`,
-    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {

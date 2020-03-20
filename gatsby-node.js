@@ -1,11 +1,11 @@
 const path = require(`path`)
+const slugify = require(`slug`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
-
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
-  return graphql(
+  const blog = graphql(
     `
       {
         allMdx(
@@ -21,9 +21,6 @@ exports.createPages = ({ graphql, actions }) => {
               frontmatter {
                 title
                 subtitle
-              }
-              code {
-                scope
               }
             }
           }
@@ -53,7 +50,59 @@ exports.createPages = ({ graphql, actions }) => {
       })
     })
   })
+
+  const podcastEpisode = path.resolve(`./src/templates/episode-page.js`)
+  const podcast = graphql(
+    `
+      {
+        allFeedDeveloperTea {
+          edges {
+            node {
+              title
+              isoDate(formatString: "MMMM Do, YYYY")
+              guid
+              contentSnippet
+              fields {
+                slug
+              }
+              enclosure {
+                url
+              } 
+              content {
+                encoded
+              }
+            }
+          }
+        }
+      }
+    `
+  ).then(result => {
+    if (result.errors) {
+      throw result.errors
+    }
+
+    // Create blog posts pages.
+    const posts = result.data.allFeedDeveloperTea.edges
+
+    posts.forEach((post, index) => {
+      const previous = index === posts.length - 1 ? null : posts[index + 1].node
+      const next = index === 0 ? null : posts[index - 1].node
+
+      createPage({
+        path: post.node.fields.slug,
+        component: podcastEpisode,
+        context: {
+          slug: post.node.fields.slug,
+          previous,
+          next,
+        },
+      })
+    })
+  })
+
+  return Promise.all([blog, podcast])
 }
+
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
@@ -73,4 +122,14 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       value: parent.sourceInstanceName,
     })
   }
+
+  if (node.internal.type === `FeedDeveloperTea`) {
+    const value = slugify(`${node.title}`, {lower: true})
+    createNodeField({
+      name: `slug`,
+      node,
+      value,
+    })
+  }
+
 }

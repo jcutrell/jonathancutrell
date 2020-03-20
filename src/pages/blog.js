@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 
 import Bio from '../components/Bio'
-import BlogLayout from '../components/BlogLayout'
+import SiteLayout from '../components/SiteLayout'
 import SEO from '../components/seo'
 import Sidebar from '../components/Sidebar'
 import { rhythm } from '../utils/typography'
@@ -14,7 +14,7 @@ class BlogIndex extends React.Component {
     const posts = data.allMdx.edges
 
     return (
-      <BlogLayout location={this.props.location} title={siteTitle}>
+      <SiteLayout location={this.props.location} title={siteTitle}>
         <SEO
           title="All posts"
           keywords={[
@@ -46,7 +46,7 @@ class BlogIndex extends React.Component {
             </div>
           )
         })}
-      </BlogLayout>
+      </SiteLayout>
     )
   }
 }

@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-import MDXRenderer from 'gatsby-mdx/mdx-renderer'
+import { MDXRenderer } from "gatsby-plugin-mdx"
 
-import BlogLayout from '../components/BlogLayout'
+import SiteLayout from '../components/SiteLayout'
 import Sidebar from '../components/Sidebar'
 import { rhythm } from '../utils/typography'
 import styled from 'styled-components'
@@ -116,10 +116,10 @@ class BlogIndex extends React.Component {
 
     return (
       <React.Fragment>
-        <BlogLayout location={this.props.location} title={siteTitle}>
+        <SiteLayout location={this.props.location} title={siteTitle}>
           <h3>What People Say</h3>
           <p>Here's what some people have said about working with me.</p>
-        </BlogLayout>
+        </SiteLayout>
         <div>
           <PostFilter {...this.props} posts={data.allMdx.edges}>
             {props =>
@@ -128,7 +128,7 @@ class BlogIndex extends React.Component {
                 return (
                   <Testimonial key={node.fields.slug}>
                     <blockquote>
-                      <MDXRenderer>{node.code.body}</MDXRenderer>
+                      <MDXRenderer>{node.body}</MDXRenderer>
                     </blockquote>
                     <cite>
                       <strong>{title}</strong>
@@ -161,9 +161,7 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          code {
-            body
-          }
+          body
           fields {
             slug
           }

@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-import MDXRenderer from 'gatsby-mdx/mdx-renderer'
+import { MDXRenderer } from "gatsby-plugin-mdx"
 
 import Bio from '../components/Bio'
-import BlogLayout from '../components/BlogLayout'
+import SiteLayout from '../components/SiteLayout'
 import SEO from '../components/seo'
 import { rhythm, scale } from '../utils/typography'
 
@@ -14,7 +14,7 @@ class BlogPostTemplate extends React.Component {
     const { previous, next } = this.props.pageContext
 
     return (
-      <BlogLayout location={this.props.location} title={siteTitle}>
+      <SiteLayout location={this.props.location} title={siteTitle}>
         <SEO title={post.frontmatter.title} description={post.excerpt} />
         <h1>{post.frontmatter.title}</h1>
         <p
@@ -27,7 +27,7 @@ class BlogPostTemplate extends React.Component {
         >
           {post.frontmatter.date}
         </p>
-        <MDXRenderer>{post.code.body}</MDXRenderer>
+        <MDXRenderer>{post.body}</MDXRenderer>
         <hr
           style={{
             marginBottom: rhythm(2),
@@ -60,7 +60,7 @@ class BlogPostTemplate extends React.Component {
             )}
           </li>
         </ul>
-      </BlogLayout>
+      </SiteLayout>
     )
   }
 }
@@ -82,9 +82,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
       }
-      code {
-        body
-      }
+      body
     }
   }
 `

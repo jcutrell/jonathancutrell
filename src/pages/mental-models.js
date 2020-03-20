@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-import MDXRenderer from 'gatsby-mdx/mdx-renderer'
+import { MDXRenderer } from "gatsby-plugin-mdx"
 import * as humanizeString from 'humanize-string'
 
-import BlogLayout from '../components/BlogLayout'
+import SiteLayout from '../components/SiteLayout'
 import Sidebar from '../components/Sidebar'
 import { rhythm } from '../utils/typography'
 import styled from 'styled-components'
@@ -68,7 +68,7 @@ class BlogIndex extends React.Component {
 
     return (
       <React.Fragment>
-        <BlogLayout location={this.props.location} title={siteTitle} />
+        <SiteLayout location={this.props.location} title={siteTitle} />
         <TestimonialWrap>
           {data.allMdx.edges
             .filter(({ node }) => node.rawBody.length)
@@ -78,7 +78,7 @@ class BlogIndex extends React.Component {
                 <Testimonial key={node.fields.slug}>
                   <h2>{humanizeString(node.fields.slug.replace(/\//g, ''))}</h2>
                   <blockquote>
-                    <MDXRenderer>{node.code.body}</MDXRenderer>
+                    <MDXRenderer>{node.body}</MDXRenderer>
                   </blockquote>
                   <cite>
                     <br />
@@ -102,19 +102,18 @@ export const pageQuery = graphql`
       }
     }
     allMdx(
-      sort: { fields: [frontmatter___priority], order: ASC }
+      sort: { fields: [fields___slug, frontmatter___title], order: ASC }
       filter: { fields: { sourceName: { eq: "mental-models" } } }
     ) {
       edges {
         node {
           rawBody
-          code {
-            body
-          }
+          body
           fields {
             slug
           }
           frontmatter {
+            title
             subtitle
             tags
             priority

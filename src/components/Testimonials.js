@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import Image from 'gatsby-image'
-import MDXRenderer from 'gatsby-mdx/mdx-renderer'
+import { MDXRenderer } from "gatsby-plugin-mdx"
 
 import Bio from '../components/Bio'
 import Layout from '../components/Layout'
@@ -40,9 +40,7 @@ export const query = graphql`
           fields {
             slug
           }
-          code {
-            body
-          }
+          body
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
@@ -65,7 +63,7 @@ class BlogIndex extends React.Component {
               {posts.map(post => {
                 return (
                   <Testimonial>
-                    <MDXRenderer>{post.code.body}</MDXRenderer>
+                    <MDXRenderer>{post.body}</MDXRenderer>
                   </Testimonial>
                 )
               })}
