@@ -4,7 +4,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 
 import Bio from '../components/Bio'
 import SiteLayout from '../components/SiteLayout'
-import Footer from '../components/Footer'
+import Footer from '../components/footer'
 import SEO from '../components/seo'
 import { rhythm, scale } from '../utils/typography'
 

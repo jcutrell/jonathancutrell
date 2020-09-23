@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 
 import Bio from '../components/Bio'
-import Footer from '../components/Footer'
+import Footer from '../components/footer'
 import SiteLayout from '../components/SiteLayout'
 import SEO from '../components/seo'
 import Sidebar from '../components/Sidebar'
