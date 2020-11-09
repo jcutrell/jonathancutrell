@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link, graphql } from 'gatsby'
 import Image from 'gatsby-image'
-import TesorioLogo from '../components/icons/tesorio-logo'
+import PBSLogo from '../components/icons/pbs-logo'
 import DtLogo from '../components/icons/dt-logo'
 import SpecLogo from '../components/icons/spec-logo'
 import Footer from '../components/footer';
@@ -355,16 +355,16 @@ const Experience = ({ data }) => {
       <CurrentWork>
         <WorkItem>
           <IconWrap>
-            <TesorioLogo />
+            <PBSLogo />
           </IconWrap>
           <div style={{ position: 'relative', zIndex: 100 }}>
             <h4>
-              Engineering Manager,{' '}
-              <a href="https://clearbit.com/about" target="_blank">
-                Tesorio
+              Director of Technology,{' '}
+              <a href="https://pbs.org" target="_blank">
+                PBS
               </a>
             </h4>
-            Building a fearless team of developers focused on creating the world's best cashflow management platform.
+            Supporting engineers responsible for content delivery services for millions of end users.
           </div>
         </WorkItem>
         <WorkItem>
