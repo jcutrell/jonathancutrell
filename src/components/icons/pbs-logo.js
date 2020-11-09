@@ -1,6 +1,6 @@
 import React from 'react'
 const Icon = () => (
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="223 234 350 148" style="enable-background:new 223 234 792 612;">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="223 234 350 148" style={{"enable-background":"new 223 234 792 612"}}>
 	<g>
 		<path style={{"fill":"#2638C4"}} d="M367,306c0,39.8-32.2,72-72,72c-39.8,0-72-32.2-72-72c0-39.8,32.2-72,72-72C334.8,234,367,266.2,367,306"></path>
 		<g>
