@@ -3,10 +3,15 @@ import { render } from 'react-dom'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
 
-export const Code = ({ codeString, language, ...props }) => {
+const defaultStyles = {
+  padding: '1rem',
+}
+
+const Code = ({ children, className = "", ...props }) => {
+  const language = className.replace(/language-/, '') || ''
   if (props['react-live']) {
     return (
-      <LiveProvider code={codeString} noInline={true}>
+      <LiveProvider code={children} noInline={true}>
         <LiveEditor />
         <LiveError />
         <LivePreview />
@@ -14,9 +19,9 @@ export const Code = ({ codeString, language, ...props }) => {
     )
   } else {
     return (
-      <Highlight {...defaultProps} code={codeString} language={language}>
+      <Highlight {...defaultProps} code={children} language={language}>
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
-          <pre className={className} style={style}>
+          <pre className={className} style={{...defaultStyles, ...style}}>
             {tokens.map((line, i) => (
               <div {...getLineProps({ line, key: i })}>
                 {line.map((token, key) => (
@@ -30,3 +35,5 @@ export const Code = ({ codeString, language, ...props }) => {
     )
   }
 }
+
+export default Code;

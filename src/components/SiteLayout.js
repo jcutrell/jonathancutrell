@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
+import { MDXProvider } from '@mdx-js/react'
+import code from './code'
 
 import { rhythm, scale } from '../utils/typography'
 
@@ -32,15 +34,16 @@ const GradientText = styled.span`
   -webkit-text-fill-color: transparent;
 `
 
-class Layout extends React.Component {
-  isActive = ({ isCurrent }) => {
-    return isCurrent ? { isActive: true } : { isActive: false }
-  }
+const components = {
+  pre: props => <div {...props} />,
+  code: code,
+}
 
+class Layout extends React.Component {
   render() {
     const { location, title, children } = this.props
     const rootPath = `${__PATH_PREFIX__}/`
-    let header
+    let header = null
 
     return (
       <div
@@ -73,7 +76,7 @@ class Layout extends React.Component {
             Testimonials
           </NavLink>
         </Nav>
-        {children}
+        <MDXProvider components={components}>{children}</MDXProvider>
       </div>
     )
   }

@@ -1,16 +1,21 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import { MDXProvider } from '@mdx-js/react'
+import CodeBlock from './CodeBlock'
 
 import { rhythm, scale } from '../utils/typography'
+
+const components = {
+  pre: props => <div {...props} />,
+  code: CodeBlock,
+}
 
 class Layout extends React.Component {
   render() {
     const { location, title, children } = this.props
     const rootPath = `${__PATH_PREFIX__}/`
-    let header
-
-    if (location.pathname === rootPath) {
-    } else {
+    let header = null
+    if (location.pathname !== rootPath) {
       header = (
         <h3
           style={{
@@ -37,7 +42,7 @@ class Layout extends React.Component {
           marginRight: `auto`,
         }}
       >
-        {children}
+        <MDXProvider components={components}>{children}</MDXProvider>
       </div>
     )
   }
