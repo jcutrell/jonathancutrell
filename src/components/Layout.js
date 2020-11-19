@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { MDXProvider } from '@mdx-js/react'
-import CodeBlock from './CodeBlock'
+import code from './code'
 
 import { rhythm, scale } from '../utils/typography'
 
 const components = {
   pre: props => <div {...props} />,
-  code: CodeBlock,
+  code
 }
 
 class Layout extends React.Component {
