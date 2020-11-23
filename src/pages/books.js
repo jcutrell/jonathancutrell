@@ -9,10 +9,19 @@ import Sidebar from '../components/Sidebar'
 import { rhythm } from '../utils/typography'
 
 const Book = styled.div`
+  padding-top: 2rem;
   display: flex;
   justify-content: space-between;
   a {
     display: block;
+    min-width: 25%;
+    margin-right: 2rem;
+    img {
+      margin: 0;
+    }
+  }
+  h5 {
+    margin-top: 0;
   }
 `
 
@@ -21,6 +30,7 @@ class Books extends React.Component {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allBooksYaml.edges
+    console.log(posts);
 
     return (
       <SiteLayout location={this.props.location} title={siteTitle}>
@@ -39,17 +49,15 @@ class Books extends React.Component {
           return (
             <Book>
                 <a href={ book.url } aria-label={`Buy ${book.title}`}>
-                    <img src={ book.img } alt=""/>
+                    <img src={ book.img } alt="" /> Purchase on Amazon
                 </a>
                 <div>
                   <h5>{ book.title }</h5>
                   <p>{ book.subtitle }</p>
-                  <p>{ book.author }</p>
-                  <details>
-                      <summary>{ book.rating }</summary>
-                      <div className="notes">{ book.notes }</div>
-                  </details>
-                  <p>{ book.rating }</p>
+                  <p>Author: { book.author }</p>
+                  <p>Published: {book.publish_year}</p>
+                  <summary>{ book.rating } / 5</summary>
+                  <div className="notes">{ book.notes }</div>
                 </div>
             </Book>
           )
@@ -74,8 +82,11 @@ query MyQuery {
         id
         title
         url
+        rating
         img
         author
+        notes
+        publish_year
       }
     }
   }
