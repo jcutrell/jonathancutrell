@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
+import { LinkWithArrow } from '../components/shared';
 
 import Bio from '../components/Bio'
 import SiteLayout from '../components/SiteLayout'
@@ -19,6 +20,7 @@ class PodcastIndex extends React.Component {
     const siteTitle = data.site.siteMetadata.title
     const episodes = data.allFeedDeveloperTea.edges
 		const showCount = this.state.showAll ? episodes.length : 100;
+    console.log(episodes);
 
     return (
       <SiteLayout location={this.props.location} title={siteTitle}>
@@ -43,12 +45,12 @@ class PodcastIndex extends React.Component {
                   marginBottom: rhythm(1 / 4),
                 }}
               >
-							<a href={`/${node.fields.slug}`}>{title}</a>
-              </h3>
+							{title}<br/>
               <small>{node.isoDate}</small>
+              </h3><br/>
+              <p><LinkWithArrow to={node.enclosure.url} target="blank">Listen to this episode</LinkWithArrow></p>
               <div
                 dangerouslySetInnerHTML={{ __html: node.contentSnippet }}
-                style={{ marginBottom: rhythm(3) }}
               />
             </div>
           )

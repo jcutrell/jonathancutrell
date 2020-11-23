@@ -5,6 +5,7 @@ import PBSLogo from '../components/icons/pbs-logo'
 import DtLogo from '../components/icons/dt-logo'
 import SpecLogo from '../components/icons/spec-logo'
 import Footer from '../components/footer';
+import LinkWithArrow from '../components/shared';
 
 import Bio from '../components/Bio'
 import Layout from '../components/Layout'
@@ -64,17 +65,6 @@ const Lead = styled.h3`
   padding-top: 1rem;
 `
 const Value = styled.h4``
-const LinkWithArrow = styled(Link)`
-  &:after {
-    content: '→';
-    display: inline-block;
-    margin-left: 4px;
-    transition: all .1s;
-  }
-  &:hover:after {
-    margin-left: 6px;
-  }
-`
 
 const WorkItem = styled.div`
   @media only screen and (min-width: 100rem) {
