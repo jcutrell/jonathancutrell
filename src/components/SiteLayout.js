@@ -1,10 +1,20 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import styled from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 import { MDXProvider } from '@mdx-js/react'
 import code from './code'
 
 import { rhythm, scale } from '../utils/typography'
+
+const GlobalStyle = createGlobalStyle`
+	blockquote {
+    border: none;
+		border-image: linear-gradient(180deg,#008aed,#b35fff) 1;
+		border-width: 0;
+		border-left-width: 5px;
+		border-left-style: solid;
+	}
+`
 
 const Nav = styled.nav`
   @media only screen and (min-width: 60rem) {
@@ -54,6 +64,7 @@ class Layout extends React.Component {
           maxWidth: '45rem',
         }}
       >
+        <GlobalStyle />
         <h2>
           <Link to="/">
             <GradientText>Jonathan Cutrell</GradientText>

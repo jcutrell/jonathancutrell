@@ -8,7 +8,7 @@ import Sidebar from '../components/Sidebar'
 import { rhythm } from '../utils/typography'
 import styled from 'styled-components'
 
-const TestimonialWrap = styled.section`
+const Wrap = styled.section`
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -31,7 +31,7 @@ const Tags = styled.div`
   margin: 0 auto;
 `
 
-const Testimonial = styled.div`
+const Model = styled.div`
   padding: 2rem;
   margin-bottom: 2rem;
   width: 100%;
@@ -69,14 +69,14 @@ class BlogIndex extends React.Component {
     return (
       <React.Fragment>
         <SiteLayout location={this.props.location} title={siteTitle} />
-        <TestimonialWrap>
+        <Wrap>
           {data.allMdx.edges
             .filter(({ node }) => node.rawBody.length)
             .map(({ node }) => {
               const { subtitle } = node.frontmatter
               return (
-                <Testimonial key={node.fields.slug}>
-                  <h2>{humanizeString(node.fields.slug.replace(/\//g, ''))}</h2>
+                <Model key={node.fields.slug}>
+                  <h2>{humanizeString(node.frontmatter?.title) || humanizeString(node.fields.slug.replace(/\//g, ''))}</h2>
                   <blockquote>
                     <MDXRenderer>{node.body}</MDXRenderer>
                   </blockquote>
@@ -84,10 +84,10 @@ class BlogIndex extends React.Component {
                     <br />
                   </cite>
                   <i>{subtitle}</i>
-                </Testimonial>
+                </Model>
               )
             })}
-        </TestimonialWrap>
+        </Wrap>
       </React.Fragment>
     )
   }

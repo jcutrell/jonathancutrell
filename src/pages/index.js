@@ -5,7 +5,7 @@ import PBSLogo from '../components/icons/pbs-logo'
 import DtLogo from '../components/icons/dt-logo'
 import SpecLogo from '../components/icons/spec-logo'
 import Footer from '../components/footer';
-import LinkWithArrow from '../components/shared';
+import { LinkWithArrow } from '../components/shared';
 
 import Bio from '../components/Bio'
 import Layout from '../components/Layout'
@@ -192,7 +192,7 @@ const Header = ({ data, picRef }) => {
         <SubHeader>Engineering manager with a chosen bias for long-term thinking.</SubHeader>
         <Nav style={{ marginTop: '2rem' }}>
           <Link to="/blog">
-            Posts
+            Blog Posts
             <SlantButton />
           </Link>
           <Link to="/testimonials">
@@ -232,6 +232,17 @@ const LongTerm = () => (
         </ul>
       <p>Most people have a bias for short-term execution. This can be necessary for survival. Only exceptional ventures optimize for the long-term.</p>
     </div>
+
+      <div>
+        <div>
+          <h5>My Values</h5>
+          <Value>Optimize for the Long-Term</Value>
+          <Value>Cultivate Understanding</Value>
+          <Value>Fearless Bravery</Value>
+          <Value>Go Happy</Value>
+          <LinkWithArrow to="/values">Read more about my values</LinkWithArrow>
+        </div>
+      </div>
   </LongTermWrap>
 )
 
@@ -389,17 +400,6 @@ const Experience = ({ data }) => {
           </div>
         </WorkItem>
       </CurrentWork>
-
-      <div>
-        <div>
-          <h5>My Values</h5>
-          <Value>Optimize for the Long-Term</Value>
-          <Value>Cultivate Understanding</Value>
-          <Value>Fearless Bravery</Value>
-          <Value>Go Happy</Value>
-          <LinkWithArrow to="/values">Read more about my values</LinkWithArrow>
-        </div>
-      </div>
     </ExperienceWrap>
   )
 }
@@ -429,6 +429,8 @@ class BlogIndex extends React.Component {
             <RecentPost post={data.allMdx.edges[0].node} />
             <RecentPost post={data.allMdx.edges[1].node} />
             <RecentPost post={data.allMdx.edges[2].node} />
+            <RecentPost post={data.allMdx.edges[3].node} />
+            <RecentPost post={data.allMdx.edges[4].node} />
             <LinkWithArrow to="/blog">View All Posts</LinkWithArrow>
           </div>
           <LongTerm />
@@ -469,7 +471,7 @@ export const pageQuery = graphql`
         fields: { sourceName: { eq: "blog" } }
         frontmatter: { tags: { nin: ["Personal"] } }
       }
-      limit: 3
+      limit: 5
     ) {
       edges {
         node {
