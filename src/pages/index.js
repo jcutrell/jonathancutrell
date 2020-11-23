@@ -31,11 +31,11 @@ const PicHeader = styled.div`
   top: 0;
   width: 100vw;
   background-position: left center;
-  background-size: 160%;
+  background-size: 120%;
   z-index: -1;
-  height: 100%;
+  height: 70%;
   @media only screen and (min-width: 80rem) {
-    height: 110%;
+    height: 100%;
     z-index: 400;
     padding: 0 10rem;
     width: 50vw;
@@ -85,7 +85,7 @@ const HomeHeader = styled.div`
   position: relative;
   z-index: 100;
   padding: 6rem 0;
-  min-height: 78vh;
+  min-height: 40vh;
   margin-bottom: 3rem;
   &:after {
     content: '';
@@ -199,9 +199,7 @@ const Header = ({ data, picRef }) => {
         <HeaderTitle>
           Hello, I'm Jonathan&nbsp;Cutrell.
         </HeaderTitle>
-        <SubHeader>
-          I am an empathetic engineering manager with over 10 years of experience and a chosen bias for long-term thinking.
-        </SubHeader>
+        <SubHeader>Engineering manager with a chosen bias for long-term thinking.</SubHeader>
         <Nav style={{ marginTop: '2rem' }}>
           <Link to="/blog">
             Posts
@@ -227,7 +225,7 @@ const LongTerm = () => (
     <div>
       <Lead>Long-term thinking requires a paradigm shift.</Lead>
       <p>
-        Long-term thinking is a forcing function that powerfully aligns organizations and individuals.<br/>
+        Long-term thinking is a forcing function that powerfully aligns organizations and individuals.
         Thinking long term means valuing:</p>
         <ul style={{ marginTop: '1rem'}}>
           <li>People over products</li>
@@ -255,10 +253,12 @@ const Wrap = styled.section`
 `
 
 const LongTermWrap = styled.div`
-  max-width: 55rem;
-  padding-right: 6rem;
+  max-width: 50rem;
   ul {
     columns: 2;
+  }
+  @media only screen and (min-width: 80rem){
+    padding-left: 6rem;
   }
 `
 
@@ -341,7 +341,7 @@ const RecentPost = ({ post }) => {
         style={{ position: 'relative', display: 'block', zIndex: 100 }}
         href={post.fields.slug}
       >
-        <h4 style={{ marginTop: 0, paddingTop: '1rem'}}>{post.frontmatter.title}</h4>
+        <Lead style={{ marginTop: 0, paddingTop: '1rem'}}>{post.frontmatter.title}</Lead>
         <p>{post.excerpt}</p>
       </a>
     </div>
@@ -409,47 +409,7 @@ const Experience = ({ data }) => {
           <Value>Go Happy</Value>
           <LinkWithArrow to="/values">Read more about my values</LinkWithArrow>
         </div>
-        <div>
-          <h5>A Brief History</h5>
-          <ul>
-            <li><a href="https://clearbit.com">Clearbit, Senior Engineer</a><br/><em>Aug 2018 &mdash; Oct 2019</em></li>
-            <li><a href="https://whiteboard.is">Whiteboard, CTO</a> <br/><em>May 2010 &mdash; Aug 2018</em></li>
-            <li>Medium (now-defunct agency), Frontend Engineer <br/><em>Jan 2010 &mdash; Jan 2011</em></li>
-            <li>Managing Editor, FuelYourInterface.com<br/><em>Jul 2009 &mdash; Jan 2010</em></li>
-            <li>Freelance Frontend Engineer / Designer<br/><em>2008 &mdash; 2011</em></li>
-          </ul>
-        </div>
-        <div>
-          <h5>Education</h5>
-          <div>
-            <div>
-              <ul>
-                <li>
-                  M.S. Digital Media, Georgia Institute of Technology, 4.0 GPA
-                </li>
-                <li>
-                  B.A. Communications, Graduated Magna Cum Laude, Lee University
-                </li>
-                <li>
-                  Certificate, Management of Technology, Georgia Institute of
-                  Technology
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
       </div>
-      <h5>Skills</h5>
-      <section>
-        <Skill>Mentorship</Skill>
-        <Skill>Speaking</Skill>
-        <Skill>Front-end Architecture</Skill>
-        <Skill>Technical Writing</Skill>
-        <Skill>Software Architecture</Skill>
-        <Skill>JavaScript (React, ES6)</Skill>
-        <Skill>Ruby (Sinatra, Rails)</Skill>
-        <Skill>Decision Science</Skill>
-      </section>
     </ExperienceWrap>
   )
 }
@@ -459,17 +419,6 @@ class BlogIndex extends React.Component {
     super()
     this.state = {}
     this.headerPicRef = React.createRef()
-  }
-
-  componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll)
-  }
-
-  handleScroll = e => {
-    window.requestAnimationFrame(() => {
-      const scroll = window.scrollY
-      this.headerPicRef.current.style.opacity = 1 - scroll / window.innerHeight
-    })
   }
 
   componentWillUnmount() {
@@ -485,13 +434,14 @@ class BlogIndex extends React.Component {
       <Layout location={this.props.location} title={siteTitle}>
         <Header data={data} picRef={this.headerPicRef} />
         <FlexWrap>
-          <LongTerm />
           <div>
             <h5>Recent Posts</h5>
             <RecentPost post={data.allMdx.edges[0].node} />
             <RecentPost post={data.allMdx.edges[1].node} />
             <RecentPost post={data.allMdx.edges[2].node} />
+            <LinkWithArrow to="/blog">View All Posts</LinkWithArrow>
           </div>
+          <LongTerm />
         </FlexWrap>
         <Experience scroll={this.state.scroll} data={data} />
         <Footer />

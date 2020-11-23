@@ -8,23 +8,11 @@ import Sidebar from '../components/Sidebar'
 import Footer from '../components/footer'
 import { rhythm } from '../utils/typography'
 
-const PlayerUrl = (audioUrl) => audioUrl.replace('audio.', 'embed.').replace('.mp3', '');
-
-const Player = ({ url }) => (
-	<div>
-		<iframe frameBorder='0' height='200px' scrolling='no' seamless src={`${PlayerUrl(url)}?color=f5f5f5`} width='100%'></iframe>
-	</div>
-)
 
 class PodcastIndex extends React.Component {
 	constructor(props){
 		super(props);
 		this.state={ showEps: [] }
-	}
-	showPlayerForEpisode(guid){
-	  const shownEps = this.state.showEps 
-		shownEps.push(guid);
-		this.setState({showEps: shownEps})
 	}
   render() {
     const { data } = this.props
@@ -44,7 +32,7 @@ class PodcastIndex extends React.Component {
           ]}
         />
         <h3>Developer Tea Episodes</h3>
-				<p>I'm very thankful that we've been able to publish {episodes.length} episodes of Developer Tea so far!</p>
+				<p>I'm very thankful that we've been able to publish nearly 900 episodes of Developer Tea so far!</p>
 				<p>P.S. If you want to give back and support Developer Tea, <a href="https://itunes.apple.com/us/podcast/developer-tea/id955596067?mt=2">leave a review on iTunes!</a> You can also email me at <a href="mailto:developertea@gmail.com">developertea@gmail.com</a> to talk about the show.</p>
         {episodes.slice(0, showCount).map(({ node }, i) => {
           const title = node.title
@@ -58,9 +46,6 @@ class PodcastIndex extends React.Component {
 							<a href={`/${node.fields.slug}`}>{title}</a>
               </h3>
               <small>{node.isoDate}</small>
-              <br />
-							{(i < 20 || this.state.showEps.includes(node.guid)) && <Player url={node.enclosure.url} />}
-							{(i >= 20 && !this.state.showEps.includes(node.guid)) && <a onClick={() => this.showPlayerForEpisode(node.guid)}>Show Player</a>}
               <div
                 dangerouslySetInnerHTML={{ __html: node.contentSnippet }}
                 style={{ marginBottom: rhythm(3) }}

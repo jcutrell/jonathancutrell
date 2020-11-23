@@ -34,6 +34,7 @@ class Books extends React.Component {
           ]}
         />
         <h3>Books</h3>
+        <p>Note: This page is woefully under-utilized. I am leaving it here because I want it to be a full virtual bookshelf soon.</p>
         {posts.map(({ node: book }) => {
           return (
             <Book>
