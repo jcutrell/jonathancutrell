@@ -51,9 +51,6 @@ export const pageQuery = graphql`
       enclosure {
         url
       } 
-      content {
-        encoded
-      }
     }
   }
 `

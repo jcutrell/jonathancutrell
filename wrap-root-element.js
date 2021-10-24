@@ -1,6 +1,7 @@
 import React from 'react'
 import { MDXProvider } from '@mdx-js/tag'
-import { Code } from './src/components/code'
+import { ServerStyleSheet, StyleSheetManager } from 'styled-components'
+import Code from './src/components/code'
 import { preToCodeBlock } from 'mdx-utils'
 
 // components is its own object outside of render so that the references to
@@ -17,6 +18,10 @@ const components = {
     }
   },
 }
-export const wrapRootElement = ({ element }) => (
-  <MDXProvider components={components}>{element}</MDXProvider>
-)
+export const wrapRootElement = ({ element }) => {
+  return (
+    <MDXProvider components={components}>
+      {element}
+    </MDXProvider>
+  )
+}

@@ -386,19 +386,6 @@ const Experience = ({ data }) => {
             </Link>
           </div>
         </WorkItem>
-        <WorkItem>
-          <IconWrap>
-            <SpecLogo />
-          </IconWrap>
-          <div style={{ position: 'relative', zIndex: 100 }}>
-            <h4>
-              Co-founder, <a href="https://spec.fm">Spec.fm</a>
-            </h4>
-            I co-founded a podcast network called Spec for designers and
-            developers who want to level up in their careers. Spec hosts
-            episodes from 13 different podcasts today, with millions of listens.
-          </div>
-        </WorkItem>
       </CurrentWork>
     </ExperienceWrap>
   )

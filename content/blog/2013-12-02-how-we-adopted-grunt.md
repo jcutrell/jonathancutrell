@@ -46,7 +46,7 @@ author: JCutrell
 ```
 #!/bin/bash
 command -v lolcat &gt;/dev/null 2&gt;&amp;1 || { echo &gt;&amp;2 "I require lolcat but it's not installed. Run gem install lolcat."; exit 1; }
-command -v wp &gt;/dev/null 2&gt;&amp;1 || { echo &gt;&amp;2 "I require Wordpress CLI but it's not installed. \n Run the following:\n curl https://raw.github.com/wp-cli/wp-cli.github.com/master/installer.sh | bash
+command -v wp &gt;/dev/null 2&gt;&amp;1 || { echo &gt;&amp;2 "I require Wordpress CLI but it's not installed. ,\n Run the following:,\n curl https://raw.github.com/wp-cli/wp-cli.github.com/master/installer.sh | bash
 ."; exit 1; }
 command -v git &gt;/dev/null 2&gt;&amp;1 || { echo &gt;&amp;2 "I require git. For more information, visit: http://git-scm.com/book/en/Getting-Started-Installing-Git "; exit 1; }
 
@@ -136,15 +136,15 @@ if [[ $adminemail == "" ]]; then
     adminemail="admin@example.com"
 fi
 
-echo -e "\n"
+echo -e ",\n"
 echo -e "${purple}Creating the wp-config file.${NC}"
-echo -e "\n"
+echo -e ",\n"
 
 wp core config --dbname=$dbname --dbuser=$dbuser --dbpass=$dbpass
 
-echo -e "\n"
+echo -e ",\n"
 echo -e "${purple}Creating the database.${NC}"
-echo -e "\n"
+echo -e ",\n"
 
 adminpw='[filtered]'
 adminun='admin'
@@ -157,9 +157,9 @@ if [[ ${a:0:1} == "Y" || ${a:0:1} == "y" ]]; then
     wp plugin install multiple-post-thumbnails
     wp plugin activate multiple-post-thumbnails
 else
-    echo -e "\n"
+    echo -e ",\n"
     echo -e "${purple}Run wp plugin install multiple-post-thumbnails to install later.${NC}"
-    echo -e "\n"
+    echo -e ",\n"
 fi
 
 echo -n "Install Yoast SEO? (y/N)"
@@ -168,20 +168,20 @@ if [[ ${a:0:1} == "Y" || ${a:0:1} == "y" ]]; then
     wp plugin install wordpress-seo
     wp plugin activate wordpress-seo
 else
-    echo -e "\n"
+    echo -e ",\n"
     echo -e "${purple}Run wp plugin install wordpress-seo to install later.${NC}"
-    echo -e "\n"
+    echo -e ",\n"
 fi
 
-echo -e "\n"
+echo -e ",\n"
 echo -e "${purple}Downloading Launchframe...${NC}"
-echo -e "\n"
+echo -e ",\n"
 
 wp theme install https://github.com/Whiteboard/launchframe/archive/master.zip
 
-echo -e "\n"
+echo -e ",\n"
 echo -e "${purple}Activating Launchframe...${NC}"
-echo -e "\n"
+echo -e ",\n"
 
 mv wp-content/themes/launchframe-master wp-content/themes/launchframe
 wp theme activate launchframe
@@ -196,9 +196,9 @@ cd wp-content/themes/launchframe
 npm install
 
 
-echo -e "\n"
+echo -e ",\n"
 echo -e "${purple}Opening the site install...${NC}"
-echo -e "\n"
+echo -e ",\n"
 
 open $siteurl
 

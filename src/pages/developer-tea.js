@@ -20,7 +20,6 @@ class PodcastIndex extends React.Component {
     const siteTitle = data.site.siteMetadata.title
     const episodes = data.allFeedDeveloperTea.edges
 		const showCount = this.state.showAll ? episodes.length : 100;
-    console.log(episodes);
 
     return (
       <SiteLayout location={this.props.location} title={siteTitle}>
@@ -34,7 +33,7 @@ class PodcastIndex extends React.Component {
           ]}
         />
         <h3>Developer Tea Episodes</h3>
-				<p>I'm very thankful that we've been able to publish nearly 900 episodes of Developer Tea so far!</p>
+				<p>I'm very thankful that we've been able to publish over 1,000 episodes of Developer Tea so far!</p>
 				<p>P.S. If you want to give back and support Developer Tea, <a href="https://itunes.apple.com/us/podcast/developer-tea/id955596067?mt=2">leave a review on iTunes!</a> You can also email me at <a href="mailto:developertea@gmail.com">developertea@gmail.com</a> to talk about the show.</p>
         {episodes.slice(0, showCount).map(({ node }, i) => {
           const title = node.title
@@ -91,9 +90,6 @@ export const pageQuery = graphql`
         enclosure {
           url
         } 
-        content {
-          encoded
-        }
       }
     }
   }
