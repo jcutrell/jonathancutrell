@@ -15,7 +15,7 @@ const Foot = styled.footer`
 
 const Footer = () => (
   <Foot>
-    &nbsp; &copy; 2020 {' '}
+    &nbsp; &copy; 2022 {' '}
     <Link to="/blog">Blog</Link>
     <Link to="/books">Books</Link>
     <Link to="/developer-tea">Podcast</Link>
