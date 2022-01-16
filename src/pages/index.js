@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link, graphql } from 'gatsby'
 import Image from 'gatsby-image'
-import PBSLogo from '../components/icons/pbs-logo'
+import GuildLogo from '../components/icons/guild-logo'
 import DtLogo from '../components/icons/dt-logo'
 import SpecLogo from '../components/icons/spec-logo'
 import Footer from '../components/footer';
@@ -356,13 +356,13 @@ const Experience = ({ data }) => {
       <CurrentWork>
         <WorkItem>
           <IconWrap>
-            <PBSLogo />
+            <GuildLogo />
           </IconWrap>
           <div style={{ position: 'relative', zIndex: 100 }}>
             <h4>
-              Director of Technology,{' '}
-              <a href="https://pbs.org" target="_blank">
-                PBS
+              Engineering Manager,{' '}
+              <a href="https://guildeducation.com" target="_blank">
+                Guild Education
               </a>
             </h4>
             Supporting engineers responsible for content delivery services for millions of end users.
