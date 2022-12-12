@@ -1,13 +1,13 @@
 import fs from 'fs';
 import matter from 'gray-matter';
 import readingTime from 'reading-time';
-import {sync} from 'glob';
 import path from 'path';
+import { DateTime } from 'luxon'
 
 export async function getAllArticles() {
   const articles = fs.readdirSync(path.join(process.cwd(), 'content/blog'))
 
-  return articles.reduce((allArticles, articleSlug) => {
+  return articles.filter((articleSlug) => articleSlug.endsWith(".md")).reduce((allArticles, articleSlug) => {
     // get parsed data from mdx files in the "articles" dir
     const source = fs.readFileSync(
       path.join(process.cwd(), 'content/blog', articleSlug),
@@ -44,3 +44,29 @@ export async function getArticle(articleSlug) {
     readingTime: readingTime(source).text,
   }
 }
+
+export async function getEpisodes({page = 1, pageSize = 20}){
+  const res = await fetch(
+    `https://api.simplecast.com/podcasts/${
+      process.env.PODCAST_ID
+    }/episodes?limit=${pageSize}&offset=${(page - 1) * pageSize}`,
+    {
+      headers: {
+        authorization: `Bearer ${process.env.SIMPLECAST_API_KEY}`,
+      },
+    },
+  );
+  const episodes = await res.json();
+
+  return episodes;
+}
+
+export async function getAllEpisodes() {
+  return await getEpisodes({ page: 1, pageSize: 2000 })
+}
+
+export const pubDate = (date) =>
+  `${DateTime.fromISO(date).toLocaleString()}`;
+
+
+export const duration = durationInSeconds => `~${Math.round(durationInSeconds / 60)}m`;

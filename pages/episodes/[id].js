@@ -1,29 +1,31 @@
 import React from 'react'
 
-import Bio from '../components/Bio'
-import SiteLayout from '../components/SiteLayout'
-import Footer from '../components/footer'
-import SEO from '../components/seo'
+import Bio from '../../components/Bio'
+import SiteLayout from '../../components/SiteLayout'
+import Footer from '../../components/footer'
+import SEO from '../../components/seo'
 
 
 
 class PodcastEpisodeTemplate extends React.Component {
   render() {
-    const siteTitle = this.props.data.site.siteMetadata.title
-    const { data } = this.props;
-    const episode = data.feedDeveloperTea;
+    const { data, episode } = this.props;
+    const siteTitle = episode.title
 
     return (
       <SiteLayout location={this.props.location} title={siteTitle}>
-        <SEO title={episode.title} description={episode.contentSnippet} />
         <h1>{episode.title}</h1>
-        <hr
-          style={{
-            marginBottom: rhythm(2),
-            marginTop: rhythm(2),
-          }}
-        />
-        <div dangerouslySetInnerHTML={{ __html: episode?.content?.encoded}} />
+          <iframe
+            height="200px"
+            width="100%"
+            frameBorder="no"
+            scrolling="no"
+            seamless
+            tw={"pt-2 pb-2 my-6"}
+            src={`https://player.simplecast.com/${episode.id}?dark=false`}
+          ></iframe>
+        <hr/>
+        <div dangerouslySetInnerHTML={{ __html: episode.result }} />
         <Footer />
       </SiteLayout>
     )
@@ -32,6 +34,7 @@ class PodcastEpisodeTemplate extends React.Component {
 
 export default PodcastEpisodeTemplate
 
+/*
 export const pageQuery = graphql`
   query($slug: String!) {
     site {
@@ -51,3 +54,43 @@ export const pageQuery = graphql`
     }
   }
 `
+*/
+
+export async function getStaticPaths() {
+  const res = await fetch(
+    `https://api.simplecast.com/podcasts/${process.env.PODCAST_ID}/episodes?limit=1500&offset=0`,
+    {
+      headers: {
+        authorization: `Bearer ${process.env.SIMPLECAST_API_KEY}`,
+      },
+    }
+  );
+  const episodes = await res.json();
+  return {
+    paths: episodes.collection.map((ep) => `/episodes/${ep.id}`),
+    fallback: false,
+  };
+}
+
+export async function getStaticProps(context) {
+  const episode_id = context.params.id;
+  const res = await fetch(`https://api.simplecast.com/episodes/${episode_id}`, {
+    headers: {
+      authorization: `Bearer ${process.env.SIMPLECAST_API_KEY}`,
+    },
+  });
+  const episode = await res.json();
+
+  const result = (episode.long_description || episode.description || "<div />")
+
+  //episode.mdxSource = await serialize(result, { parseFrontmatter: false });
+  episode.result = result;
+
+  return {
+    props: {
+      episode,
+    },
+  };
+}
+
+

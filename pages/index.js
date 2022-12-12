@@ -12,6 +12,7 @@ import SEO from '../components/seo'
 import Sidebar from '../components/Sidebar'
 import Testimonials from '../components/Testimonials'
 import styled, { keyframes } from 'styled-components'
+import {getAllArticles} from '../helpers/content-helpers'
 
 import siteConfig from '../site-config';
 
@@ -340,16 +341,16 @@ const RecentPost = ({ post }) => {
       maxWidth: '600px' }}>
       <a
         style={{ position: 'relative', display: 'block', zIndex: 100 }}
-        href={post.fields.slug}
+        href={`/blog/${post.slug}`}
       >
-        <Lead style={{ marginTop: 0, paddingTop: '1rem'}}>{post.frontmatter.title}</Lead>
+        <Lead style={{ marginTop: 0, paddingTop: '1rem'}}>{post.title}</Lead>
         <p>{post.excerpt}</p>
       </a>
     </div>
   )
 }
 
-const Experience = ({ episodes }) => {
+const Experience = ({ episodes = [] }) => {
   return (
     <ExperienceWrap>
       <h5>Current Work</h5>
@@ -392,8 +393,8 @@ const Experience = ({ episodes }) => {
 }
 
 class BlogIndex extends React.Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {}
     this.headerPicRef = React.createRef()
   }
@@ -403,10 +404,8 @@ class BlogIndex extends React.Component {
   }
 
   render() {
-    const { data } = this.props
+    const { data, posts, episodes } = this.props
     const siteTitle = siteConfig.title
-    const posts = []
-    const episodes = []
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -426,6 +425,21 @@ class BlogIndex extends React.Component {
       </Layout>
     )
   }
+}
+
+export async function getStaticProps() {
+	// Call an external API endpoint to get posts.
+	// You can use any data fetching library
+
+	// By returning { props: { posts } }, the Blog component
+	// will receive `posts` as a prop at build time
+  const posts = await getAllArticles();
+
+	return {
+		props: {
+			posts,
+		},
+	}
 }
 
 export default BlogIndex
