@@ -1,5 +1,5 @@
 ---
-title: ''
+title: 'The 39 Hour Work Week'
 date: 2021-10-25T12:00:00+04:00
 author: Jonathan Cutrell
 templateKey: blog-post
