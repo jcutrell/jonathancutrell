@@ -1,7 +1,4 @@
-import React from 'react'
 import styled, { createGlobalStyle } from 'styled-components'
-import { MDXProvider } from '@mdx-js/react'
-import code from './code'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
@@ -46,7 +43,6 @@ const GradientText = styled.span`
 
 const components = {
   pre: (props) => <div {...props} />,
-  code: code,
 }
 
 const activeIf = (route, router) => {

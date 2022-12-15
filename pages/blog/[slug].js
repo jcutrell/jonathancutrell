@@ -1,17 +1,8 @@
-import React from 'react'
 
 import { useRouter } from 'next/router'
 
-import matter from 'gray-matter'
-import Link from 'next/link'
-import Bio from '../../components/Bio'
-import SiteLayout from '../../components/SiteLayout'
-import SEO from '../../components/seo'
-import Footer from '../../components/footer'
-import { Wrap } from '../../components/shared'
 import siteConfig from '../../site-config'
 import { serialize } from 'next-mdx-remote/serialize'
-import { MDXRemote } from 'next-mdx-remote'
 import styled from 'styled-components'
 import {
   getArticle,

@@ -1,12 +1,8 @@
 import React, { useState } from 'react'
 
-import SiteLayout from '../components/SiteLayout'
-import Sidebar from '../components/Sidebar'
 import styled from 'styled-components'
-import { Wrap } from '../components/shared'
 
 import { serialize } from 'next-mdx-remote/serialize'
-import { MDXRemote } from 'next-mdx-remote'
 
 import { getAllContentIn } from '../helpers/content-helpers'
 import siteConfig from '../site-config'

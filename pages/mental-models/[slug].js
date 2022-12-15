@@ -1,13 +1,9 @@
 import React from 'react'
 import * as humanizeString from 'humanize-string'
 
-import SiteLayout from '../../components/SiteLayout'
-import Sidebar from '../../components/Sidebar'
 import styled from 'styled-components'
-import Link from 'next/link';
 
 import { serialize } from 'next-mdx-remote/serialize'
-import { MDXRemote } from 'next-mdx-remote'
 
 import {getAllContentIn, getContentBySlug} from '../../helpers/content-helpers';
 import siteConfig from '../../site-config';

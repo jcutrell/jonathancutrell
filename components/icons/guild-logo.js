@@ -1,4 +1,3 @@
-import React from 'react'
 const Icon = () => (
   <svg
     viewBox="0 0 114 27"

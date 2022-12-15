@@ -1,12 +1,5 @@
 import React from 'react'
 
-import Link from 'next/link'
-import Bio from '../components/Bio'
-import Footer from '../components/footer'
-import SiteLayout from '../components/SiteLayout'
-import SEO from '../components/seo'
-import Sidebar from '../components/Sidebar'
-import { Wrap } from '../components/shared'
 import { getAllContentIn, pubDate } from '../helpers/content-helpers'
 import siteConfig from '../site-config'
 import styled from 'styled-components'

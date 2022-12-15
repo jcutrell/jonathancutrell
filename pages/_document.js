@@ -1,4 +1,3 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document'
 
 const MyDocument = props => {
   return (

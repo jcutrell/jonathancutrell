@@ -34,6 +34,10 @@ const config = {
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
 }
 
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+})
+
 const withMDX = require('@next/mdx')({
   extension: /\.mdx?$/,
   options: {
@@ -47,4 +51,4 @@ const withMDX = require('@next/mdx')({
   },
 })
 
-module.exports = withMDX(config)
+module.exports = withBundleAnalyzer(withMDX(config))

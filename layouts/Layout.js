@@ -1,11 +1,9 @@
 import React from 'react'
 import { MDXProvider } from '@mdx-js/react'
-import code from '../components/code'
 import { useRouter } from 'next/router'
 
 const components = {
-  pre: props => <div {...props} />,
-  code
+  pre: (props) => <div {...props} />,
 }
 
 const Layout = (props) => {

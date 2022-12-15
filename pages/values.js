@@ -1,11 +1,6 @@
 import React from 'react'
 
-import Bio from '../components/Bio'
-import SiteLayout from '../components/SiteLayout'
-import SEO from '../components/seo'
-import { Wrap } from '../components/shared'
 import { serialize } from 'next-mdx-remote/serialize'
-import { MDXRemote } from 'next-mdx-remote'
 
 import { getAllContentIn } from '../helpers/content-helpers'
 import siteConfig from '../site-config'

@@ -1,15 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Bio from '../components/Bio'
-import SiteLayout from '../components/SiteLayout'
-import SEO from '../components/seo'
-import Sidebar from '../components/Sidebar'
 import siteConfig from '../site-config'
-import { Wrap } from '../components/shared'
 
 import { serialize } from 'next-mdx-remote/serialize'
-import { MDXRemote } from 'next-mdx-remote'
 import { getAllContentIn } from '../helpers/content-helpers'
 
 const Book = styled.div`

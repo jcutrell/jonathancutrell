@@ -1,4 +1,3 @@
-import React from 'react'
 const Icon = () => (
   <svg
     version="1.1"

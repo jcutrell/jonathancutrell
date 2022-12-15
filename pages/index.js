@@ -1,16 +1,5 @@
-import React, { useState } from 'react'
-import GuildLogo from '../components/icons/guild-logo'
-import DtLogo from '../components/icons/dt-logo'
-import SpecLogo from '../components/icons/spec-logo'
-import Footer from '../components/footer'
-import Link from 'next/link'
-import { LinkWithArrow } from '../components/shared'
+import React from 'react'
 
-import Bio from '../components/Bio'
-import Layout from '../layouts/Layout'
-import SEO from '../components/seo'
-import Sidebar from '../components/Sidebar'
-import Testimonials from '../components/Testimonials'
 import styled, { keyframes } from 'styled-components'
 import { getAllArticles } from '../helpers/content-helpers'
 

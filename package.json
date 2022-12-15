@@ -7,10 +7,12 @@
     "@mdx-js/mdx": "1.6.22",
     "@mdx-js/react": "^2.1.5",
     "@mdx-js/tag": "0.20.3",
+    "@next/bundle-analyzer": "^13.0.7",
     "@next/mdx": "^13.0.6",
     "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/typography": "^0.5.8",
     "eslint-config-next": "^13.0.5",
+    "eslint-plugin-unused-imports": "^2.0.0",
     "fs": "^0.0.1-security",
     "glob": "^8.0.3",
     "gray-matter": "^4.0.3",
@@ -34,10 +36,10 @@
     "twin.macro": "^3.0.1"
   },
   "devDependencies": {
+    "babel-plugin-styled-components": "^2.0.7",
     "eslint": "7.32.0",
     "eslint-plugin-react": "^7.26.0",
-    "prettier": "^1.14.2",
-    "babel-plugin-styled-components": "^2.0.7"
+    "prettier": "^1.14.2"
   },
   "browser": {
     "fs": false

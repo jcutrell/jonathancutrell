@@ -1,11 +1,6 @@
 import React from 'react'
 
-import Bio from '../components/Bio'
-import Layout from '../layouts/Layout'
-import SEO from '../components/seo'
-import Sidebar from '../components/Sidebar'
-import Testimonials from '../components/Testimonials'
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 
 const Testimonial = styled.div`
   padding: 4rem;

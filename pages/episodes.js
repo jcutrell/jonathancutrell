@@ -1,13 +1,5 @@
 import React from 'react'
-import Link from 'next/link'
-import { LinkWithArrow } from '../components/shared'
 
-import Bio from '../components/Bio'
-import SiteLayout from '../components/SiteLayout'
-import SEO from '../components/seo'
-import Sidebar from '../components/Sidebar'
-import Footer from '../components/footer'
-import { Wrap } from '../components/shared'
 import siteConfig from '../site-config'
 
 import { getEpisodes, pubDate, duration } from '../helpers/content-helpers'

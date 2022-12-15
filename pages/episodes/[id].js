@@ -1,12 +1,5 @@
 import React from 'react'
 
-import Bio from '../../components/Bio'
-import SiteLayout from '../../components/SiteLayout'
-import Footer from '../../components/footer'
-import { Wrap } from '../../components/shared'
-import SEO from '../../components/seo'
-import tw, { styled } from 'twin.macro'
-import Link from 'next/link'
 
 class PodcastEpisodeTemplate extends React.Component {
   render() {
