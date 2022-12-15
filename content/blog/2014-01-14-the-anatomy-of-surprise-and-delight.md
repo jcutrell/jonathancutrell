@@ -1,19 +1,10 @@
 ---
-id: 158
 title: The Anatomy of Surprise and Delight
 date: 2014-01-14T16:58:24+00:00
 author: JCutrell
-templateKey: blog-post
-
-
-dsq_thread_id:
-  - "3199114918"
-tags:
-  - Thoughts
-
 ---
-<h1>
-<u>A chance to surprise and delight someone by doing something a little exceptional goes a long way because it provides a smack of awesome humanity upside the head.</u> - Alexis Ohanian [1]</h1>
+
+## <u>A chance to surprise and delight someone by doing something a little exceptional goes a long way because it provides a smack of awesome humanity upside the head.</u> - Alexis Ohanian [1]
 
 <p>Bill Murray has a reputation. Sure, to many he is an actor with a strong and highly memorable personality in each of his movies. But Bill Murray’s fame goes deeper.</p>
 

@@ -1,17 +1,10 @@
 ---
-id: 47
 title: 'Getting Past Writer’s Block: Break the Rules'
 date: 2014-06-09T16:51:40+00:00
 author: JCutrell
 templateKey: blog-post
-
-
-dsq_thread_id:
-  - "3072837362"
-tags:
-  - Thoughts
-
 ---
+
 <p>One thing I’ve been able to do in my writing career is… well, write. Perhaps the better way to describe this is to say that I have a knack for not getting stuck in writer’s block.</p>
 
 <p>I didn’t realize this was a skill until a coworker recently asked me about my writing process, and inquired into how I get from zero to finished without many hitches.</p>
@@ -46,14 +39,9 @@ tags:
 
 <p>Writing is:</p>
 
-<ul>
-<li>
-<em>Output</em>: This is what we’re talking about in this article, for the most part. This is where people end up getting “writer’s block”, and is absolutely the primary, most essential part of the writing process.</li>
-<li>
-<em>Research</em>: Research occurs in so many different ways. For me, research isn’t purely academic. It’s coincidence, experience, and consumption all in one. Research performs two roles as it relates to your writing: <strong>informing</strong> and <strong>validating</strong>.</li>
-<li>
-<em>Editing</em>: Editing occurs throughout the process. We do both simple editing (wherein we correct our “alright"s to "all right"s), as well as complex editing (wherein entire sections are nixed, and the necessity for new sections arises). Editing is informed both by your output and research, but will also affect your output and research significantly.</li>
-</ul>
+- <em>Output</em>: This is what we’re talking about in this article, for the most part. This is where people end up getting “writer’s block”, and is absolutely the primary, most essential part of the writing process.
+- <em>Research</em>: Research occurs in so many different ways. For me, research isn’t purely academic. It’s coincidence, experience, and consumption all in one. Research performs two roles as it relates to your writing: <strong>informing</strong> and <strong>validating</strong>.
+- <em>Editing</em>: Editing occurs throughout the process. We do both simple editing (wherein we correct our “alright"s to "all right"s), as well as complex editing (wherein entire sections are nixed, and the necessity for new sections arises). Editing is informed both by your output and research, but will also affect your output and research significantly.
 
 <p>If you can do the three of these things well, I believe you can write well. What’s more, it takes a massive amount of fluid output to be able to effectively research and edit. If you are experiencing writer’s block, ask yourself these questions:</p>
 

@@ -1,24 +1,15 @@
 ---
-id: 162
 title: Steal these iWatch App Ideas
 date: 2014-09-08T18:46:58+00:00
 author: Jonathan Cutrell
 templateKey: blog-post
-tags:
-  - Apple
-  - Apps
-  - entrepreneur
-  - iPhone
-  - Mobile payments
-  - predictions
-  - trends
-  - Ideas
 ---
+
 <h2>I want you to steal my ideas.</h2>
 
 I've said it before, and nothing has changed. Ideas are important, but they aren't proprietary. I want these things to exist, so hopefully with this post I can inspire someone to make them, even if that person is me.
 
-The iWatch (or whatever it is going to be called) is announced this week, and that's exciting for entrepreneurs and developers for a lot of reasons. The ideas I present below are sort of like predictions; because I don't know the features of the watch, I'm making a lot of assumptions. 
+The iWatch (or whatever it is going to be called) is announced this week, and that's exciting for entrepreneurs and developers for a lot of reasons. The ideas I present below are sort of like predictions; because I don't know the features of the watch, I'm making a lot of assumptions.
 
 As always, the ideas presented below are in no way my property. Think of them as money left on the sidewalk. In an envelope labeled "take me!". The only thing I ask is that you <a href="/lets-talk">contact me by emailing me</a> or reach out to me on Twitter (<a href="http://twitter.com/jcutrell">@JCutrell</a>).
 

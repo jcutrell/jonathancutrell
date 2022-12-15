@@ -50,7 +50,6 @@ const components = {
 }
 
 const activeIf = (route, router) => {
-  console.log(route, router)
   return route === router.pathname ? activeNavItemClass : ''
 }
 

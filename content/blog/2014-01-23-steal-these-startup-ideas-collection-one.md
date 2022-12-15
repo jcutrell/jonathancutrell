@@ -1,14 +1,8 @@
 ---
-id: 156
 title: 'Steal these Startup Ideas: Collection One'
 date: 2014-01-23T16:57:09+00:00
 author: JCutrell
 templateKey: blog-post
-
-dsq_thread_id:
-  - '2999968473'
-tags:
-  - Thoughts
 ---
 
 <h1>I want you to steal these ideas.</h1>
@@ -27,7 +21,7 @@ tags:
 
 <h2>Coffee subscription drive-thru service</h2>
 
-<p><em>Credit actually is due to <a href="http://twitter.com/taylorleejones">@taylorleejones</a> for most of this one</em>.</p>
+<em>Credit actually is due to <a href="http://twitter.com/taylorleejones">@taylorleejones</a> for most of this one</em>.
 
 <p>Coffee is one thing almost everyone I know has in common. So much so that many of us have a coffee budget that we write off on our taxes. Subscriptions simplify our lives to a great extent. The idea is simple: create a subscription service that takes advantage of passive Bluetooth at a drive-thru and provides a reliably great cup of coffee any time I want it (24 hours). Heck, you could create learning algorithms to do auto-ordering and preparations schedules. I just want my same coffee, and I want it to be good. And I’d love data on my coffee drinking habits (because I’m a part-time data nerd).</p>
 
@@ -63,13 +57,14 @@ tags:
 
 <p>Want to know who is looking at your stuff, where they are, and what they want? If you don’t already, you probably will. Alexis Ohanian (yes, I mention him a lot right now) relates people invading our data to someone opening our mailbox and reading our mail. Yes, I absolutely want to know exactly where the packets of information are traveling, and who opens them. If you create a startup that tells me with some level of confidence where my data is and what is being read, when, by whom, I would pay a body part.</p>
 
-<p>This has significant business implications too; think Google Analytics on steroids, plus a private investigator in the form of intelligent algorithms and tracking techniques. The privacy war is coming, and there’s a lot of money in war. If someone is spying on me, I also want to spy on them. This has a lot of physical-world cost in the long run, but whoever owns this will probably own it for a long time. They can also be sure that they will receive a lot of resistance and shutdown requests, so it’s probably wise to do this in a country where the government is… small.</p>
+This has significant business implications too; think Google Analytics on steroids, plus a private investigator in the form of intelligent algorithms and tracking techniques. The privacy war is coming, and there’s a lot of money in war. If someone is spying on me, I also want to spy on them. This has a lot of physical-world cost in the long run, but whoever owns this will probably own it for a long time. They can also be sure that they will receive a lot of resistance and shutdown requests, so it’s probably wise to do this in a country where the government is… small.
 
 <h2>A REAL, widely accepted solution to this:</h2>
 
-<p><a href="http://img.svbtle.com/crjckw4d9b4hma.jpg"><img src="https://d23f6h5jpj26xu.cloudfront.net/crjckw4d9b4hma_small.jpg" alt="convoluted_mess.jpg"></img></a>
-<a href="http://img.svbtle.com/3vvrvr9xtipruw.jpg"><img src="https://d23f6h5jpj26xu.cloudfront.net/3vvrvr9xtipruw_small.jpg" alt="remotes.jpg"></img></a>
-But seriously, how is this not completely done yet? I know the XBox One is heading this direction, but how close is it? I’ll answer your question with a question: when will my Dad buy an XBox One? Now, provide a simple, beautiful solution to the problem of discrete boxes doing discrete things that can benefit from all of the automation and remote-ness (read: not remote control) of the cloud. Give me a way to schedule EVERYTHING.</p>
+<a href="http://img.svbtle.com/crjckw4d9b4hma.jpg"><img src="https://d23f6h5jpj26xu.cloudfront.net/crjckw4d9b4hma_small.jpg" alt="convoluted_mess.jpg" /></a>
+<a href="http://img.svbtle.com/3vvrvr9xtipruw.jpg"><img src="https://d23f6h5jpj26xu.cloudfront.net/3vvrvr9xtipruw_small.jpg" alt="remotes.jpg"/></a>
+
+But seriously, how is this not completely done yet? I know the XBox One is heading this direction, but how close is it? I’ll answer your question with a question: when will my Dad buy an XBox One? Now, provide a simple, beautiful solution to the problem of discrete boxes doing discrete things that can benefit from all of the automation and remote-ness (read: not remote control) of the cloud. Give me a way to schedule EVERYTHING.
 
 <p>Give me a way to throw away Comcast’s horrible channel surfing interface. I still want the things cable provides me, like reliable sports - but please, for the love of God, make things look better than TiVo circa 1999. FIFTEEN YEARS, guys. And if you think your one Raspberry Pi with XBMC is enough, then you probably don’t watch sports. And you’re probably not willing to keep paying for cable and Netflix, but I am. Someone make a Nest for my home entertainment system, and I’ll buy. Now, do a deal with cable companies and/or Netflix to be the single solution for any home, and you win the long term game.</p>
 

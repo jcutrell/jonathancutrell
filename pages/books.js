@@ -34,7 +34,6 @@ class Books extends React.Component {
   render() {
     const { data, posts } = this.props
     const siteTitle = siteConfig.title
-    console.log(posts)
 
     return (
       <SiteLayout location={this.props.location} title={siteTitle}>

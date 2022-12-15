@@ -1,17 +1,9 @@
 ---
-id: 51
-title: I’m Using Buffer to Segment My Working Day, and it’s Awesome
 date: 2014-01-12T16:52:46+00:00
 author: JCutrell
-templateKey: blog-post
-
-
-dsq_thread_id:
-  - "3028037459"
-tags:
-  - Thoughts
-
+title: I’m Using Buffer to Segment My Working Day, and it’s Awesome
 ---
+
 <p>I have a lot of different responsibilities on a day-to-day basis. I’m guessing you probably do too.</p>
 
 <p>Family and home responsibilities, like loving my wife, paying bills, and taking my dog on walks.</p>
@@ -20,12 +12,8 @@ tags:
 
 <p>Work responsibilities - now there’s a big (and awesome) list. In particular, let me highlight two types of work I do, at work.</p>
 
-<ul>
-<li>
-<em>Reactive work</em> - work that requires me to respond to external resources, like emails, phone calls, meetings, etcetera</li>
-<li>
-<em>Creative work</em> - work that requires me to build something out of nothing (or out of a predetermined specification)</li>
-</ul>
+- <em>Reactive work</em> - work that requires me to respond to external resources, like emails, phone calls, meetings, etcetera
+- <em>Creative work</em> - work that requires me to build something out of nothing (or out of a predetermined specification)
 
 <p>As a company, Whiteboard employees recently read 99U’s <a href="http://www.amazon.com/Manage-Your-Day-Day-Creative/dp/1477800670">Managing Your Day to Day</a>, an excellent book about building an effective creative routine. We’ve all adopted a good number of practices proscribed in the book to start out the year, and let me tell you, it has been fantastic. A few simple thoughts on these practices, as they will inform what this article is really about.</p>
 

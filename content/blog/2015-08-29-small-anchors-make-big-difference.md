@@ -1,18 +1,13 @@
 ---
-id: 77
 title: Small Anchors Make a Big Difference
 date: 2015-08-29T21:40:41+00:00
 author: Jonathan Cutrell
 excerpt: |
   When people talk about their origin stories, there's one thread that seems to be relatively common, give or take a few creators. At some point, the creator "just finally did it."
-templateKey: blog-post
-
-
-image: /wp-content/uploads/2014/08/CA2_9227.jpg
-tags:
-  - Entrepreneurship
 ---
+
 When people talk about their origin stories, there's one thread that seems to be relatively common, give or take a few creators. At some point, the creator "just finally did it."
+
 <!--more-->
 
 There's a moment of &mdash; let's call it "reckless abandon", or as <em>Ex Machina</em> refers to it, a Pollock-ian moment of disregard or entropy or untargeted action &mdash; the moment where we say "I'm not sure if this step is perfect or calculated quite correctly, but I'm going to invest a little bit more than just thought."

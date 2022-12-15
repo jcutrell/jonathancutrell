@@ -1,58 +1,73 @@
-import fs from 'fs';
-import matter from 'gray-matter';
-import path from 'path';
-import readingTime from 'reading-time';
+import fs from 'fs'
+import matter from 'gray-matter'
+import path from 'path'
+import readingTime from 'reading-time'
 import { DateTime } from 'luxon'
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 
-export async function getAllContentIn({ folder = "blog", extension = "md"}) {
+export async function getAllContentIn({ folder = 'blog', extension = 'md' }) {
   const items = fs.readdirSync(path.join(process.cwd(), `content/${folder}`))
 
-  return items.filter((itemSlug) => itemSlug.endsWith(`.${extension}`)).reduce((allItems, itemSlug) => {
-    const source = fs.readFileSync(
-      path.join(process.cwd(), `content/${folder}`, itemSlug),
-      'utf-8'
-    )
-    let { content, data } = matter(source)
+  return items
+    .filter((itemSlug) => itemSlug.endsWith(`.${extension}`))
+    .reduce((allItems, itemSlug) => {
+      const source = fs.readFileSync(
+        path.join(process.cwd(), `content/${folder}`, itemSlug),
+        'utf-8'
+      )
+      let { content, data } = matter(source)
 
-    data = JSON.parse(JSON.stringify({...data, content}));
+      data = JSON.parse(JSON.stringify({ ...data, content }))
 
-    return [
-      {
-        ...data,
-        slug: itemSlug.replace(`.${extension}`, ''),
-        readingTime: readingTime(source).text,
-      },
-      ...allItems,
-    ]
-  }, [])
+      return [
+        {
+          ...data,
+          slug: itemSlug.replace(`.${extension}`, ''),
+          readingTime: readingTime(source).text,
+        },
+        ...allItems,
+      ]
+    }, [])
+}
+
+export function getSlugsIn({ folder = 'blog', extension = 'md' }) {
+  const paths = fs
+    .readdirSync(path.join(process.cwd(), `content/${folder}`))
+    .filter((path) => path.endsWith(extension))
+  return paths.map((path) => path.replace(`.${extension}`, ''))
 }
 
 export async function getAllArticles() {
   const articles = fs.readdirSync(path.join(process.cwd(), 'content/blog'))
 
-  return articles.filter((articleSlug) => articleSlug.endsWith(".md")).reduce((allArticles, articleSlug) => {
-    // get parsed data from mdx files in the "articles" dir
-    const source = fs.readFileSync(
-      path.join(process.cwd(), 'content/blog', articleSlug),
-      'utf-8'
-    )
-    let { data } = matter(source)
-    data = JSON.parse(JSON.stringify(data));
+  return articles
+    .filter((articleSlug) => articleSlug.endsWith('.md'))
+    .reduce((allArticles, articleSlug) => {
+      // get parsed data from mdx files in the "articles" dir
+      const source = fs.readFileSync(
+        path.join(process.cwd(), 'content/blog', articleSlug),
+        'utf-8'
+      )
+      let { data } = matter(source)
+      data = JSON.parse(JSON.stringify(data))
 
-    return [
-      {
-        ...data,
-        slug: articleSlug.replace('.md', ''),
-        readingTime: readingTime(source).text,
-      },
-      ...allArticles,
-    ]
-  }, [])
+      return [
+        {
+          ...data,
+          slug: articleSlug.replace('.md', ''),
+          readingTime: readingTime(source).text,
+        },
+        ...allArticles,
+      ]
+    }, [])
 }
 
-export async function getContentBySlug({folder = "blog", extension = "md", slug}) {
+export async function getContentBySlug({
+  folder = 'blog',
+  extension = 'md',
+  slug,
+}) {
   // get parsed data from mdx files in the "articles" dir
   const source = fs.readFileSync(
     path.join(process.cwd(), `content/${folder}/${slug}.${extension}`),
@@ -60,7 +75,7 @@ export async function getContentBySlug({folder = "blog", extension = "md", slug}
   )
 
   let { content, data } = matter(source)
-  data = JSON.parse(JSON.stringify(data));
+  data = JSON.parse(JSON.stringify(data))
 
   return {
     ...data,
@@ -78,7 +93,7 @@ export async function getArticle(articleSlug) {
   )
 
   let { content, data } = matter(source)
-  data = JSON.parse(JSON.stringify(data));
+  data = JSON.parse(JSON.stringify(data))
 
   return {
     ...data,
@@ -88,8 +103,7 @@ export async function getArticle(articleSlug) {
   }
 }
 
-
-export async function getEpisodes({page = 1, pageSize = 20}){
+export async function getEpisodes({ page = 1, pageSize = 20 }) {
   const res = await fetch(
     `https://api.simplecast.com/podcasts/${
       process.env.PODCAST_ID
@@ -98,19 +112,18 @@ export async function getEpisodes({page = 1, pageSize = 20}){
       headers: {
         authorization: `Bearer ${process.env.SIMPLECAST_API_KEY}`,
       },
-    },
-  );
-  const episodes = await res.json();
+    }
+  )
+  const episodes = await res.json()
 
-  return episodes;
+  return episodes
 }
 
 export async function getAllEpisodes() {
   return await getEpisodes({ page: 1, pageSize: 2000 })
 }
 
-export const pubDate = (date) =>
-  `${DateTime.fromISO(date).toLocaleString()}`;
+export const pubDate = (date) => `${DateTime.fromISO(date).toLocaleString()}`
 
-
-export const duration = durationInSeconds => `~${Math.round(durationInSeconds / 60)}m`;
+export const duration = (durationInSeconds) =>
+  `~${Math.round(durationInSeconds / 60)}m`

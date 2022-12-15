@@ -1,12 +1,8 @@
 ---
-id: 152
 title: The Infinite Toolset, Craftsmanship, and Developer Sanity
 date: 2015-02-08T18:34:18+00:00
 author: Jonathan Cutrell
 templateKey: blog-post
-
-dsq_thread_id:
-  - '3497216912'
 tags:
   - Habits
 ---

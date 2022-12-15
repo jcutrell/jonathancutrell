@@ -1,17 +1,9 @@
 ---
-id: 157
 title: 'Steal these Startup Ideas: Collection Two'
 date: 2014-07-07T16:57:45+00:00
 author: Jonathan Cutrell
-templateKey: blog-post
-
-
-dsq_thread_id:
-  - "2999965196"
-tags:
-  - Thoughts
-
 ---
+
 <p>As I’ve said before in <a href="http://jonathancutrell.com/steal-these-startup-ideas-collection-one">collection one of this series</a>, ideas are everywhere. Furthermore, I certainly don’t have time to make all of my ideas a reality. I want them to be real, and truly would use each and every one of these.</p>
 
 <p>If you like one of the ideas and want to take it and make it a real thing, let me know! I’m not going to try to take a piece of your company (unless you offer and the deal is a good one), and I’m not going to sue you. I just want to hear from the people these ideas are influencing. It fuels me! Tell me on <a href="http://twitter.com/jcutrell">Twitter (@jcutrell)</a> or email me at <a href="mailto:jonathan@whiteboard.is">jonathan@whiteboard.is</a>.</p>

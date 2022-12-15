@@ -16,6 +16,7 @@ import styled from 'styled-components'
 import {
   getArticle,
   getAllArticles,
+  getSlugsIn,
   pubDate,
 } from '../../helpers/content-helpers'
 import { mdxOptions } from '../../site-config'
@@ -34,9 +35,7 @@ const BlogPostTemplate = (props) => {
   const router = useRouter()
   const { slug } = router.query
   const siteTitle = siteConfig.title
-  const { post } = props
-  const previous = false
-  const next = false
+  const { post, next, prev } = props
 
   return (
     <SiteLayout location={slug} title={siteTitle}>
@@ -45,25 +44,24 @@ const BlogPostTemplate = (props) => {
           <h1>{post.title}</h1>
           <p>{pubDate(post.date)}</p>
           <MDXRemote {...post.mdxSource} />
-          <hr />
-          <Bio />
-
           <ul>
             <li>
-              {previous && (
-                <Link href={previous.fields.slug} rel="prev">
-                  ← {previous.frontmatter.title}
+              {prev && (
+                <Link href={`/blog/${prev.slug}`} rel="prev">
+                  ← Previous: {prev.title}
                 </Link>
               )}
             </li>
             <li>
               {next && (
-                <Link href={next.fields.slug} rel="next">
-                  {next.frontmatter.title} →
+                <Link href={`/blog/${next.slug}`} rel="next">
+                  Next: {next.title} →
                 </Link>
               )}
             </li>
           </ul>
+          <hr />
+          <Bio />
         </Article>
       </Wrap>
       <Footer />
@@ -88,12 +86,24 @@ export async function getStaticProps(context) {
   // By returning { props: { posts } }, the Blog component
   // will receive `posts` as a prop at build time
   const { params } = context
+
+  const slugs = getSlugsIn({ folder: 'blog' })
+  const currInd = slugs.indexOf(params.slug)
+  const nextInd = currInd + 1
+  const nextSlug = slugs[nextInd % slugs.length]
+  const prevInd = nextInd == 1 ? slugs.length - 1 : nextInd - 2
+  const prevSlug = slugs[prevInd]
+
   const post = await getArticle(params.slug)
+  const next = await getArticle(nextSlug)
+  const prev = await getArticle(prevSlug)
   post.mdxSource = await serialize(post.content, mdxOptions)
 
   return {
     props: {
       post,
+      next,
+      prev,
     },
   }
 }
