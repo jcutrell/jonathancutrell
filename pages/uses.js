@@ -3,63 +3,55 @@ import React from 'react'
 import Bio from '../components/Bio'
 import SiteLayout from '../components/SiteLayout'
 import SEO from '../components/seo'
+import { Wrap } from '../components/shared'
 
-class Values extends React.Component {
-  render() {
-    const {data} = this.props
-    const siteTitle = data.site.siteMetadata.title
-    const posts = data.allMdx.edges
-    console.log(posts);
+import { serialize } from 'next-mdx-remote/serialize'
+import { MDXRemote } from 'next-mdx-remote'
 
-    return (
-      <SiteLayout location={this.props.location} title={siteTitle}>
-        <SEO title="Jonathan Cutrell :: Uses" />
+import { getAllContentIn } from '../helpers/content-helpers'
+import siteConfig from '../site-config'
+import { mdxOptions } from '../site-config'
+
+const Uses = (props) => {
+  const siteTitle = siteConfig.title
+  const posts = props.posts
+
+  return (
+    <SiteLayout location={props.location} title={siteTitle}>
+      <SEO title="Jonathan Cutrell :: Uses" />
+      <Wrap>
         <h1>Uses</h1>
-        {posts.map(({node}) => (
-          <MDXRenderer>{node.body}</MDXRenderer>
+        {posts.map((val) => (
+          <MDXRemote {...val.mdxSource} />
         ))}
-        <hr
-          style={{
-            marginBottom: rhythm(2),
-            marginTop: rhythm(2),
-          }}
-        />
+        <hr />
         <Bio />
-      </SiteLayout>
-    )
+      </Wrap>
+    </SiteLayout>
+  )
+}
+
+export async function getStaticProps() {
+  // Call an external API endpoint to get posts.
+  // You can use any data fetching library
+
+  // By returning { props: { posts } }, the Blog component
+  // will receive `posts` as a prop at build time
+
+  const posts = await getAllContentIn({ folder: 'uses' })
+
+  await Promise.all(
+    posts.map(async (post) => {
+      post.mdxSource = await serialize(post.content, mdxOptions)
+      return
+    })
+  )
+
+  return {
+    props: {
+      posts,
+    },
   }
 }
 
-export default Values
-
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allMdx(
-      sort: { fields: [frontmatter___date], order: ASC }
-      filter: {
-        fields: { sourceName: { eq: "uses" } }
-        frontmatter: { tags: { nin: ["Personal"] } }
-      }
-    ) {
-      edges {
-        node {
-          body
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            tags
-          }
-        }
-      }
-    }
-  }
-`
+export default Uses
