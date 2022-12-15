@@ -1,8 +1,11 @@
+---
 title: Noise
 subtitle:
 author: Daniel Kahneman, Olivier Sibony, Cass R. Sunstein
-img: https://images-na.ssl-images-amazon.com/images/I/41RtytNpsfL._SX332_BO1,204,203,200_.jpg
+img: https://m.media-amazon.com/images/I/41lfiSJTFjL.jpg 
 publish_year: 2021
 url: https://smile.amazon.com/Noise-Human-Judgment-Daniel-Kahneman/dp/0316451401
 rating: 4.5
-notes: In progress...
+---
+
+In progress...

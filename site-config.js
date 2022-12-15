@@ -1,3 +1,4 @@
+
 export default {
 	title: 'JonathanCutrell.com',
 	author: {
@@ -7,3 +8,10 @@ export default {
 		twitter: 'jcutrell',
 	},
 }
+
+const mdxOptions = {
+  parseFrontmatter: false,
+  mdxOptions: { remarkPlugins: [] }
+}
+
+export { mdxOptions }

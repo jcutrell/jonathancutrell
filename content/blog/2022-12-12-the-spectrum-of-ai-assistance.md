@@ -36,6 +36,19 @@ Clippy provided a new kind of assistance; it spied on what you were writing (wit
 
 Clippy could help. On the spectrum, Clippy acted a bit like a formatting secretary, and worked alongside its spell-checking and grammar-checking robot teammates.
 
+```mermaid
+gantt
+dateFormat  YYYY-MM-DD
+title Adding GANTT diagram to mermaid
+excludes weekdays 2014-01-10
+
+section A section
+Completed task            :done,    des1, 2014-01-06,2014-01-08
+Active task               :active,  des2, 2014-01-09, 3d
+Future task               :         des3, after des2, 5d
+Future task2               :         des4, after des3, 5d
+```
+
 ### Is it a brain if its Bayesian?
 
 These tools were built on, presumably, basic decision algorithms mixed with an extremely limited domain of knowledge. I say presumably because I didn't do a deep dive on the specifics, but also because it's only been possible to do more complex AI work recently, as processing speed catches up to our workload demand.

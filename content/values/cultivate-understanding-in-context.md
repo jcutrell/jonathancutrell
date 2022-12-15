@@ -1,5 +1,5 @@
 ---
-title: "Cultivate Understanding"
+title: Cultivate Understanding In Context
 date: 2020-03-04T11:00:00
 author: Jonathan Cutrell
 templateKey: blog-post

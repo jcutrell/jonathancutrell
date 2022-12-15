@@ -1,11 +1,11 @@
 ---
-title: "Optimize for the Long-Term"
+title: 'Optimize for the Long-Term; Always Be Ahead Of The Ball'
 date: 2020-03-04T12:00:00
 author: Jonathan Cutrell
 templateKey: blog-post
 ---
 
-### Optimize for the Long-Term
+### Optimize for the Long-Term; Always Be Ahead Of The Ball
 
 When you optimize for the long-term, a lot of other problems naturally resolve.
 

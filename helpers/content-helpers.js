@@ -1,8 +1,33 @@
 import fs from 'fs';
 import matter from 'gray-matter';
-import readingTime from 'reading-time';
 import path from 'path';
+import readingTime from 'reading-time';
 import { DateTime } from 'luxon'
+import { MDXRemote } from 'next-mdx-remote'
+import { serialize } from 'next-mdx-remote/serialize'
+
+export async function getAllContentIn({ folder = "blog", extension = "md"}) {
+  const items = fs.readdirSync(path.join(process.cwd(), `content/${folder}`))
+
+  return items.filter((itemSlug) => itemSlug.endsWith(`.${extension}`)).reduce((allItems, itemSlug) => {
+    const source = fs.readFileSync(
+      path.join(process.cwd(), `content/${folder}`, itemSlug),
+      'utf-8'
+    )
+    let { content, data } = matter(source)
+
+    data = JSON.parse(JSON.stringify({...data, content}));
+
+    return [
+      {
+        ...data,
+        slug: itemSlug.replace(`.${extension}`, ''),
+        readingTime: readingTime(source).text,
+      },
+      ...allItems,
+    ]
+  }, [])
+}
 
 export async function getAllArticles() {
   const articles = fs.readdirSync(path.join(process.cwd(), 'content/blog'))
@@ -27,6 +52,24 @@ export async function getAllArticles() {
   }, [])
 }
 
+export async function getContentBySlug({folder = "blog", extension = "md", slug}) {
+  // get parsed data from mdx files in the "articles" dir
+  const source = fs.readFileSync(
+    path.join(process.cwd(), `content/${folder}/${slug}.${extension}`),
+    'utf-8'
+  )
+
+  let { content, data } = matter(source)
+  data = JSON.parse(JSON.stringify(data));
+
+  return {
+    ...data,
+    content,
+    slug: slug.replace(`.${extension}`, ''),
+    readingTime: readingTime(source).text,
+  }
+}
+
 export async function getArticle(articleSlug) {
   // get parsed data from mdx files in the "articles" dir
   const source = fs.readFileSync(
@@ -44,6 +87,7 @@ export async function getArticle(articleSlug) {
     readingTime: readingTime(source).text,
   }
 }
+
 
 export async function getEpisodes({page = 1, pageSize = 20}){
   const res = await fetch(

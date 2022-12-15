@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import GuildLogo from '../components/icons/guild-logo'
 import DtLogo from '../components/icons/dt-logo'
 import SpecLogo from '../components/icons/spec-logo'
-import Footer from '../components/footer';
+import Footer from '../components/footer'
 import Link from 'next/link'
-import { LinkWithArrow } from '../components/shared';
+import { LinkWithArrow } from '../components/shared'
 
 import Bio from '../components/Bio'
 import Layout from '../layouts/Layout'
@@ -12,9 +12,9 @@ import SEO from '../components/seo'
 import Sidebar from '../components/Sidebar'
 import Testimonials from '../components/Testimonials'
 import styled, { keyframes } from 'styled-components'
-import {getAllArticles} from '../helpers/content-helpers'
+import { getAllArticles } from '../helpers/content-helpers'
 
-import siteConfig from '../site-config';
+import siteConfig from '../site-config'
 
 const rotateHue = keyframes`
   0% {
@@ -36,6 +36,7 @@ const PicHeader = styled.div`
   background-size: 120%;
   z-index: -1;
   height: 70%;
+  box-sizing: border-box;
   @media only screen and (min-width: 80rem) {
     height: 100%;
     z-index: 400;
@@ -54,8 +55,7 @@ const PicHeader = styled.div`
       animation: ${rotateHue} 10s infinite linear;
       border-radius: 820px 0 610px 300px / 500px 0 230px 460px;
       box-shadow: 0 -35px rgba(0, 148, 255, 0.42),
-        20px 30px rgba(0, 255, 198, 0.52),
-        -24px 0 rgba(255, 0, 163, 0.52),
+        20px 30px rgba(0, 255, 198, 0.52), -24px 0 rgba(255, 0, 163, 0.52),
         -54px -10px 0 -10px rgba(225, 10, 220, 0.52),
         -20px -25px 0 40px rgba(255, 198, 33, 0.52);
     }
@@ -132,7 +132,7 @@ const SubHeader = styled.h2`
   font-size: 1.6rem;
   max-width: 500px;
   font-weight: 200;
-  margin-top: .8rem;
+  margin-top: 0.8rem;
   color: #fff;
   @media only screen and (min-width: 80rem) {
     color: #234156;
@@ -148,7 +148,7 @@ const Nav = styled.nav`
   letter-spacing: 0.05rem;
   text-transform: uppercase;
   a {
-    color: #FFF;
+    color: #fff;
     display: block;
     margin-right: 2rem;
     display: inline-block;
@@ -158,10 +158,11 @@ const Nav = styled.nav`
       content: '→';
       display: inline-block;
       margin-left: 4px;
-      transition: all .1s;
+      transition: all 0.1s;
     }
     &:hover:after {
       margin-left: 6px;
+      margin-right: -2px;
     }
     @media only screen and (min-width: 80rem) {
       color: #234156;
@@ -187,10 +188,10 @@ const Header = ({ data, picRef }) => {
   return (
     <HomeHeader>
       <HeaderContent>
-        <HeaderTitle>
-          Hello, I'm Jonathan&nbsp;Cutrell.
-        </HeaderTitle>
-        <SubHeader>Engineering manager with a chosen bias for long-term thinking.</SubHeader>
+        <HeaderTitle>Hello, I'm Jonathan&nbsp;Cutrell.</HeaderTitle>
+        <SubHeader>
+          Engineering manager with a chosen bias for long-term thinking.
+        </SubHeader>
         <Nav style={{ marginTop: '2rem' }}>
           <Link href="/blog">
             Blog Posts
@@ -202,10 +203,7 @@ const Header = ({ data, picRef }) => {
           </Link>
         </Nav>
       </HeaderContent>
-      <PicHeader
-        ref={picRef}
-        backgroundImageUrl={null}
-      />
+      <PicHeader ref={picRef} backgroundImageUrl={null} />
     </HomeHeader>
   )
 }
@@ -216,40 +214,44 @@ const LongTerm = () => (
     <div>
       <Lead>Long-term thinking requires a paradigm shift.</Lead>
       <p>
-        Long-term thinking is a forcing function that powerfully aligns organizations and individuals.
-        Thinking long term means valuing:</p>
-        <ul style={{ marginTop: '1rem'}}>
-          <li>People over products</li>
-          <li>Character over skills</li>
-          <li>Trends over spikes</li>
-          <li>Norms over exceptions</li>
-          <li>Teaching over showing</li>
-          <li>Philosophy over tactics</li>
-          <li>Habits over heroics</li>
-          <li>Smooth over fast</li>
-          <li>Data over anecdotes</li>
-          <li>Impact over hype</li>
-          <li>Causes over symptoms</li>
-        </ul>
-      <p>Most people have a bias for short-term execution. This can be necessary for survival. Only exceptional ventures optimize for the long-term.</p>
+        Long-term thinking is a forcing function that powerfully aligns
+        organizations and individuals. Thinking long term means valuing:
+      </p>
+      <ul style={{ marginTop: '1rem' }}>
+        <li>People over products</li>
+        <li>Character over skills</li>
+        <li>Trends over spikes</li>
+        <li>Norms over exceptions</li>
+        <li>Teaching over showing</li>
+        <li>Philosophy over tactics</li>
+        <li>Habits over heroics</li>
+        <li>Smooth over fast</li>
+        <li>Data over anecdotes</li>
+        <li>Impact over hype</li>
+        <li>Causes over symptoms</li>
+      </ul>
+      <p>
+        Most people have a bias for short-term execution. This can be necessary
+        for survival. Only exceptional ventures optimize for the long-term.
+      </p>
     </div>
 
+    <div>
       <div>
-        <div>
-          <h5>My Values</h5>
-          <Value>Optimize for the Long-Term</Value>
-          <Value>Cultivate Understanding</Value>
-          <Value>Fearless Bravery</Value>
-          <Value>Go Happy</Value>
-          <LinkWithArrow href="/values">Read more about my values</LinkWithArrow>
-        </div>
+        <h5>My Values</h5>
+        <Value>Optimize for the Long-Term</Value>
+        <Value>Cultivate Understanding</Value>
+        <Value>Fearless Bravery</Value>
+        <Value>Go Happy</Value>
+        <LinkWithArrow href="/values">Read more about my values</LinkWithArrow>
       </div>
+    </div>
   </LongTermWrap>
 )
 
 const Wrap = styled.section`
   padding: 2rem;
-  @media only screen and (min-width: 80rem){
+  @media only screen and (min-width: 80rem) {
     padding: 2rem 10rem;
   }
 `
@@ -259,13 +261,13 @@ const LongTermWrap = styled.div`
   ul {
     columns: 2;
   }
-  @media only screen and (min-width: 80rem){
+  @media only screen and (min-width: 80rem) {
     padding-left: 6rem;
   }
 `
 
 const FlexWrap = styled(Wrap)`
-  @media only screen and (min-width: 80rem){
+  @media only screen and (min-width: 80rem) {
     display: flex;
   }
 `
@@ -276,7 +278,7 @@ const ExperienceWrap = styled(Wrap)`
   color: #888;
   position: relative;
   z-index: 1000;
-  @media only screen and (min-width: 80rem){
+  @media only screen and (min-width: 80rem) {
     & > div {
       display: flex;
     }
@@ -297,7 +299,7 @@ const ExperienceWrap = styled(Wrap)`
     margin-top: 0px;
     margin-bottom: 1rem;
   }
-  @media only screen and (min-width: 80rem){
+  @media only screen and (min-width: 80rem) {
     padding: 2rem 10rem;
   }
 `
@@ -336,14 +338,14 @@ const CurrentWork = styled.div`
 
 const RecentPost = ({ post }) => {
   return (
-    <div style={{ position: 'relative',
-      overflow: 'hidden',
-      maxWidth: '600px' }}>
+    <div
+      style={{ position: 'relative', overflow: 'hidden', maxWidth: '600px' }}
+    >
       <a
         style={{ position: 'relative', display: 'block', zIndex: 100 }}
         href={`/blog/${post.slug}`}
       >
-        <Lead style={{ marginTop: 0, paddingTop: '1rem'}}>{post.title}</Lead>
+        <Lead style={{ marginTop: 0, paddingTop: '1rem' }}>{post.title}</Lead>
         <p>{post.excerpt}</p>
       </a>
     </div>
@@ -366,24 +368,24 @@ const Experience = ({ episodes = [] }) => {
                 Guild Education
               </a>
             </h4>
-            Supporting engineers responsible for content delivery services for millions of end users.
+            Supporting engineers responsible for content delivery services for
+            millions of end users.
           </div>
         </WorkItem>
         <WorkItem>
-            <IconWrap>
-              <DtLogo />
-            </IconWrap>
+          <IconWrap>
+            <DtLogo />
+          </IconWrap>
           <div style={{ position: 'relative', zIndex: 100 }}>
             <h4>
               Host,{' '}
               <a href="https://spec.fm/podcasts/developer-tea">Developer Tea</a>
             </h4>
-            A top-100 tech podcast
-            with over 15m all-time downloads by
-            listeners in over 200 countries.
+            A top-100 tech podcast with over 15m all-time downloads by listeners
+            in over 200 countries.
             <br />
             <Link href={'/developer-tea'}>
-              Latest episode: {episodes.length ? episodes[0].title : ""}
+              Latest episode: {episodes.length ? episodes[0].title : ''}
             </Link>
           </div>
         </WorkItem>
@@ -413,7 +415,7 @@ class BlogIndex extends React.Component {
         <FlexWrap>
           <div>
             <h5>Recent Posts</h5>
-            {posts.slice(0,5).map(post => ( 
+            {posts.slice(0, 5).map((post) => (
               <RecentPost post={post} />
             ))}
             <LinkWithArrow href="/blog">View All Posts</LinkWithArrow>
@@ -428,18 +430,18 @@ class BlogIndex extends React.Component {
 }
 
 export async function getStaticProps() {
-	// Call an external API endpoint to get posts.
-	// You can use any data fetching library
+  // Call an external API endpoint to get posts.
+  // You can use any data fetching library
 
-	// By returning { props: { posts } }, the Blog component
-	// will receive `posts` as a prop at build time
-  const posts = await getAllArticles();
+  // By returning { props: { posts } }, the Blog component
+  // will receive `posts` as a prop at build time
+  const posts = await getAllArticles()
 
-	return {
-		props: {
-			posts,
-		},
-	}
+  return {
+    props: {
+      posts,
+    },
+  }
 }
 
 export default BlogIndex
