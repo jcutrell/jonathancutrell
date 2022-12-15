@@ -12,11 +12,12 @@ import siteConfig from '../site-config'
 
 import { getEpisodes, pubDate, duration } from '../helpers/content-helpers'
 
+const SHOW_COUNT = 50
+
 class PodcastIndex extends React.Component {
   render() {
     const { data, episodes = [] } = this.props
     const siteTitle = siteConfig.title
-    const showCount = 100
 
     return (
       <SiteLayout location={this.props.location} title={siteTitle}>
@@ -24,7 +25,12 @@ class PodcastIndex extends React.Component {
           <h2>Developer Tea Episodes</h2>
           <p>
             I'm very thankful that we've been able to publish over 1,000
-            episodes of Developer Tea so far!
+            episodes of Developer Tea so far!{' '}
+            <em>
+              Note: Only the last 50 episodes of the show can be found here. The
+              whole catalog can be found at{' '}
+              <a href="https://developertea.com">DeveloperTea.com</a>
+            </em>
           </p>
           <p>
             P.S. If you want to give back and support Developer Tea,{' '}
@@ -35,7 +41,7 @@ class PodcastIndex extends React.Component {
             <a href="mailto:developertea@gmail.com">developertea@gmail.com</a>{' '}
             to talk about the show.
           </p>
-          {episodes.slice(0, showCount).map((node, i) => {
+          {episodes.slice(0, SHOW_COUNT).map((node, i) => {
             return (
               <div key={node.guid}>
                 <h3>
@@ -67,7 +73,7 @@ export async function getStaticProps() {
 
   // By returning { props: { posts } }, the Blog component
   // will receive `posts` as a prop at build time
-  const episodes = await getEpisodes({ pageSize: 100 })
+  const episodes = await getEpisodes({ pageSize: SHOW_COUNT })
 
   return {
     props: {
@@ -77,32 +83,3 @@ export async function getStaticProps() {
 }
 
 export default PodcastIndex
-
-/*
-export const pageQuery = graphql`
-  query 
-{
-  site {
-    siteMetadata {
-      title
-    }
-  }
-  allFeedDeveloperTea {
-    edges {
-      node {
-        title
-				isoDate(formatString: "MMMM Do, YYYY")
-				guid
-        contentSnippet
-        fields {
-          slug
-        }
-        enclosure {
-          url
-        } 
-      }
-    }
-  }
-}
-`
-*/

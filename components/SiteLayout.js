@@ -45,7 +45,7 @@ const GradientText = styled.span`
 `
 
 const components = {
-  pre: props => <div {...props} />,
+  pre: (props) => <div {...props} />,
   code: code,
 }
 
@@ -80,10 +80,7 @@ const Layout = ({ location, title, children }) => {
         <NavLink className={activeIf('/books', router)} href="/books">
           Books
         </NavLink>
-        <NavLink
-          className={activeIf('/developer-tea', router)}
-          href="/developer-tea"
-        >
+        <NavLink className={activeIf('/episodes', router)} href="/episodes">
           Podcast
         </NavLink>
         <NavLink

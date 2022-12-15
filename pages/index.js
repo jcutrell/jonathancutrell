@@ -378,13 +378,12 @@ const Experience = ({ episodes = [] }) => {
           </IconWrap>
           <div style={{ position: 'relative', zIndex: 100 }}>
             <h4>
-              Host,{' '}
-              <a href="https://spec.fm/podcasts/developer-tea">Developer Tea</a>
+              Host, <a href="https://developertea.com">Developer Tea</a>
             </h4>
             A top-100 tech podcast with over 15m all-time downloads by listeners
             in over 200 countries.
             <br />
-            <Link href={'/developer-tea'}>
+            <Link href={'/episodes'}>
               Latest episode: {episodes.length ? episodes[0].title : ''}
             </Link>
           </div>
@@ -415,7 +414,7 @@ class BlogIndex extends React.Component {
         <FlexWrap>
           <div>
             <h5>Recent Posts</h5>
-            {posts.slice(0, 5).map(post => (
+            {posts.slice(0, 5).map((post) => (
               <RecentPost post={post} />
             ))}
             <LinkWithArrow href="/blog">View All Posts</LinkWithArrow>

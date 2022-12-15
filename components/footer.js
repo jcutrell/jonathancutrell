@@ -17,7 +17,7 @@ const Footer = () => (
   <Foot>
     &nbsp; &copy; 2022 <Link href="/blog">Blog</Link>
     <Link href="/books">Books</Link>
-    <Link href="/developer-tea">Podcast</Link>
+    <Link href="/episodes">Podcast</Link>
     <Link href="/values">Values</Link>
     <Link href="https://linkedin.com/in/jcutrell">LinkedIn</Link>
     <Link href="https://twitter.com/jcutrell">Twitter</Link>
