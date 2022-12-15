@@ -41,6 +41,7 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
+    "lint": "next lint",
     "dev": "next dev",
     "build": "IS_BUILD=true next build",
     "start": "next start"
