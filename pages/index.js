@@ -3,11 +3,12 @@ import React from 'react'
 import styled, { keyframes } from 'styled-components'
 import { getAllArticles } from '../helpers/content-helpers'
 
-import Layout from '../components/Layout'
+import Layout from '../layouts/Layout'
 import Footer from '../components/Footer'
-import { Wrap, LinkWithArrow } from '../components/shared'
+import { LinkWithArrow } from '../components/shared'
 import Link from 'next/link'
-import { GuildLogo, DtLogo } from '../components/icons'
+import GuildLogo from '../components/icons/guild-logo'
+import DtLogo from '../components/icons/dt-logo'
 
 import siteConfig from '../site-config'
 
@@ -247,6 +248,12 @@ const LongTermWrap = styled.div`
   }
   @media only screen and (min-width: 80rem) {
     padding-left: 6rem;
+  }
+`
+const Wrap = styled.section`
+  padding: 2rem;
+  @media only screen and (min-width: 80rem) {
+    padding: 2rem 10rem;
   }
 `
 

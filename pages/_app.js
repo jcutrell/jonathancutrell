@@ -1,13 +1,13 @@
 import 'normalize.css/normalize.css'
 import '../styles/globals.css'
-import SiteLayout from '../components/SiteLayout'
+import Layout from '../layouts/Layout'
 //import { StateProvider } from "../store.js";
 
 function MainApp({ Component, pageProps }) {
   return (
-    <SiteLayout>
+    <Layout>
       <Component {...pageProps} />
-    </SiteLayout>
+    </Layout>
   )
 }
 
