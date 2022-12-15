@@ -1,11 +1,9 @@
 {
 		"presets": [
 				"next/babel",
-        "stage-0"
 		],
 
 		"plugins": [
-      ["@babel/plugin-proposal-optional-chaining"],
       [
           "styled-components",
           {
