@@ -4,6 +4,11 @@ import { getAllContentIn, pubDate } from '../helpers/content-helpers'
 import siteConfig from '../site-config'
 import styled from 'styled-components'
 
+import SiteLayout from '../../components/SiteLayout'
+import { Wrap } from '../../components/shared'
+import Link from 'next/link'
+import Footer from '../../components/Footer'
+
 const BlogPost = styled.section`
   margin-bottom: 1rem;
 `
@@ -15,18 +20,9 @@ class BlogIndex extends React.Component {
 
     return (
       <SiteLayout location={this.props.location} title={siteTitle}>
-        <SEO
-          title="All posts"
-          keywords={[
-            `Jonathan Cutrell`,
-            `Developer Tea`,
-            `spec.fm`,
-            `clearbit`,
-          ]}
-        />
         <Wrap>
           <h2>Blog</h2>
-          {posts.map(post => {
+          {posts.map((post) => {
             const title = post.title || post.slug
             return (
               <BlogPost key={post.slug}>

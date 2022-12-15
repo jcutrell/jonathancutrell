@@ -1,5 +1,6 @@
+import { Html, Head, Main, NextScript } from 'next/document'
 
-const MyDocument = props => {
+const MyDocument = () => {
   return (
     <Html>
       <Head>

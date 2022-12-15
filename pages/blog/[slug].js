@@ -1,8 +1,8 @@
-
 import { useRouter } from 'next/router'
 
 import siteConfig from '../../site-config'
 import { serialize } from 'next-mdx-remote/serialize'
+import { MDXRemote } from 'next-mdx-remote'
 import styled from 'styled-components'
 import {
   getArticle,
@@ -11,6 +11,11 @@ import {
   pubDate,
 } from '../../helpers/content-helpers'
 import { mdxOptions } from '../../site-config'
+import SiteLayout from '../../components/SiteLayout'
+import { Wrap } from '../../components/shared'
+import Link from 'next/link'
+import Footer from '../../components/Footer'
+import Bio from '../../components/Bio'
 
 const Article = styled.article`
   width: 100%;

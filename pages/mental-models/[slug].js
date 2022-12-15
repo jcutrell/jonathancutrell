@@ -4,11 +4,16 @@ import * as humanizeString from 'humanize-string'
 import styled from 'styled-components'
 
 import { serialize } from 'next-mdx-remote/serialize'
+import { MDXRemote } from 'next-mdx-remote'
 
-import {getAllContentIn, getContentBySlug} from '../../helpers/content-helpers';
-import siteConfig from '../../site-config';
+import SiteLayout from '../components/SiteLayout'
+import Link from 'next/link'
 
-
+import {
+  getAllContentIn,
+  getContentBySlug,
+} from '../../helpers/content-helpers'
+import siteConfig from '../../site-config'
 
 const Wrap = styled.section`
   display: flex;
@@ -24,13 +29,6 @@ const Wrap = styled.section`
     border-width: 0;
     border-left-width: 5px;
   }
-`
-
-const Tags = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 40rem;
-  margin: 0 auto;
 `
 
 const Model = styled.div`
@@ -54,15 +52,6 @@ const Model = styled.div`
   }
 `
 
-const Tag = styled.a`
-  display: inline-block;
-  padding: 0.2rem 0.6rem;
-  cursor: pointer;
-  background: ${props => (props.active ? '#f4f8ff' : 'transparent')};
-`
-
-const flatMap = (f, xs) => xs.reduce((acc, x) => acc.concat(f(x)), [])
-
 class BlogIndex extends React.Component {
   render() {
     const { post } = this.props
@@ -76,7 +65,9 @@ class BlogIndex extends React.Component {
           <Model key={post.slug}>
             <h2>
               <Link href={`/mental-models/${post.slug}`}>
-                {humanizeString(post?.title || "") || humanizeString(post.slug.replace(/\//g, '')) || ""}
+                {humanizeString(post?.title || '') ||
+                  humanizeString(post.slug.replace(/\//g, '')) ||
+                  ''}
               </Link>
             </h2>
             <blockquote>
@@ -90,33 +81,39 @@ class BlogIndex extends React.Component {
   }
 }
 
-export default BlogIndex 
+export default BlogIndex
 
 export async function getStaticPaths() {
-  const articles = await getAllContentIn({ folder: "mental-models", extension: "mdx"})
-  const slugs = articles.map(article => article.slug)
-  const paths = slugs.map(s => ({ params: { slug: s }}))
-	return {
-		paths: paths,
-		fallback: false, // can also be true or 'blocking'
-	}
+  const articles = await getAllContentIn({
+    folder: 'mental-models',
+    extension: 'mdx',
+  })
+  const slugs = articles.map((article) => article.slug)
+  const paths = slugs.map((s) => ({ params: { slug: s } }))
+  return {
+    paths: paths,
+    fallback: false, // can also be true or 'blocking'
+  }
 }
 
 export async function getStaticProps(context) {
-	// Call an external API endpoint to get posts.
-	// You can use any data fetching library
+  // Call an external API endpoint to get posts.
+  // You can use any data fetching library
 
-	// By returning { props: { posts } }, the Blog component
-	// will receive `posts` as a prop at build time
-  const { params } = context;
-  const post = await getContentBySlug({ folder: "mental-models", extension: "mdx", slug: params.slug });
+  // By returning { props: { posts } }, the Blog component
+  // will receive `posts` as a prop at build time
+  const { params } = context
+  const post = await getContentBySlug({
+    folder: 'mental-models',
+    extension: 'mdx',
+    slug: params.slug,
+  })
 
   post.mdxSource = await serialize(post.content, { parseFrontmatter: false })
 
-	return {
-		props: {
-			post,
-		},
-	}
+  return {
+    props: {
+      post,
+    },
+  }
 }
-

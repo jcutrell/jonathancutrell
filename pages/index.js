@@ -3,6 +3,12 @@ import React from 'react'
 import styled, { keyframes } from 'styled-components'
 import { getAllArticles } from '../helpers/content-helpers'
 
+import Layout from '../components/Layout'
+import Footer from '../components/Footer'
+import { Wrap, LinkWithArrow } from '../components/shared'
+import Link from 'next/link'
+import { GuildLogo, DtLogo } from '../components/icons'
+
 import siteConfig from '../site-config'
 
 const rotateHue = keyframes`
@@ -127,10 +133,6 @@ const SubHeader = styled.h2`
     color: #234156;
   }
 `
-const Skill = styled.span`
-  padding: 0 2rem 1rem 0;
-`
-
 const Nav = styled.nav`
   position: relative;
   font-size: 1rem;
@@ -173,11 +175,11 @@ const SlantButton = styled.span`
   z-index: -1;
 `
 
-const Header = ({ data, picRef }) => {
+const Header = ({ picRef }) => {
   return (
     <HomeHeader>
       <HeaderContent>
-        <HeaderTitle>Hello, I'm Jonathan&nbsp;Cutrell.</HeaderTitle>
+        <HeaderTitle>Hello, I&apos;m Jonathan&nbsp;Cutrell.</HeaderTitle>
         <SubHeader>
           Engineering manager with a chosen bias for long-term thinking.
         </SubHeader>
@@ -237,13 +239,6 @@ const LongTerm = () => (
     </div>
   </LongTermWrap>
 )
-
-const Wrap = styled.section`
-  padding: 2rem;
-  @media only screen and (min-width: 80rem) {
-    padding: 2rem 10rem;
-  }
-`
 
 const LongTermWrap = styled.div`
   max-width: 50rem;
@@ -353,7 +348,11 @@ const Experience = ({ episodes = [] }) => {
           <div style={{ position: 'relative', zIndex: 100 }}>
             <h4>
               Engineering Manager,{' '}
-              <a href="https://guildeducation.com" target="_blank">
+              <a
+                href="https://guildeducation.com"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Guild Education
               </a>
             </h4>
@@ -394,17 +393,17 @@ class BlogIndex extends React.Component {
   }
 
   render() {
-    const { data, posts, episodes } = this.props
+    const { posts, episodes } = this.props
     const siteTitle = siteConfig.title
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <Header data={data} picRef={this.headerPicRef} />
+        <Header picRef={this.headerPicRef} />
         <FlexWrap>
           <div>
             <h5>Recent Posts</h5>
             {posts.slice(0, 5).map((post) => (
-              <RecentPost post={post} />
+              <RecentPost post={post} key={post.slug} />
             ))}
             <LinkWithArrow href="/blog">View All Posts</LinkWithArrow>
           </div>

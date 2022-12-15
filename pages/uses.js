@@ -1,22 +1,24 @@
-
-
 import { serialize } from 'next-mdx-remote/serialize'
+import { MDXRemote } from 'next-mdx-remote'
 
 import { getAllContentIn } from '../helpers/content-helpers'
 import siteConfig from '../site-config'
 import { mdxOptions } from '../site-config'
 
-const Uses = props => {
+import SiteLayout from '../components/SiteLayout'
+import Bio from '../components/Bio'
+import Wrap from '../components/shared'
+
+const Uses = (props) => {
   const siteTitle = siteConfig.title
   const posts = props.posts
 
   return (
     <SiteLayout location={props.location} title={siteTitle}>
-      <SEO title="Jonathan Cutrell :: Uses" />
       <Wrap>
         <h1>Uses</h1>
-        {posts.map(val => (
-          <MDXRemote {...val.mdxSource} />
+        {posts.map((val) => (
+          <MDXRemote {...val.mdxSource} key={val.title} />
         ))}
         <hr />
         <Bio />
@@ -35,7 +37,7 @@ export async function getStaticProps() {
   const posts = await getAllContentIn({ folder: 'uses' })
 
   await Promise.all(
-    posts.map(async post => {
+    posts.map(async (post) => {
       post.mdxSource = await serialize(post.content, mdxOptions)
       return
     })

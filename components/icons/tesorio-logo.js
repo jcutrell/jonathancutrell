@@ -9,9 +9,9 @@ const Icon = () => (
     <g
       id="All-White"
       stroke="none"
-      stroke-width="1"
+      strokeWidth="1"
       fill="none"
-      fill-rule="evenodd"
+      fillRule="evenodd"
     >
       <rect
         id="Rectangle"

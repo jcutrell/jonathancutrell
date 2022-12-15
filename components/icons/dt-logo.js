@@ -2,7 +2,7 @@ const Icon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 310.5 318.8"
-    enable-background="new 0 0 310.5 318.8"
+    enableBackground="new 0 0 310.5 318.8"
   >
     <path
       fill="#9ED7CF"

@@ -8,12 +8,10 @@ import { serialize } from 'next-mdx-remote/serialize'
 import { getAllContentIn } from '../helpers/content-helpers'
 import siteConfig from '../site-config'
 
-const Tags = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 40rem;
-  margin: 0 auto;
-`
+import SiteLayout from '../components/SiteLayout'
+import { Wrap } from '../components/shared'
+import Link from 'next/link'
+import { MDXRemote } from 'next-mdx-remote'
 
 const Model = styled.div`
   width: 100%;
@@ -35,15 +33,6 @@ const Model = styled.div`
   }
 `
 
-const Tag = styled.a`
-  display: inline-block;
-  padding: 0.2rem 0.6rem;
-  cursor: pointer;
-  background: ${props => (props.active ? '#f4f8ff' : 'transparent')};
-`
-
-const flatMap = (f, xs) => xs.reduce((acc, x) => acc.concat(f(x)), [])
-
 class BlogIndex extends React.Component {
   render() {
     const { posts } = this.props
@@ -54,8 +43,8 @@ class BlogIndex extends React.Component {
         <SiteLayout location={this.props.location} title={siteTitle} />
         <Wrap>
           {posts
-            .filter(post => post.content.length)
-            .map(post => {
+            .filter((post) => post.content.length)
+            .map((post) => {
               const { subtitle } = post
               return (
                 <Model key={post.slug}>
@@ -91,7 +80,7 @@ export async function getStaticProps() {
   })
 
   await Promise.all(
-    posts.map(async post => {
+    posts.map(async (post) => {
       post.mdxSource = await serialize(post.content, {
         parseFrontmatter: false,
       })

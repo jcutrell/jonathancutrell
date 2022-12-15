@@ -1,5 +1,7 @@
-import React from 'react'
 import styled from 'styled-components'
+import SiteLayout from '../../components/SiteLayout'
+import { Wrap } from '../../components/shared'
+import { MDXRemote } from 'next-mdx-remote'
 
 import siteConfig from '../site-config'
 
@@ -26,30 +28,20 @@ const Book = styled.div`
 
 class Books extends React.Component {
   render() {
-    const { data, posts } = this.props
+    const { posts } = this.props
     const siteTitle = siteConfig.title
 
     return (
       <SiteLayout location={this.props.location} title={siteTitle}>
-        <SEO
-          title="All posts"
-          keywords={[
-            `Jonathan Cutrell`,
-            `Developer Tea`,
-            `spec.fm`,
-            `clearbit`,
-          ]}
-        />
         <Wrap>
           <h2>Books</h2>
           <p>
             Note: This page is woefully under-utilized. I am leaving it here
             because I want it to be a full virtual bookshelf soon.
           </p>
-          {posts.map(book => {
-            console.log(book)
+          {posts.map((book) => {
             return (
-              <Book>
+              <Book key={book.title}>
                 <a href={book.url} aria-label={`Buy ${book.title}`}>
                   <img src={book.img} alt="" /> Purchase on Amazon
                 </a>
@@ -82,7 +74,7 @@ export async function getStaticProps() {
   const posts = await getAllContentIn({ folder: 'books' })
 
   await Promise.all(
-    posts.map(async post => {
+    posts.map(async (post) => {
       post.mdxSource = await serialize(post.content, {
         parseFrontmatter: false,
       })

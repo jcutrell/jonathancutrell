@@ -1,8 +1,42 @@
 import PropTypes from 'prop-types'
 
-function SEO({ description, lang, meta, keywords, title }) {
+//function SEO({ description, lang, meta, keywords, title }) {
+function SEO() {
   return <></>
-  return (
+}
+
+SEO.defaultProps = {
+  lang: `en`,
+  meta: [],
+  keywords: [],
+}
+
+SEO.propTypes = {
+  description: PropTypes.string,
+  lang: PropTypes.string,
+  meta: PropTypes.array,
+  keywords: PropTypes.arrayOf(PropTypes.string),
+  title: PropTypes.string.isRequired,
+}
+
+export default SEO
+
+/*
+const detailsQuery = graphql`
+  query DefaultSEOQuery {
+    site {
+      siteMetadata {
+        title
+        description
+        author
+      }
+    }
+  }
+`
+
+
+
+return (
     <StaticQuery
       query={detailsQuery}
       render={data => {
@@ -62,35 +96,5 @@ function SEO({ description, lang, meta, keywords, title }) {
         )
       }}
     />
-  )
-}
 
-SEO.defaultProps = {
-  lang: `en`,
-  meta: [],
-  keywords: [],
-}
-
-SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.array,
-  keywords: PropTypes.arrayOf(PropTypes.string),
-  title: PropTypes.string.isRequired,
-}
-
-export default SEO
-
-/*
-const detailsQuery = graphql`
-  query DefaultSEOQuery {
-    site {
-      siteMetadata {
-        title
-        description
-        author
-      }
-    }
-  }
-`
 */

@@ -1,23 +1,26 @@
 import React from 'react'
 
 import { serialize } from 'next-mdx-remote/serialize'
+import { MDXRemote } from 'next-mdx-remote'
 
 import { getAllContentIn } from '../helpers/content-helpers'
 import siteConfig from '../site-config'
 import { mdxOptions } from '../site-config'
+import Bio from '../components/Bio'
+import SiteLayout from '../components/SiteLayout'
+import { Wrap } from '../components/shared'
 
 class Values extends React.Component {
   render() {
-    const { data, posts } = this.props
+    const { posts } = this.props
     const siteTitle = siteConfig.title
 
     return (
       <SiteLayout location={this.props.location} title={siteTitle}>
-        <SEO title="Jonathan Cutrell :: My Values" />
         <Wrap>
           <h1>My values</h1>
-          {posts.map(val => (
-            <MDXRemote {...val.mdxSource} />
+          {posts.map((val) => (
+            <MDXRemote {...val.mdxSource} key={val.title} />
           ))}
           <hr />
           <Bio />
@@ -37,7 +40,7 @@ export async function getStaticProps() {
   const posts = await getAllContentIn({ folder: 'values' })
 
   await Promise.all(
-    posts.map(async post => {
+    posts.map(async (post) => {
       post.mdxSource = await serialize(post.content, mdxOptions)
       return
     })

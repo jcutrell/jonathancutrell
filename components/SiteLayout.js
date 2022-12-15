@@ -1,6 +1,7 @@
 import styled, { createGlobalStyle } from 'styled-components'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { MDXProvider } from '@mdx-js/react'
 
 const GlobalStyle = createGlobalStyle`
 	blockquote {
@@ -57,8 +58,7 @@ const SiteWrap = styled.main`
   padding-bottom: 2rem;
 `
 
-const Layout = ({ location, title, children }) => {
-  let header = null
+const Layout = ({ children }) => {
   const router = useRouter()
 
   return (

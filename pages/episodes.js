@@ -4,11 +4,16 @@ import siteConfig from '../site-config'
 
 import { getEpisodes, pubDate, duration } from '../helpers/content-helpers'
 
+import SiteLayout from '../../components/SiteLayout'
+import { Wrap, LinkWithArrow } from '../../components/shared'
+import Link from 'next/link'
+import Footer from '../../components/Footer'
+
 const SHOW_COUNT = 50
 
 class PodcastIndex extends React.Component {
   render() {
-    const { data, episodes = [] } = this.props
+    const { episodes = [] } = this.props
     const siteTitle = siteConfig.title
 
     return (
@@ -33,7 +38,7 @@ class PodcastIndex extends React.Component {
             <a href="mailto:developertea@gmail.com">developertea@gmail.com</a>{' '}
             to talk about the show.
           </p>
-          {episodes.slice(0, SHOW_COUNT).map((node, i) => {
+          {episodes.slice(0, SHOW_COUNT).map((node) => {
             return (
               <div key={node.guid}>
                 <h3>

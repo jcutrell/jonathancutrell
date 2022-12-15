@@ -3,9 +3,13 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 
 import { serialize } from 'next-mdx-remote/serialize'
+import { MDXRemote } from 'next-mdx-remote'
 
 import { getAllContentIn } from '../helpers/content-helpers'
 import siteConfig from '../site-config'
+
+import SiteLayout from '../components/SiteLayout'
+import { Wrap } from '../components/shared'
 
 const TestimonialWrap = styled.section`
   display: flex;
@@ -52,19 +56,17 @@ const Tag = styled.a`
   display: inline-block;
   padding: 0.2rem 0.6rem;
   cursor: pointer;
-  background: ${props => (props.active ? '#f4f8ff' : 'transparent')};
+  background: ${(props) => (props.active ? '#f4f8ff' : 'transparent')};
 `
 
-const flatMap = (f, xs) => xs.reduce((acc, x) => acc.concat(f(x)), [])
-
-const PostFilter = props => {
+const PostFilter = (props) => {
   const [filter, setFilter] = useState('All')
 
-  const clickTag = tag => {
+  const clickTag = (tag) => {
     setFilter(tag)
   }
 
-  const renderTag = (tag, onClick) => {
+  const renderTag = (tag) => {
     return (
       <Tag onClick={() => clickTag(tag)} active={filter == tag}>
         {tag}
@@ -72,9 +74,9 @@ const PostFilter = props => {
     )
   }
 
-  const filterPosts = posts => {
+  const filterPosts = (posts) => {
     if (filter && filter !== 'All') {
-      return posts.filter(post => post.tags.includes(filter))
+      return posts.filter((post) => post.tags.includes(filter))
     } else {
       return posts
     }
@@ -84,7 +86,7 @@ const PostFilter = props => {
     new Set(
       [].concat.apply(
         [],
-        (props.posts || []).map(post => post.tags)
+        (props.posts || []).map((post) => post.tags)
       )
     )
   )
@@ -102,7 +104,7 @@ const PostFilter = props => {
 
 class BlogIndex extends React.Component {
   render() {
-    const { data, posts } = this.props
+    const { posts } = this.props
     const siteTitle = siteConfig.title
 
     return (
@@ -110,10 +112,10 @@ class BlogIndex extends React.Component {
         <SiteLayout location={this.props.location} title={siteTitle}>
           <Wrap>
             <h3>What People Say</h3>
-            <p>Here's what some people have said about working with me.</p>
+            <p>Here&apos;s what some people have said about working with me.</p>
             <PostFilter {...this.props} posts={posts}>
-              {props =>
-                props.posts.map(post => {
+              {(props) =>
+                props.posts.map((post) => {
                   const { title, subtitle } = post
                   return (
                     <Testimonial key={post.slug}>
@@ -147,7 +149,7 @@ export async function getStaticProps() {
   const posts = await getAllContentIn({ folder: 'testimonials' })
 
   await Promise.all(
-    posts.map(async post => {
+    posts.map(async (post) => {
       post.mdxSource = await serialize(post.content, {
         parseFrontmatter: false,
       })
