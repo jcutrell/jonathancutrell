@@ -6,10 +6,6 @@ excerpt: |
   When people talk about their origin stories, there's one thread that seems to be relatively common, give or take a few creators. At some point, the creator "just finally did it."
 ---
 
-When people talk about their origin stories, there's one thread that seems to be relatively common, give or take a few creators. At some point, the creator "just finally did it."
-
-<!--more-->
-
 There's a moment of &mdash; let's call it "reckless abandon", or as <em>Ex Machina</em> refers to it, a Pollock-ian moment of disregard or entropy or untargeted action &mdash; the moment where we say "I'm not sure if this step is perfect or calculated quite correctly, but I'm going to invest a little bit more than just thought."
 
 That moment seems to be such an important catalyst, and I don't fully know why, but I have a guess.

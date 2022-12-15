@@ -33,36 +33,32 @@ I know, it's a hard problem to solve. I know, it seems like not knowing about a 
 
 <h2>When to pick tools: 6 guidelines</h2>
 <em>Note: this is not a cohesive list of the only times you should pick tools, but it should give you some idea of how to think.</em>
-<ol>
-<li>When you've got a problem that is proveably unsolvable or otherwise extremely inefficient to solve with current tools, especially if that problem has already been solved elsewhere. (If you're a C programmer and you need to serve a webpage, it's probably a good idea to learn about an existing tool like Apache instead of rewriting a web server in C.)</li>
-<li>When switching provides undeniable and exponential long-term gains. For example, switching to a new text editor that will increase your productivity every moment you are using it (I did this recently by moving to vim).</li>
-<li>When the tool is an easy win. Pick tools that are easy to adopt and provide obvious value without much investment.</li>
-<li>Lest we be hacked, upgrade your tools when there are security vulnerabilities in that tool.</li>
-<li>If You rely on your tool having adequate support or community involvement, it might be a good idea to choose a new tool when an old tool's support or community become dormant. With that said, choose based on your values in the first place. If the community is an extremely important value to you in the long run, only choose to invest time into tools that have a thriving, vibrant, and committed community.</li>
-<li>When the tool stacks well on your existing toolset. For example, if you have already learned HTML and CSS, it's probably a good idea to learn JavaScript, as the gains you receive by learning JavaScript are naturally complemented and increased by your knowledge of HTML and CSS. Other stacks you could learn:
-<ul>
-  <li>You know Assembler? Learn C.</li>
-  <li>You know PHP? Learn Laravel.</li>
-  <li>You know LISP? Try out emacs.</li>
-  <li>You know Ruby? Learn about Rack or mruby.</li>
-  <li>You know Objective-C? Look into Swift.</li>
-  <li>You know JavaScript? Learn about how Node/IO.js works.</li>
-  <li>You know Java? Learn about virtualization, or learn Scala.</li>
-  <li>You know Apache? Learn some Linux sysadmin basics.</li>
-</ul>
-</li>
-</ol>
+
+- When you've got a problem that is proveably unsolvable or otherwise extremely inefficient to solve with current tools, especially if that problem has already been solved elsewhere. (If you're a C programmer and you need to serve a webpage, it's probably a good idea to learn about an existing tool like Apache instead of rewriting a web server in C.)
+- When switching provides undeniable and exponential long-term gains. For example, switching to a new text editor that will increase your productivity every moment you are using it (I did this recently by moving to vim).
+- When the tool is an easy win. Pick tools that are easy to adopt and provide obvious value without much investment.
+- Lest we be hacked, upgrade your tools when there are security vulnerabilities in that tool.
+- If You rely on your tool having adequate support or community involvement, it might be a good idea to choose a new tool when an old tool's support or community become dormant. With that said, choose based on your values in the first place. If the community is an extremely important value to you in the long run, only choose to invest time into tools that have a thriving, vibrant, and committed community.
+- When the tool stacks well on your existing toolset. For example, if you have already learned HTML and CSS, it's probably a good idea to learn JavaScript, as the gains you receive by learning JavaScript are naturally complemented and increased by your knowledge of HTML and CSS. Other stacks you could learn:
+
+  - You know Assembler? Learn C.
+  - You know PHP? Learn Laravel.
+  - You know LISP? Try out emacs.
+  - You know Ruby? Learn about Rack or mruby.
+  - You know Objective-C? Look into Swift.
+  - You know JavaScript? Learn about how Node/IO.js works.
+  - You know Java? Learn about virtualization, or learn Scala.
+  - You know Apache? Learn some Linux sysadmin basics.
 
 Pro tip: Be certain that you differentiate your <em>learning</em> efforts from your <em>tool-picking</em> efforts. You might choose to learn a new language that doesn't stack well with your current toolset, just to expand your brain's ability to adapt and think in new patterns. This has value, even if you never use that language as an actual tool. This is the whole idea of <a href="https://developertea.com/episodes/6877">code kata</a>.
 
 <h2>5 step guide to picking tools</h2>
-<ol>
-<li>Look at your materials (read: consumer devices, browsers, iOS APIs, your unique service offering, etc)</li>
-<li>Look at the available toolset (languages, frameworks, hardware, outsourced efforts)</li>
-<li>Imagine your product (you fill in the parentheses on this one)</li>
-<li>Pick the tools that can turn your materials into your product (make your best educated guess)</li>
-<li>Repeat every 2-3 years, keeping a majority of the tools you picked previously, and dropping only the ones that didn't work so well.</li>
-</ol>
+
+1. Look at your materials (read: consumer devices, browsers, iOS APIs, your unique service offering, etc)
+1. Look at the available toolset (languages, frameworks, hardware, outsourced efforts)
+1. Imagine your product (you fill in the parentheses on this one)
+1. Pick the tools that can turn your materials into your product (make your best educated guess)
+1. Repeat every 2-3 years, keeping a majority of the tools you picked previously, and dropping only the ones that didn't work so well.
 
 <h2>Conclusion</h2>
 You use your toolset every day; it's natural to want to refine that toolset. But changing your toolset constantly might mean that instead of spending time becoming a craftsman, you are just wasting your time constantly tool shopping. Learn to say no when your tools are perfectly capable of doing the job you need for them to do, and learn how to properly adopt new tools when the time and situation are right.
