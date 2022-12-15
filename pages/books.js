@@ -52,7 +52,7 @@ class Books extends React.Component {
             Note: This page is woefully under-utilized. I am leaving it here
             because I want it to be a full virtual bookshelf soon.
           </p>
-          {posts.map((book) => {
+          {posts.map(book => {
             console.log(book)
             return (
               <Book>
@@ -88,7 +88,7 @@ export async function getStaticProps() {
   const posts = await getAllContentIn({ folder: 'books' })
 
   await Promise.all(
-    posts.map(async (post) => {
+    posts.map(async post => {
       post.mdxSource = await serialize(post.content, {
         parseFrontmatter: false,
       })

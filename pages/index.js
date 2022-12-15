@@ -415,7 +415,7 @@ class BlogIndex extends React.Component {
         <FlexWrap>
           <div>
             <h5>Recent Posts</h5>
-            {posts.slice(0, 5).map((post) => (
+            {posts.slice(0, 5).map(post => (
               <RecentPost post={post} />
             ))}
             <LinkWithArrow href="/blog">View All Posts</LinkWithArrow>

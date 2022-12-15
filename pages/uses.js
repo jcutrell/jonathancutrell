@@ -12,7 +12,7 @@ import { getAllContentIn } from '../helpers/content-helpers'
 import siteConfig from '../site-config'
 import { mdxOptions } from '../site-config'
 
-const Uses = (props) => {
+const Uses = props => {
   const siteTitle = siteConfig.title
   const posts = props.posts
 
@@ -21,7 +21,7 @@ const Uses = (props) => {
       <SEO title="Jonathan Cutrell :: Uses" />
       <Wrap>
         <h1>Uses</h1>
-        {posts.map((val) => (
+        {posts.map(val => (
           <MDXRemote {...val.mdxSource} />
         ))}
         <hr />
@@ -41,7 +41,7 @@ export async function getStaticProps() {
   const posts = await getAllContentIn({ folder: 'uses' })
 
   await Promise.all(
-    posts.map(async (post) => {
+    posts.map(async post => {
       post.mdxSource = await serialize(post.content, mdxOptions)
       return
     })

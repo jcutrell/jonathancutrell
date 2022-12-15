@@ -56,15 +56,15 @@ const Tag = styled.a`
   display: inline-block;
   padding: 0.2rem 0.6rem;
   cursor: pointer;
-  background: ${(props) => (props.active ? '#f4f8ff' : 'transparent')};
+  background: ${props => (props.active ? '#f4f8ff' : 'transparent')};
 `
 
 const flatMap = (f, xs) => xs.reduce((acc, x) => acc.concat(f(x)), [])
 
-const PostFilter = (props) => {
+const PostFilter = props => {
   const [filter, setFilter] = useState('All')
 
-  const clickTag = (tag) => {
+  const clickTag = tag => {
     setFilter(tag)
   }
 
@@ -76,9 +76,9 @@ const PostFilter = (props) => {
     )
   }
 
-  const filterPosts = (posts) => {
+  const filterPosts = posts => {
     if (filter && filter !== 'All') {
-      return posts.filter((post) => post.tags.includes(filter))
+      return posts.filter(post => post.tags.includes(filter))
     } else {
       return posts
     }
@@ -88,7 +88,7 @@ const PostFilter = (props) => {
     new Set(
       [].concat.apply(
         [],
-        (props.posts || []).map((post) => post.tags)
+        (props.posts || []).map(post => post.tags)
       )
     )
   )
@@ -116,8 +116,8 @@ class BlogIndex extends React.Component {
             <h3>What People Say</h3>
             <p>Here's what some people have said about working with me.</p>
             <PostFilter {...this.props} posts={posts}>
-              {(props) =>
-                props.posts.map((post) => {
+              {props =>
+                props.posts.map(post => {
                   const { title, subtitle } = post
                   return (
                     <Testimonial key={post.slug}>
@@ -151,7 +151,7 @@ export async function getStaticProps() {
   const posts = await getAllContentIn({ folder: 'testimonials' })
 
   await Promise.all(
-    posts.map(async (post) => {
+    posts.map(async post => {
       post.mdxSource = await serialize(post.content, {
         parseFrontmatter: false,
       })

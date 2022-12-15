@@ -33,7 +33,7 @@ class BlogIndex extends React.Component {
         />
         <Wrap>
           <h2>Blog</h2>
-          {posts.map((post) => {
+          {posts.map(post => {
             const title = post.title || post.slug
             return (
               <BlogPost key={post.slug}>

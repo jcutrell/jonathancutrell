@@ -21,7 +21,7 @@ class Values extends React.Component {
         <SEO title="Jonathan Cutrell :: My Values" />
         <Wrap>
           <h1>My values</h1>
-          {posts.map((val) => (
+          {posts.map(val => (
             <MDXRemote {...val.mdxSource} />
           ))}
           <hr />
@@ -42,7 +42,7 @@ export async function getStaticProps() {
   const posts = await getAllContentIn({ folder: 'values' })
 
   await Promise.all(
-    posts.map(async (post) => {
+    posts.map(async post => {
       post.mdxSource = await serialize(post.content, mdxOptions)
       return
     })
