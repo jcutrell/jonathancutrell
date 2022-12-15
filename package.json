@@ -3,7 +3,6 @@
   "private": true,
   "dependencies": {
     "@babel/core": "7.15.8",
-    "babel-plugin-styled-components": "^2.0.7",
     "@mdx-js/loader": "^2.1.5",
     "@mdx-js/mdx": "1.6.22",
     "@mdx-js/react": "^2.1.5",
@@ -33,7 +32,8 @@
   "devDependencies": {
     "eslint": "7.32.0",
     "eslint-plugin-react": "^7.26.0",
-    "prettier": "^1.14.2"
+    "prettier": "^1.14.2",
+    "babel-plugin-styled-components": "^2.0.7"
   },
   "browser": {
     "fs": false
