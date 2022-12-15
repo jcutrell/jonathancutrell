@@ -7,7 +7,7 @@ const defaultStyles = {
   padding: '1rem',
 }
 
-const Code = ({ children, className = "", ...props }) => {
+const Code = ({ children, className = '', ...props }) => {
   const language = className.replace(/language-/, '') || ''
   if (props['react-live']) {
     return (
@@ -21,7 +21,7 @@ const Code = ({ children, className = "", ...props }) => {
     return (
       <Highlight {...defaultProps} code={children} language={language}>
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
-          <pre className={className} style={{...defaultStyles, ...style}}>
+          <pre className={className} style={{ ...defaultStyles, ...style }}>
             {tokens.map((line, i) => (
               <div {...getLineProps({ line, key: i })}>
                 {line.map((token, key) => (
@@ -36,4 +36,4 @@ const Code = ({ children, className = "", ...props }) => {
   }
 }
 
-export default Code;
+export default Code

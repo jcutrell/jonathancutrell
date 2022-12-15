@@ -45,7 +45,7 @@ const GradientText = styled.span`
 `
 
 const components = {
-  pre: (props) => <div {...props} />,
+  pre: props => <div {...props} />,
   code: code,
 }
 

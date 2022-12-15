@@ -10,7 +10,7 @@ export async function getAllContentIn({ folder = 'blog', extension = 'md' }) {
   const items = fs.readdirSync(path.join(process.cwd(), `content/${folder}`))
 
   return items
-    .filter((itemSlug) => itemSlug.endsWith(`.${extension}`))
+    .filter(itemSlug => itemSlug.endsWith(`.${extension}`))
     .reduce((allItems, itemSlug) => {
       const source = fs.readFileSync(
         path.join(process.cwd(), `content/${folder}`, itemSlug),
@@ -34,15 +34,15 @@ export async function getAllContentIn({ folder = 'blog', extension = 'md' }) {
 export function getSlugsIn({ folder = 'blog', extension = 'md' }) {
   const paths = fs
     .readdirSync(path.join(process.cwd(), `content/${folder}`))
-    .filter((path) => path.endsWith(extension))
-  return paths.map((path) => path.replace(`.${extension}`, ''))
+    .filter(path => path.endsWith(extension))
+  return paths.map(path => path.replace(`.${extension}`, ''))
 }
 
 export async function getAllArticles() {
   const articles = fs.readdirSync(path.join(process.cwd(), 'content/blog'))
 
   return articles
-    .filter((articleSlug) => articleSlug.endsWith('.md'))
+    .filter(articleSlug => articleSlug.endsWith('.md'))
     .reduce((allArticles, articleSlug) => {
       // get parsed data from mdx files in the "articles" dir
       const source = fs.readFileSync(
@@ -123,7 +123,7 @@ export async function getAllEpisodes() {
   return await getEpisodes({ page: 1, pageSize: 2000 })
 }
 
-export const pubDate = (date) => `${DateTime.fromISO(date).toLocaleString()}`
+export const pubDate = date => `${DateTime.fromISO(date).toLocaleString()}`
 
-export const duration = (durationInSeconds) =>
+export const duration = durationInSeconds =>
   `~${Math.round(durationInSeconds / 60)}m`

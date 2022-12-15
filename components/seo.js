@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
 function SEO({ description, lang, meta, keywords, title }) {
-  return (<></>)
+  return <></>
   return (
     <StaticQuery
       query={detailsQuery}
