@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import SiteLayout from '../components/SiteLayout'
 import Sidebar from '../components/Sidebar'
@@ -61,54 +61,47 @@ const Tag = styled.a`
 
 const flatMap = (f, xs) => xs.reduce((acc, x) => acc.concat(f(x)), [])
 
-class PostFilter extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      filter: 'All',
-    }
+const PostFilter = (props) => {
+  const [filter, setFilter] = useState('All')
+
+  const clickTag = (tag) => {
+    setFilter(tag)
   }
 
-  clickTag = (tag) => {
-    this.setState({ filter: tag })
-  }
-
-  renderTag = (tag, onClick) => {
+  const renderTag = (tag, onClick) => {
     return (
-      <Tag onClick={() => this.clickTag(tag)} active={this.state.filter == tag}>
+      <Tag onClick={() => clickTag(tag)} active={filter == tag}>
         {tag}
       </Tag>
     )
   }
 
-  filterPosts = (posts) => {
-    if (this.state.filter && this.state.filter !== 'All') {
-      return posts.filter((post) => post.tags.includes(this.state.filter))
+  const filterPosts = (posts) => {
+    if (filter && filter !== 'All') {
+      return posts.filter((post) => post.tags.includes(filter))
     } else {
       return posts
     }
   }
 
-  render() {
-    const tags = Array.from(
-      new Set(
-        [].concat.apply(
-          [],
-          (this.props.posts || []).map((post) => post.tags)
-        )
+  const tags = Array.from(
+    new Set(
+      [].concat.apply(
+        [],
+        (props.posts || []).map((post) => post.tags)
       )
     )
-    tags.unshift('All')
-    const posts = this.filterPosts(this.props.posts)
-    return (
-      <React.Fragment>
-        <Tags>{tags.map(this.renderTag)}</Tags>
-        <TestimonialWrap>
-          {this.props.children({ ...this.props, posts: posts })}
-        </TestimonialWrap>
-      </React.Fragment>
-    )
-  }
+  )
+  tags.unshift('All')
+  const posts = filterPosts(props.posts)
+  return (
+    <>
+      <Tags>{tags.map(renderTag)}</Tags>
+      <TestimonialWrap>
+        {props.children({ ...props, posts: posts })}
+      </TestimonialWrap>
+    </>
+  )
 }
 
 class BlogIndex extends React.Component {

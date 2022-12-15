@@ -1,6 +1,7 @@
 {
 		"presets": [
-				"next/babel"
+				"next/babel",
+        "stage-0"
 		],
 		"plugins": [
 				[
