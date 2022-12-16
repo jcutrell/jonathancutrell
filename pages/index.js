@@ -7,6 +7,7 @@ import Layout from '../layouts/Layout'
 import Footer from '../components/Footer'
 import { LinkWithArrow } from '../components/shared'
 import Link from 'next/link'
+import Image from 'next/image'
 import GuildLogo from '../components/icons/guild-logo'
 import DtLogo from '../components/icons/dt-logo'
 
@@ -22,19 +23,24 @@ const rotateHue = keyframes`
 `
 
 const PicHeader = styled.div`
-  background-size: cover;
-  background-image: url(/header.jpg);
   position: absolute;
+  //overflow: hidden;
   right: 0;
   top: 0;
   width: 100vw;
   background-position: left center;
   background-size: 120%;
   z-index: -1;
-  height: 70%;
+  height: 100%;
   box-sizing: border-box;
-  @media only screen and (min-width: 80rem) {
+  img {
+    object-fit: cover;
     height: 100%;
+    @media only screen and (min-width: 80rem) {
+      border-radius: 1002px 0 649px 298px / 264px 0 382px 496px;
+    }
+  }
+  @media only screen and (min-width: 80rem) {
     z-index: 400;
     padding: 0 10rem;
     width: 50vw;
@@ -49,7 +55,7 @@ const PicHeader = styled.div`
       content: '';
       display: block;
       animation: ${rotateHue} 10s infinite linear;
-      border-radius: 820px 0 610px 300px / 500px 0 230px 460px;
+      border-radius: 1002px 0 649px 298px / 264px 0 382px 496px;
       box-shadow: 0 -35px rgba(0, 148, 255, 0.42),
         20px 30px rgba(0, 255, 198, 0.52), -24px 0 rgba(255, 0, 163, 0.52),
         -54px -10px 0 -10px rgba(225, 10, 220, 0.52),
@@ -195,7 +201,16 @@ const Header = ({ picRef }) => {
           </Link>
         </Nav>
       </HeaderContent>
-      <PicHeader ref={picRef} backgroundImageUrl={null} />
+      <PicHeader ref={picRef} backgroundImageUrl={null}>
+        <Image
+          src="/header.jpg"
+          alt="Picture of the author"
+          fill
+          sizes="(max-width: 768px) 100vw,
+                 (max-width: 1200px) 50vw,
+                  33vw"
+        />
+      </PicHeader>
     </HomeHeader>
   )
 }
