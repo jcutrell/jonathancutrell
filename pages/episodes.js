@@ -4,10 +4,10 @@ import siteConfig from '../site-config'
 
 import { getEpisodes, pubDate, duration } from '../helpers/content-helpers'
 
-import SiteLayout from '../../components/SiteLayout'
-import { Wrap, LinkWithArrow } from '../../components/shared'
+import SiteLayout from '../components/SiteLayout'
+import { Wrap, LinkWithArrow } from '../components/shared'
 import Link from 'next/link'
-import Footer from '../../components/Footer'
+import Footer from '../components/footer'
 
 const SHOW_COUNT = 50
 

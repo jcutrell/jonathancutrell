@@ -7,7 +7,7 @@ import styled from 'styled-components'
 import SiteLayout from '../components/SiteLayout'
 import { Wrap } from '../components/shared'
 import Link from 'next/link'
-import Footer from '../components/Footer'
+import Footer from '../components/footer'
 
 const BlogPost = styled.section`
   margin-bottom: 1rem;

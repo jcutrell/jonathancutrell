@@ -14,7 +14,7 @@ import { mdxOptions } from '../../site-config'
 import SiteLayout from '../../components/SiteLayout'
 import { Wrap } from '../../components/shared'
 import Link from 'next/link'
-import Footer from '../../components/Footer'
+import Footer from '../../components/footer'
 import Bio from '../../components/Bio'
 
 const Article = styled.article`
