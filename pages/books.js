@@ -1,3 +1,4 @@
+import React from 'react'
 import styled from 'styled-components'
 import SiteLayout from '../components/SiteLayout'
 import { Wrap } from '../components/shared'

@@ -7,7 +7,7 @@ import { mdxOptions } from '../site-config'
 
 import SiteLayout from '../components/SiteLayout'
 import Bio from '../components/Bio'
-import Wrap from '../components/shared'
+import { Wrap } from '../components/shared'
 
 const Uses = (props) => {
   const siteTitle = siteConfig.title
