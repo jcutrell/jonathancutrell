@@ -1,7 +1,7 @@
 import SiteLayout from '../../components/SiteLayout'
 import { Wrap } from '../../components/shared'
 import Link from 'next/link'
-import Footer from '../../components/Footer'
+import Footer from '../../components/footer'
 
 const PodcastEpisodeTemplate = (props) => {
   const { episode } = props

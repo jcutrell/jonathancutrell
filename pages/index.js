@@ -4,7 +4,7 @@ import styled, { keyframes } from 'styled-components'
 import { getAllArticles } from '../helpers/content-helpers'
 
 import Layout from '../layouts/Layout'
-import Footer from '../components/Footer'
+import Footer from '../components/footer'
 import { LinkWithArrow } from '../components/shared'
 import Link from 'next/link'
 import Image from 'next/image'
