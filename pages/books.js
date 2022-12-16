@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import SiteLayout from '../../components/SiteLayout'
-import { Wrap } from '../../components/shared'
+import SiteLayout from '../components/SiteLayout'
+import { Wrap } from '../components/shared'
 import { MDXRemote } from 'next-mdx-remote'
 
 import siteConfig from '../site-config'
