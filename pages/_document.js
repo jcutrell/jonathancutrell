@@ -4,6 +4,7 @@ const MyDocument = () => {
   return (
     <Html>
       <Head>
+        <title>Jonathan Cutrell</title>
         <link
           href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap"
           rel="stylesheet"
