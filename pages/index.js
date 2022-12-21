@@ -203,6 +203,7 @@ const Header = ({ picRef }) => {
       </HeaderContent>
       <PicHeader ref={picRef} backgroundImageUrl={null}>
         <Image
+          priority
           src="/header.jpg"
           alt="Picture of the author"
           fill
