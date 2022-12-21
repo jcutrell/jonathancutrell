@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { getAllContentIn, pubDate } from '../helpers/content-helpers'
+import { createAndSaveRSS } from '../helpers/rss-helpers'
 import siteConfig from '../site-config'
 import styled from 'styled-components'
 
@@ -55,6 +56,8 @@ export async function getStaticProps() {
   // will receive `posts` as a prop at build time
   const posts = await getAllContentIn({ folder: 'blog' })
 
+  createAndSaveRSS({ items: posts })
+
   return {
     props: {
       posts,
@@ -63,36 +66,3 @@ export async function getStaticProps() {
 }
 
 export default BlogIndex
-
-/*
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allMdx(
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: {
-        fields: { sourceName: { eq: "blog" } }
-        frontmatter: { tags: { nin: ["Personal"] } }
-      }
-    ) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            tags
-          }
-        }
-      }
-    }
-  }
-`
-*/
