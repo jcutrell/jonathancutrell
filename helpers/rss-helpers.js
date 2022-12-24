@@ -15,7 +15,7 @@ export const BlogRSS = ({ items }) => {
 					<item>
 						<title>${item.title}</title>
 						<description>${item.excerpt || 'No description provided.'}</description>
-						<link>https://myblog.com/blog/${item.slug}</link>
+						<link>https://www.jonathancutrell.com/blog/${item.slug}</link>
 						<pubDate>${new Date(item.date).toUTCString()}</pubDate>
             <content:encoded><![CDATA[${item.content}]]></content:encoded>
 					</item>
