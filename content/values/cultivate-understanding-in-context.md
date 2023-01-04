@@ -2,10 +2,10 @@
 title: Cultivate Understanding In Context
 date: 2020-03-04T11:00:00
 author: Jonathan Cutrell
-templateKey: blog-post
+id: value-cultivate-understanding
 ---
 
-### Cultivate Understanding
+### Cultivate Understanding In Context
 
 I've spent a lot of my life learning.
 
