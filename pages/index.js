@@ -1,7 +1,7 @@
 import React from 'react'
 
 import styled, { keyframes } from 'styled-components'
-import { getAllArticles } from '../helpers/content-helpers'
+import { getAllArticles, getAllContentIn } from '../helpers/content-helpers'
 
 import Layout from '../layouts/Layout'
 import Footer from '../components/footer'
@@ -216,7 +216,7 @@ const Header = ({ picRef }) => {
   )
 }
 
-const LongTerm = () => (
+const LongTerm = ({ values }) => (
   <LongTermWrap>
     <h5>Why Long-Term?</h5>
     <div>
@@ -247,10 +247,9 @@ const LongTerm = () => (
     <div>
       <div>
         <h5>My Values</h5>
-        <Value>Optimize for the Long-Term</Value>
-        <Value>Cultivate Understanding</Value>
-        <Value>Fearless Bravery</Value>
-        <Value>Go Happy</Value>
+        {values.map(value => (
+          <Value>{value.title}</Value>
+        ))}
         <LinkWithArrow href="/values">Read more about my values</LinkWithArrow>
       </div>
     </div>
@@ -416,7 +415,7 @@ class BlogIndex extends React.Component {
   }
 
   render() {
-    const { posts, episodes } = this.props
+    const { posts, episodes, values } = this.props
     const siteTitle = siteConfig.title
 
     return (
@@ -430,7 +429,7 @@ class BlogIndex extends React.Component {
             ))}
             <LinkWithArrow href="/blog">View All Posts</LinkWithArrow>
           </div>
-          <LongTerm />
+          <LongTerm values={values} />
         </FlexWrap>
         <Experience scroll={this.state.scroll} episodes={episodes} />
         <Footer />
@@ -446,10 +445,12 @@ export async function getStaticProps() {
   // By returning { props: { posts } }, the Blog component
   // will receive `posts` as a prop at build time
   const posts = await getAllArticles()
+  const values = await getAllContentIn({ folder: "values" })
 
   return {
     props: {
       posts,
+      values,
     },
   }
 }
