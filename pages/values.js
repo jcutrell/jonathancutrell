@@ -9,6 +9,7 @@ import { mdxOptions } from '../site-config'
 import Bio from '../components/Bio'
 import SiteLayout from '../components/SiteLayout'
 import { Wrap } from '../components/shared'
+import { createAndSaveValuesAPI } from '../helpers/api-helpers'
 
 class Values extends React.Component {
   render() {
@@ -38,6 +39,8 @@ export async function getStaticProps() {
   // will receive `posts` as a prop at build time
 
   const posts = await getAllContentIn({ folder: 'values' })
+
+  createAndSaveValuesAPI({ items: posts })
 
   await Promise.all(
     posts.map(async (post) => {
