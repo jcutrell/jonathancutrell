@@ -252,7 +252,7 @@ const LongTerm = ({ values }) => (
         <ValueWrap>
           <ValueWrapInner>
             {values.map((value) => (
-              <Value>{value.title}</Value>
+              <Value key={value.id}>{value.title}</Value>
             ))}
           </ValueWrapInner>
         </ValueWrap>
