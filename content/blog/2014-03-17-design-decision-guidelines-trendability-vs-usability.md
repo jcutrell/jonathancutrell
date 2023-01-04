@@ -2,17 +2,15 @@
 id: 43
 title: 'Design Decision Guidelines: Trendability vs. Usability'
 date: 2014-03-17T16:50:08+00:00
-author: JCutrell
-templateKey: blog-post
-
-dsq_thread_id:
-  - '3000720865'
+author: Jonathan Cutrell
 tags:
   - Thoughts
 ---
 
 <blockquote className="large">
-<p>When you make a design decision, understand that there is no single more important guideline to follow than an equal balance of your own intention and the consumer’s situation.</p>
+  <div class="inner">
+    <p>When you make a design decision, understand that there is no single more important guideline to follow than an equal balance of your own intention and the consumer’s situation.</p>
+  </div>
 </blockquote>
 
 <p>Often, conversations discussing the usability implications of a particular design decision spike on HN/DN, bringing opinions out of the wood work. Whether you are talking about <a href="https://news.layervault.com/stories/2847-why-has-hiding-navigation-menus-behind-icons-suddenly-become-acceptable">the hamburger icon</a> or <a href="http://www.fastcodesign.com/3023690/evidence/snow-fail-do-readers-really-prefer-parallax-web-design">whether parallax is a good idea</a>, the opinions of readers shift wildly.</p>
@@ -34,7 +32,9 @@ tags:
 <p><img src="http://2.bp.blogspot.com/-ETwjbcA56Vk/UVj7IF0b3VI/AAAAAAAAEzk/ro_3mUmiyWY/s1600/Cloud+Save+Icon.png" alt=""></img></p>
 
 <blockquote className="large">
-<p>A cloud disk drive, found via Google Image Search. Literally.</p>
+  <div class="inner">
+    <p>A cloud disk drive, found via Google Image Search. Literally.</p>
+  </div>
 </blockquote>
 
 <p>That context helps us understand decisions more accurately.</p>

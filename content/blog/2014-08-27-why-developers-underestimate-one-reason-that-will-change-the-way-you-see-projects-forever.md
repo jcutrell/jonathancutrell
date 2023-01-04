@@ -14,7 +14,9 @@ author: Jonathan Cutrell
 <p>People have a completely skewed perception of time. Checkout this excerpt from a Huffington Post <a href="http://www.huffingtonpost.com/jon-hotchkiss/how-bad-is-our-perception_b_3955696.html">article from last year</a>.</p>
 
 <blockquote className="large">
-<p>This vs That’s initial research is in line with previous research into time estimation, which has revealed that our ability to accurately estimate time is influenced by our emotional state, how hungry we are, how tired we are, whether our eyes are open or closed, what we are doing, among many other factors.</p>
+  <div class="inner">
+    <p>This vs That’s initial research is in line with previous research into time estimation, which has revealed that our ability to accurately estimate time is influenced by our emotional state, how hungry we are, how tired we are, whether our eyes are open or closed, what we are doing, among many other factors.</p>
+  </div>
 </blockquote>
 
 <p>Aside from the fact that people in general are terrible time estimators, it’s also my opinion that estimating a multi-stage project all at once is about as useful as guessing who will win March Madness at the beginning of the bracket. It’s not a good idea to put your money on that bet.</p>

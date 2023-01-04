@@ -46,3 +46,23 @@ ul {
   margin: 0;
   margin-bottom: 1.2rem;
 }
+
+blockquote {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  margin: 0.5rem 0;
+}
+
+blockquote .inner {
+  padding: 0.5rem 1.6rem;
+  border-left-style: solid;
+  border-width: 6px;
+  border-image: linear-gradient(
+      0deg,
+      rgba(179, 95, 255, 1),
+      rgba(0, 138, 237, 1)
+    )
+    1 100%;
+  background: #fafafa;
+}

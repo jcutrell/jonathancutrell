@@ -1,14 +1,14 @@
 ---
+
 id: 53
 title: 'Make Me Work for It: Challenge Psychology'
 date: 2014-06-19T16:53:50+00:00
 author: Jonathan Cutrell
 templateKey: blog-post
 tags:
-  - Thoughts
 
----
-<p>Fifth-degree black belt.</p>
+- Thoughts
+  ---<p>Fifth-degree black belt.</p>
 
 <p>Doctorate.</p>
 
@@ -53,11 +53,13 @@ tags:
 <p>The psychology of Flow (<a href="http://en.wikipedia.org/wiki/Flow_(psychology)">as defined by Mihály Csikszentmihalyi</a>) requires two things: a high skill level and a high challenge level. Furthermore (directly from the Wikipedia summary), flow requires these conditions:</p>
 
 <blockquote class="large">
-<ol>
-<li>One must be involved in an activity with a clear set of goals and progress. This adds direction and structure to the task.</li>
-<li>The task at hand must have clear and immediate feedback. This helps the person negotiate any changing demands and allows them to adjust their performance to maintain the flow state.</li>
-<li>One must have a good balance between the perceived challenges of the task at hand and their own perceived skills. One must have confidence in one’s ability to complete the task at hand.</li>
-</ol>
+  <div class="inner">
+    <ol>
+    <li>One must be involved in an activity with a clear set of goals and progress. This adds direction and structure to the task.</li>
+    <li>The task at hand must have clear and immediate feedback. This helps the person negotiate any changing demands and allows them to adjust their performance to maintain the flow state.</li>
+    <li>One must have a good balance between the perceived challenges of the task at hand and their own perceived skills. One must have confidence in one’s ability to complete the task at hand.</li>
+    </ol>
+  </div>
 </blockquote>
 
 <p>In other words, challenges aren’t really challenges if they are impossible, but they need to be at the edge of our skill set. “Flow” state gives us a sense of movement and achievement.</p>
@@ -83,5 +85,7 @@ tags:
 <h3>Your new marketing pitch:</h3>
 
 <blockquote class="large">
-<p>This is going to be very difficult, but once you’ve gone through it, it will have been worth it. And we are here with you every step of the way.</p>
+  <div class="inner">
+    <p>This is going to be very difficult, but once you’ve gone through it, it will have been worth it. And we are here with you every step of the way.</p>
+  </div>
 </blockquote>

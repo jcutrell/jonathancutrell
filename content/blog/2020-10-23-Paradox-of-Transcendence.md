@@ -6,8 +6,10 @@ templateKey: blog-post
 ---
 
 <blockquote>
-Get the fundamentals down and the level of everything you do will rise.<br/>
-- Michael Jordan
+  <div class="inner">
+    Get the fundamentals down and the level of everything you do will rise.<br/>
+    - Michael Jordan
+  </div>
 </blockquote>
 
 One of the most consistent messages you will find from world-class performers is a refocusing on fundamentals.

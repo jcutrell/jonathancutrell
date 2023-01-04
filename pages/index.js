@@ -67,7 +67,9 @@ const Lead = styled.h3`
   margin-top: 0;
   padding-top: 1rem;
 `
-const Value = styled.h4``
+const Value = styled.h4`
+  font-weight: lighter;
+`
 
 const WorkItem = styled.div`
   @media only screen and (min-width: 100rem) {
@@ -247,15 +249,36 @@ const LongTerm = ({ values }) => (
     <div>
       <div>
         <h5>My Values</h5>
-        {values.map(value => (
-          <Value>{value.title}</Value>
-        ))}
+        <ValueWrap>
+          <ValueWrapInner>
+            {values.map((value) => (
+              <Value>{value.title}</Value>
+            ))}
+          </ValueWrapInner>
+        </ValueWrap>
         <LinkWithArrow href="/values">Read more about my values</LinkWithArrow>
       </div>
     </div>
   </LongTermWrap>
 )
-
+const ValueWrap = styled.div`
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  margin: 0.5rem 0;
+`
+const ValueWrapInner = styled.div`
+  padding: 0.5rem 1.6rem;
+  border-left-style: solid;
+  border-width: 6px;
+  border-image: linear-gradient(
+      0deg,
+      rgba(179, 95, 255, 1),
+      rgba(0, 138, 237, 1)
+    )
+    1 100%;
+  background: #fafafa;
+`
 const LongTermWrap = styled.div`
   max-width: 50rem;
   ul {
@@ -445,7 +468,7 @@ export async function getStaticProps() {
   // By returning { props: { posts } }, the Blog component
   // will receive `posts` as a prop at build time
   const posts = await getAllArticles()
-  const values = await getAllContentIn({ folder: "values" })
+  const values = await getAllContentIn({ folder: 'values' })
 
   return {
     props: {
