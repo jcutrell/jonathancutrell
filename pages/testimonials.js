@@ -16,15 +16,6 @@ const TestimonialWrap = styled.section`
   flex-wrap: wrap;
   max-width: 45rem;
   margin: 0 auto;
-  blockquote {
-    border: none;
-    border-image: linear-gradient(180deg, #008aed, #b35fff) 1;
-    border-width: 0;
-    border-left-width: 5px;
-    border-left-style: solid;
-    padding-left: 1rem;
-    margin-left: 0;
-  }
 `
 
 const Tags = styled.div`
@@ -120,7 +111,9 @@ class BlogIndex extends React.Component {
                   return (
                     <Testimonial key={post.slug}>
                       <blockquote>
-                        <MDXRemote {...post.mdxSource} />
+                        <div className="inner">
+                          <MDXRemote {...post.mdxSource} />
+                        </div>
                       </blockquote>
                       <cite>
                         <strong>{title}</strong>
