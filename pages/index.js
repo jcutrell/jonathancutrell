@@ -63,7 +63,7 @@ const PicHeader = styled.div`
     }
   }
 `
-const Lead = styled.h3`
+const Lead = styled.h5`
   margin-top: 0;
   padding-top: 1rem;
 `
@@ -133,7 +133,6 @@ const HeaderTitle = styled.h1`
 `
 
 const SubHeader = styled.h2`
-  font-size: 1.6rem;
   max-width: 500px;
   font-weight: 200;
   margin-top: 0.8rem;
@@ -220,7 +219,7 @@ const Header = ({ picRef }) => {
 
 const LongTerm = ({ values }) => (
   <LongTermWrap>
-    <h5>Why Long-Term?</h5>
+    <h4>Why Long-Term?</h4>
     <div>
       <Lead>Long-term thinking requires a paradigm shift.</Lead>
       <p>
@@ -265,7 +264,7 @@ const ValueWrap = styled.div`
   position: relative;
   overflow: hidden;
   border-radius: 4px;
-  margin: 0.5rem 0;
+  margin: 1rem 0;
 `
 const ValueWrapInner = styled.div`
   padding: 0.5rem 1.6rem;
@@ -324,7 +323,6 @@ const ExperienceWrap = styled(Wrap)`
     }
   }
   h4 {
-    font-size: 1.4rem;
     margin-top: 0px;
     margin-bottom: 1rem;
   }
@@ -367,17 +365,17 @@ const CurrentWork = styled.div`
 
 const RecentPost = ({ post }) => {
   return (
-    <div
-      style={{ position: 'relative', overflow: 'hidden', maxWidth: '600px' }}
+    <a
+      style={{
+        position: 'relative',
+        marginBottom: '1rem',
+        display: 'block',
+        zIndex: 100,
+      }}
+      href={`/blog/${post.slug}`}
     >
-      <a
-        style={{ position: 'relative', display: 'block', zIndex: 100 }}
-        href={`/blog/${post.slug}`}
-      >
-        <Lead style={{ marginTop: 0, paddingTop: '1rem' }}>{post.title}</Lead>
-        <p>{post.excerpt}</p>
-      </a>
-    </div>
+      {post.title}
+    </a>
   )
 }
 

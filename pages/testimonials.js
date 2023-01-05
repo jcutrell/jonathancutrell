@@ -32,14 +32,15 @@ const Testimonial = styled.div`
   blockquote {
     overflow: hidden;
   }
+  p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+  }
   cite {
     margin-bottom: 0;
   }
   h5 {
     margin-top: 0;
-  }
-  p {
-    margin: 0;
   }
 `
 

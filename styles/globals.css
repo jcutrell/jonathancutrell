@@ -7,13 +7,33 @@ html {
   font-size: 16px;
 }
 
-h1,
+h1 {
+  font-size: 2.0736rem;
+}
+
 h2 {
-  font-weight: 700;
+  font-size: 1.728rem;
+}
+
+h3 {
+  font-size: 1.44rem;
+}
+
+h4 {
+  font-size: 1.2rem;
 }
 
 h5 {
   font-size: 1rem;
+}
+
+h6 {
+  font-size: 0.8rem;
+}
+
+h1,
+h2 {
+  font-weight: 700;
 }
 
 h3,
@@ -41,7 +61,7 @@ ul li {
 
 p,
 ul {
-  font-size: 0.8rem;
+  font-size: 1rem;
   line-height: 1.6;
   margin: 0;
   margin-bottom: 1.2rem;
@@ -51,11 +71,11 @@ blockquote {
   position: relative;
   overflow: hidden;
   border-radius: 4px;
-  margin: 0.5rem 0;
+  margin: 1rem 0;
 }
 
 blockquote .inner {
-  padding: 0.5rem 1.6rem;
+  padding: 0.8rem 1.6rem;
   border-left-style: solid;
   border-width: 6px;
   border-image: linear-gradient(
