@@ -8,7 +8,9 @@ templateKey: blog-post
 tags:
 
 - Thoughts
-  ---<p>Fifth-degree black belt.</p>
+---
+
+<p>Fifth-degree black belt.</p>
 
 <p>Doctorate.</p>
 
