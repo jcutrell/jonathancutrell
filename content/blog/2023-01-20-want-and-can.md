@@ -1,5 +1,9 @@
---- title: 'Want and Can' date: 2023-01-20T12:00:00+04:00 author: Jonathan
-Cutrell templateKey: blog-post ---
+---
+title: 'Want and Can'
+date: 2023-01-20T12:00:00+04:00
+author: Jonathan Cutrell
+templateKey: blog-post
+---
 
 If you are a beginner manager, you will get a ton of advice for how to manage
 teams.
