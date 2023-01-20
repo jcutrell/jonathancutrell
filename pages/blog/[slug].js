@@ -18,7 +18,7 @@ import Footer from '../../components/footer'
 import Bio from '../../components/Bio'
 
 const Article = styled.article`
-  width: 100%;
+  width: 80%;
   h2 {
     margin-top: 2.6rem;
   }
@@ -26,6 +26,14 @@ const Article = styled.article`
     margin-bottom: 2.2rem;
   }
 `
+
+const components = {
+  Blockquote: (props) => (
+    <blockquote>
+      <div className="inner">{props.children}</div>
+    </blockquote>
+  ),
+}
 
 const BlogPostTemplate = (props) => {
   const router = useRouter()
@@ -39,7 +47,7 @@ const BlogPostTemplate = (props) => {
         <Article>
           <h1>{post.title}</h1>
           <p>{pubDate(post.date)}</p>
-          <MDXRemote {...post.mdxSource} />
+          <MDXRemote {...post.mdxSource} components={components} />
           <ul>
             <li>
               {prev && (

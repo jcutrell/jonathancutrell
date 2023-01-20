@@ -1,12 +1,12 @@
 ---
-title: 'Want and Can'
+title: "Won't and Can't"
 date: 2023-01-20T12:00:00+04:00
 author: Jonathan Cutrell
 templateKey: blog-post
 ---
 
 If you are a beginner manager, you will get a ton of advice for how to manage
-teams.
+teams, and probably just as much about how to manage individuals.
 
 A lot of it will be paper-thin opinions; much will be useful in certain
 scenarios.
@@ -23,8 +23,7 @@ belongs to Andy Grove.)
 
 If you take nothing else away from this post, let it be this:
 
-> If you want someone to do something they aren't doing, there can only be two
-> reasons: they can't, or they won't.
+<Blockquote>If you want someone to do something they aren't doing, there can only be two reasons: they can't, or they won't.</Blockquote>
 
 These are not mutually exclusive; sometimes they can, but they won't. Sometimes
 they can't, but they would if they could.
@@ -68,9 +67,10 @@ This one is tricky.
 When we hear "won't", we hear obstinance. Refusal. Active disdain. We hear
 someone who is unwilling.
 
-That is usually only a small portion of the population of won'ts. 
+That is usually only a small portion of the population of won'ts.
 
 Won't more often is attached to the environment of motivation:
+
 - Lack of clarity of the desired action
 - Lack of knowledge of the desired action
 - Lack of recognition of their suitability to perform the desired action
@@ -99,7 +99,7 @@ hiring and scaling your engineering org an absolute disaster.
 much work to define the expectations I have for them."
 
 If instead you want to make the most of your opportunity as a manager, seek
-clarity.  Be clear about _what you want your reports to do_, and _why you think
+clarity. Be clear about _what you want your reports to do_, and _why you think
 they should do it._
 
 If you are bringing this to them with empathy, it will sound like an
@@ -121,6 +121,7 @@ Do I have the clarity to explain what I want, and to create the right incentive
 structures to motivate someone like that?
 
 ### Motivate and Train
+
 If you are not finding yourself often returning to the themes of motivation and
 training, you are probably leaving behind some of your reports. You may not see
 the problems right away, but eventually you will have a performance issue that
