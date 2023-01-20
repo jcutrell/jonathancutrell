@@ -28,7 +28,7 @@ If you take nothing else away from this post, let it be this:
 These are not mutually exclusive; sometimes they can, but they won't. Sometimes
 they can't, but they would if they could.
 
-Sometimes the can't _and_ won't.
+Sometimes they can't _and_ won't.
 
 Regardless of the person or circumstance, one of these must be true if they are
 not performing some behavior.
