@@ -14,7 +14,7 @@ const Foot = styled.footer`
 
 const Footer = () => (
   <Foot>
-    &nbsp; &copy; 2022 <Link href="/blog">Blog</Link>
+    &nbsp; &copy; {new Date().getFullYear()} <Link href="/blog">Blog</Link>
     <Link href="/books">Books</Link>
     <Link href="/episodes">Podcast</Link>
     <Link href="/values">Values</Link>
