@@ -1,5 +1,4 @@
 ---
-id: 49
 title: How We Adopted an Agency-wide Grunt Workflow
 date: 2013-12-02T16:52:10+00:00
 author: JCutrell
