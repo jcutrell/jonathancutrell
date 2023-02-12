@@ -1,8 +1,9 @@
 ---
-published_at: 2023-02-11
+title: 'The Dog Ate the Toast Again.'
+published_at: 2023-02-11T11:32:00
 ---
 
-Our family dog, Evie, ate my daughter's toast off of the table. This is a common occurrence - she will take whatever scraps she can get, despite the verbal assault that may follow.
+Our family dog, Evie, ate my daughter's toast off of the table. This is a common occurrence - she will take whatever scraps she can get, despite risking the verbal assault that may follow.
 
 This last occurrence triggered a thought for me, after a quick conversation with my wife.
 
@@ -41,7 +42,8 @@ So it's the sun's fault.
 Or...
 
 The existence of the sun isn't just an eternal truth. According to Nasa.gov:
->The Sun formed **about 4.6 billion years ago** in a giant, spinning cloud of gas and dust called the solar nebula. As the nebula collapsed under its own gravity, it spun faster and flattened into a disk.
+
+> The Sun formed **about 4.6 billion years ago** in a giant, spinning cloud of gas and dust called the solar nebula. As the nebula collapsed under its own gravity, it spun faster and flattened into a disk.
 
 The nebula collapsed under its own gravity as a result of the explosion of a nearby star - a supernova. (In a fun turn of events, my daughter's name is Nova.)
 
