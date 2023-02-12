@@ -1,6 +1,6 @@
 ---
 title: 'The Dog Ate the Toast Again.'
-published_at: 2023-02-11T11:32:00
+date: 2023-02-11T11:32:00+4:00
 ---
 
 Our family dog, Evie, ate my daughter's toast off of the table. This is a common occurrence - she will take whatever scraps she can get, despite risking the verbal assault that may follow.
