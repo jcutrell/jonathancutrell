@@ -1,0 +1,1 @@
+The principle that individuals aim to preserve and protect their resources.
