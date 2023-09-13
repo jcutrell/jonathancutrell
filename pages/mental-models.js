@@ -43,6 +43,7 @@ class BlogIndex extends React.Component {
         <SiteLayout location={this.props.location} title={siteTitle} />
         <Wrap>
           {posts
+            .sort((a, b) => a.slug.localeCompare(b.slug))
             .filter((post) => post.content.length)
             .map((post) => {
               const { subtitle } = post
