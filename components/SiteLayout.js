@@ -73,6 +73,9 @@ const Layout = ({ children }) => {
         <NavLink className={activeIf('/blog', router)} href="/blog">
           Blog
         </NavLink>
+        <NavLink className={activeIf('/notes', router)} href="/notes">
+          Notes
+        </NavLink>
         <NavLink className={activeIf('/books', router)} href="/books">
           Books
         </NavLink>

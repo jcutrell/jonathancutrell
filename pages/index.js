@@ -1,7 +1,11 @@
 import React from 'react'
 
 import styled, { keyframes } from 'styled-components'
-import { getAllArticles, getAllContentIn } from '../helpers/content-helpers'
+import {
+  getAllArticles,
+  getAllContentIn,
+  getAllContent,
+} from '../helpers/content-helpers'
 
 import Layout from '../layouts/Layout'
 import Footer from '../components/footer'
@@ -372,7 +376,7 @@ const RecentPost = ({ post }) => {
         display: 'block',
         zIndex: 100,
       }}
-      href={`/blog/${post.slug}`}
+      href={`${post.permalink}`}
     >
       {post.title}
     </a>
@@ -445,7 +449,7 @@ class BlogIndex extends React.Component {
         <FlexWrap>
           <div>
             <h5>Recent Posts</h5>
-            {posts.slice(0, 5).map((post) => (
+            {posts.slice(0, 20).map((post) => (
               <RecentPost post={post} key={post.slug} />
             ))}
             <LinkWithArrow href="/blog">View All Posts</LinkWithArrow>
@@ -465,7 +469,7 @@ export async function getStaticProps() {
 
   // By returning { props: { posts } }, the Blog component
   // will receive `posts` as a prop at build time
-  const posts = await getAllArticles()
+  const posts = await getAllContent()
   const values = await getAllContentIn({ folder: 'values' })
 
   return {

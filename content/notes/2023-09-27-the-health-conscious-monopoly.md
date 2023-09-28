@@ -1,3 +1,7 @@
+---
+title: The Health Conscious Monopoly
+date: 2023-09-27T10:00:11+04:00
+---
 A theoretical relationship exists between a company’s size and how much they care about their customers’ health.
 
 At a very small size, there are few enough customers that if there are detrimental health effects of your product, your business may quickly tank the little foothold it has.

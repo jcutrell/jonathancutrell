@@ -5,8 +5,8 @@ import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote } from 'next-mdx-remote'
 import styled from 'styled-components'
 import {
-  getArticle,
-  getAllArticles,
+  getAllContentIn,
+  getContentItem,
   getSlugsIn,
   pubDate,
 } from '../../helpers/content-helpers'
@@ -74,8 +74,8 @@ const NoteTemplate = (props) => {
 }
 
 export async function getStaticPaths() {
-  const articles = await getAllArticles()
-  const slugs = articles.map((article) => article.slug)
+  const notes = await getAllContentIn({ folder: 'notes' })
+  const slugs = notes.map((note) => note.slug)
   const paths = slugs.map((s) => ({ params: { slug: s } }))
   return {
     paths: paths,
@@ -98,9 +98,9 @@ export async function getStaticProps(context) {
   const prevInd = nextInd == 1 ? slugs.length - 1 : nextInd - 2
   const prevSlug = slugs[prevInd]
 
-  const post = await getArticle(params.slug)
-  const next = await getArticle(nextSlug)
-  const prev = await getArticle(prevSlug)
+  const post = await getContentItem(params.slug, 'notes')
+  const next = await getContentItem(nextSlug, 'notes')
+  const prev = await getContentItem(prevSlug, 'notes')
   post.mdxSource = await serialize(post.content, mdxOptions)
 
   return {

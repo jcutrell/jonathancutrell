@@ -10,7 +10,7 @@ export async function getAllContentIn({ folder = 'blog', extension = 'md' }) {
   const items = fs.readdirSync(path.join(process.cwd(), `content/${folder}`))
 
   return items
-    .filter(itemSlug => itemSlug.endsWith(`.${extension}`))
+    .filter((itemSlug) => itemSlug.endsWith(`.${extension}`))
     .reduce((allItems, itemSlug) => {
       const source = fs.readFileSync(
         path.join(process.cwd(), `content/${folder}`, itemSlug),
@@ -20,10 +20,13 @@ export async function getAllContentIn({ folder = 'blog', extension = 'md' }) {
 
       data = JSON.parse(JSON.stringify({ ...data, content }))
 
+      let urlSlug = itemSlug.replace(`.${extension}`, '')
+
       return [
         {
           ...data,
-          slug: itemSlug.replace(`.${extension}`, ''),
+          permalink: `${folder}/${urlSlug}`,
+          slug: urlSlug,
           readingTime: readingTime(source).text,
         },
         ...allItems,
@@ -34,33 +37,20 @@ export async function getAllContentIn({ folder = 'blog', extension = 'md' }) {
 export function getSlugsIn({ folder = 'blog', extension = 'md' }) {
   const paths = fs
     .readdirSync(path.join(process.cwd(), `content/${folder}`))
-    .filter(path => path.endsWith(extension))
-  return paths.map(path => path.replace(`.${extension}`, ''))
+    .filter((path) => path.endsWith(extension))
+  return paths.map((path) => path.replace(`.${extension}`, ''))
 }
 
 export async function getAllArticles() {
-  const articles = fs.readdirSync(path.join(process.cwd(), 'content/blog'))
+  return getAllContentIn({})
+}
 
-  return articles
-    .filter(articleSlug => articleSlug.endsWith('.md'))
-    .reduce((allArticles, articleSlug) => {
-      // get parsed data from mdx files in the "articles" dir
-      const source = fs.readFileSync(
-        path.join(process.cwd(), 'content/blog', articleSlug),
-        'utf-8'
-      )
-      let { data } = matter(source)
-      data = JSON.parse(JSON.stringify(data))
-
-      return [
-        {
-          ...data,
-          slug: articleSlug.replace('.md', ''),
-          readingTime: readingTime(source).text,
-        },
-        ...allArticles,
-      ]
-    }, [])
+export async function getAllContent() {
+  const articles = await getAllContentIn({})
+  const notes = await getAllContentIn({ folder: 'notes' })
+  return [...articles, ...notes].sort(
+    (a, b) => new Date(b.date) - new Date(a.date)
+  )
 }
 
 export async function getContentBySlug({
@@ -85,10 +75,10 @@ export async function getContentBySlug({
   }
 }
 
-export async function getArticle(articleSlug) {
+export async function getContentItem(slug, type = 'blog') {
   // get parsed data from mdx files in the "articles" dir
   const source = fs.readFileSync(
-    path.join(process.cwd(), 'content/blog', articleSlug + '.md'),
+    path.join(process.cwd(), `content/${type}`, slug + '.md'),
     'utf-8'
   )
 
@@ -98,9 +88,13 @@ export async function getArticle(articleSlug) {
   return {
     ...data,
     content,
-    slug: articleSlug.replace('.md', ''),
+    slug: slug.replace('.md', ''),
     readingTime: readingTime(source).text,
   }
+}
+
+export async function getArticle(articleSlug) {
+  return getContentItem(articleSlug)
 }
 
 export async function getEpisodes({ page = 1, pageSize = 20 }) {
@@ -123,7 +117,7 @@ export async function getAllEpisodes() {
   return await getEpisodes({ page: 1, pageSize: 2000 })
 }
 
-export const pubDate = date => `${DateTime.fromISO(date).toLocaleString()}`
+export const pubDate = (date) => `${DateTime.fromISO(date).toLocaleString()}`
 
-export const duration = durationInSeconds =>
+export const duration = (durationInSeconds) =>
   `~${Math.round(durationInSeconds / 60)}m`

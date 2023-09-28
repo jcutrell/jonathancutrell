@@ -1,1 +1,0 @@
-It is impossible and perhaps not useful to avoid selection bias.
