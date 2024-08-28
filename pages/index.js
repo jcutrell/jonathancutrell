@@ -2,7 +2,6 @@ import React from 'react'
 
 import styled, { keyframes } from 'styled-components'
 import {
-  getAllArticles,
   getAllContentIn,
   getAllContent,
 } from '../helpers/content-helpers'
