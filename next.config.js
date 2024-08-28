@@ -1,4 +1,5 @@
 // next.config.js
+const path = require('path')
 const wikiLinkPlugin = require('remark-wiki-link')
 const config = {
   async redirects() {
@@ -22,7 +23,6 @@ const config = {
     //config.node = { fs: 'empty' }
     //}
     config.resolve.fallback = { fs: false }
-
     return config
   },
   experimental: {
@@ -32,6 +32,16 @@ const config = {
     workerThreads: false,
     cpus: 1,
   },
+
+  async rewrites() {
+    return [
+      {
+        source: '/assets/:path*',
+        destination: '/api/assets/:path*',
+      },
+    ]
+  },
+
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
 }
 

@@ -14,6 +14,7 @@ import { mdxOptions } from '../../site-config'
 import SiteLayout from '../../components/SiteLayout'
 import { Wrap } from '../../components/shared'
 import Link from 'next/link'
+import Image from 'next/image'
 import Footer from '../../components/footer'
 import Bio from '../../components/Bio'
 
@@ -32,6 +33,16 @@ const components = {
     <blockquote>
       <div className="inner">{props.children}</div>
     </blockquote>
+  ),
+  img: (props) => (
+    <Image
+      src={props.src.replace('../assets/', '/assets/')}
+      alt={props.alt}
+      width={0}
+      height={0}
+      sizes="100vw"
+      style={{ width: '100%', height: 'auto' }} // optional
+    />
   ),
 }
 
