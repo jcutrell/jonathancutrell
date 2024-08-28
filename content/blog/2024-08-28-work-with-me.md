@@ -38,7 +38,7 @@ I believe that leadership starts with clarity. Clarity in goals, motivation, exp
 - **Adaptability.** Every organization I've been a part of has undergone some kind of major change. Being able to ride through the changes is an important part of what it means to be a successful engineer.
 	- Note that I'm *not* telling you you have to agree with every change; rather, that organizations will always be changing, and holding on to previous notions of an org produces friction that may not be useful to you, and instead may hinder your growth in that org.
 - **Commit to your team.** We win and lose together. We build our agreements, we stick to commitments, we support each other. We are not individuals working near each other - we work *together.*
-- **Take responsibility for aligning your work at Calendly with your career goals.** Your biggest opportunities will come because you are ready to grab them. I am a good advocate for your success, but ultimately you are your *greatest* advocate.
+- **Take responsibility for aligning your work with your career goals.** Your biggest opportunities will come because you are ready to grab them. I am a good advocate for your success, but ultimately you are your *greatest* advocate.
 
 I bring my [personal values](https://jonathancutrell.com/values) into my work; you can expect those values to drive my own behaviors. Not all of them translate in every context, which is why I'm keeping them separated for the sake of this document, but the discussion below may have some significant overlap with those values.
 
