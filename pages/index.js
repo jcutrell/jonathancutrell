@@ -1,17 +1,14 @@
 import React from 'react'
 
 import styled, { keyframes } from 'styled-components'
-import {
-  getAllContentIn,
-  getAllContent,
-} from '../helpers/content-helpers'
+import { getAllContentIn, getAllContent } from '../helpers/content-helpers'
 
 import Layout from '../layouts/Layout'
 import Footer from '../components/footer'
 import { LinkWithArrow } from '../components/shared'
 import Link from 'next/link'
 import Image from 'next/image'
-import GuildLogo from '../components/icons/guild-logo'
+import CalendlyLogo from '../components/icons/calendly-logo'
 import DtLogo from '../components/icons/dt-logo'
 
 import siteConfig from '../site-config'
@@ -389,17 +386,17 @@ const Experience = ({ episodes = [] }) => {
       <CurrentWork>
         <WorkItem>
           <IconWrap>
-            <GuildLogo />
+            <CalendlyLogo />
           </IconWrap>
           <div style={{ position: 'relative', zIndex: 100 }}>
             <h4>
-              Engineering Manager,{' '}
+              Senior Engineering Manager,{' '}
               <a
-                href="https://guildeducation.com"
+                href="https://calendly.com"
                 target="_blank"
                 rel="noreferrer"
               >
-                Guild Education
+               Calendly 
               </a>
             </h4>
             Supporting engineers responsible for content delivery services for
