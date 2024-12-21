@@ -1,5 +1,6 @@
 import styled, { createGlobalStyle } from 'styled-components'
 import Link from 'next/link'
+import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { MDXProvider } from '@mdx-js/react'
 
@@ -58,11 +59,14 @@ const SiteWrap = styled.main`
   padding-bottom: 2rem;
 `
 
-const Layout = ({ children }) => {
+const Layout = ({ title, children }) => {
   const router = useRouter()
 
   return (
     <SiteWrap>
+      <Head>
+        <title>{title}</title>
+      </Head>
       <GlobalStyle />
       <h2>
         <Link href="/">
