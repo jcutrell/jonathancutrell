@@ -1,9 +1,5 @@
 ---
-<<<<<<< HEAD
-title: Work With Me
-=======
 title: Work With Me - Values and Philosophy
->>>>>>> 7c67b0d (adds content)
 date: 2024-08-28T08:40:26+04:00
 last_updated: 2024-08-28T08:40:26+04:00
 ---
@@ -46,10 +42,6 @@ I believe that leadership starts with clarity. Clarity in goals, motivation, exp
 
 I bring my [personal values](https://jonathancutrell.com/values) into my work; you can expect those values to drive my own behaviors. Not all of them translate in every context, which is why I'm keeping them separated for the sake of this document, but the discussion below may have some significant overlap with those values.
 
-<<<<<<< HEAD
-**Overall, you can expect me to be people-first in my approach.** This is an easy thing to say (and lots of people claim some version of this), but in practice what does this mean? Below I cover a handful of examples of how this plays out.
-=======
 **Overall, you can expect me to be people-first in my approach.** This is an easy thing to say (and lots of people claim some version of this), but in practice what does this mean?
->>>>>>> 7c67b0d (adds content)
 
 **Humans are not machines.** We are organic, head, heart, and soul. Our goals of working together are ultimately subordinate to our individual humanity, our personal search for meaning, our own full experience. Our emotions - fear, excitement, joy, loss, anticipation... all of these are more powerful than any OKR or Jira board can capture. This means that predictions about humans are less reliable than predictions about machines. Over the course of many humans, predictions become more reliable, but individual outliers are not only possible - they are fundamental to what it means to be human.
