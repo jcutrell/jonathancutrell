@@ -1,6 +1,5 @@
 import { useRouter } from 'next/router'
 
-import siteConfig from '../../site-config'
 import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote } from 'next-mdx-remote'
 import styled from 'styled-components'
@@ -38,11 +37,10 @@ const components = {
 const NoteTemplate = (props) => {
   const router = useRouter()
   const { slug } = router.query
-  const siteTitle = siteConfig.title
   const { post, next, prev } = props
 
   return (
-    <SiteLayout location={slug} title={siteTitle}>
+    <SiteLayout location={slug} title={post.title}>
       <Wrap>
         <Article>
           <h1>{post.title}</h1>
