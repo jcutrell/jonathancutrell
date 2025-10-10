@@ -93,25 +93,33 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context) {
-  // Call an external API endpoint to get posts.
-  // You can use any data fetching library
-
-  // By returning { props: { posts } }, the Blog component
-  // will receive `posts` as a prop at build time
   const { params } = context
-
   const slugs = getSlugsIn({ folder: 'blog' })
   const currInd = slugs.indexOf(params.slug)
   const nextInd = currInd + 1
   const nextSlug = slugs[nextInd % slugs.length]
   const prevInd = nextInd == 1 ? slugs.length - 1 : nextInd - 2
   const prevSlug = slugs[prevInd]
-
+  
   const post = await getArticle(params.slug)
   const next = await getArticle(nextSlug)
   const prev = await getArticle(prevSlug)
-  post.mdxSource = await serialize(post.content, mdxOptions)
-
+  
+  // Transform Obsidian syntax before serialization
+  const processedContent = post.content.replace(
+    /!\[\[([^\]]+?)\]\]/g,
+    (match, filename) => {
+      // Handle both with and without alt text
+      // Obsidian format: ![[image.png]] or ![[image.png|alt text]]
+      const parts = filename.split('|')
+      const imagePath = parts[0].trim()
+      const altText = parts[1]?.trim() || ''
+      return `![${altText}](../assets/${imagePath})`
+    }
+  )
+  
+  post.mdxSource = await serialize(processedContent, mdxOptions)
+  
   return {
     props: {
       post,
