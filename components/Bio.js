@@ -6,7 +6,7 @@ function Bio() {
     <div>
       <p style={{ margin: 0, maxWidth: '32rem' }}>
         Written by <strong>{author.name}</strong>, Engineering Manager at{' '}
-        <a href="https://calendly.com">Calendly</a> and podcast host at{' '}
+        <a href="https://getgarner.com">Garner Health</a> and podcast host at{' '}
         <a href="https://developertea.com">Developer Tea</a>.
       </p>
     </div>

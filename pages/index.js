@@ -8,7 +8,7 @@ import Footer from '../components/footer'
 import { LinkWithArrow } from '../components/shared'
 import Link from 'next/link'
 import Image from 'next/image'
-import CalendlyLogo from '../components/icons/calendly-logo'
+import GarnerLogo from '../components/icons/garner-logo'
 import DtLogo from '../components/icons/dt-logo'
 
 import siteConfig from '../site-config'
@@ -386,17 +386,17 @@ const Experience = ({ episodes = [] }) => {
       <CurrentWork>
         <WorkItem>
           <IconWrap>
-            <CalendlyLogo />
+            <GarnerLogo />
           </IconWrap>
           <div style={{ position: 'relative', zIndex: 100 }}>
             <h4>
               Senior Engineering Manager,{' '}
               <a
-                href="https://calendly.com"
+                href="https://getgarner.com"
                 target="_blank"
                 rel="noreferrer"
               >
-               Calendly 
+               Garner Health
               </a>
             </h4>
             Supporting engineers responsible for content delivery services for
