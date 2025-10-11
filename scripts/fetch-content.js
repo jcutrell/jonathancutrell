@@ -40,7 +40,7 @@ try {
 
   if (fs.existsSync(repoPath)) {
     console.log('📥 Updating existing content repository...');
-    execSync('git pull', { cwd: repoPath, stdio: 'inherit' });
+    execSync('git pull origin main', { cwd: repoPath, stdio: 'inherit' });
   } else {
     console.log('📥 Cloning content repository (sparse checkout)...');
 
