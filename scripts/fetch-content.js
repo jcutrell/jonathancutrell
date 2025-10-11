@@ -35,15 +35,30 @@ try {
     console.log('⚠️  Using HTTPS without authentication (may fail for private repos)');
   }
 
-  // Clone or pull the repository
+  // Clone or pull the repository using sparse checkout
   const repoPath = path.join(TEMP_DIR, 'repo');
 
   if (fs.existsSync(repoPath)) {
     console.log('📥 Updating existing content repository...');
     execSync('git pull', { cwd: repoPath, stdio: 'inherit' });
   } else {
-    console.log('📥 Cloning content repository...');
-    execSync(`git clone --depth 1 ${repoUrl} "${repoPath}"`, {
+    console.log('📥 Cloning content repository (sparse checkout)...');
+
+    // Initialize repo
+    fs.mkdirSync(repoPath, { recursive: true });
+    execSync('git init', { cwd: repoPath, stdio: 'inherit' });
+    execSync(`git remote add origin ${repoUrl}`, { cwd: repoPath, stdio: 'inherit' });
+
+    // Enable sparse checkout
+    execSync('git config core.sparseCheckout true', { cwd: repoPath, stdio: 'inherit' });
+
+    // Specify which directory to checkout
+    const sparseCheckoutFile = path.join(repoPath, '.git', 'info', 'sparse-checkout');
+    fs.writeFileSync(sparseCheckoutFile, `${SOURCE_SUBFOLDER}/*\n`);
+
+    // Pull only the specified directory
+    execSync('git pull --depth 1 origin main', {
+      cwd: repoPath,
       stdio: 'inherit',
       env: { ...process.env, GIT_TERMINAL_PROMPT: '0' }
     });
