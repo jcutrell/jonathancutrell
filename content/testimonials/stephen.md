@@ -1,7 +1,0 @@
----
-title: Stephen Van Gorp
-subtitle: Director of Marketing and Digital Strategy; Jonathan formerly worked with Stephen at Whiteboard
-tags: ['Coworkers']
-priority: 1
----
-Although Jonathan contains a wide variety of skillsets to create solutions, and diverse topical and technical knowledge to provide counsel, his greatest strength is his ability to connect with others through **active listening and thoughtful question-asking.** I can say from personal experience that he has been **instrumental in helping me shape my own problem-solving process** through intentional challenges to my approach and assumptions. Plainly stated, Jonathan is the type of person who wants to serve and make those around him better at their craft — and his life reflects that in every aspect.

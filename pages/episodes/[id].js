@@ -45,6 +45,14 @@ const PodcastEpisodeTemplate = (props) => {
 export default PodcastEpisodeTemplate
 
 export async function getStaticPaths() {
+  // If API credentials are not available, return empty paths
+  if (!process.env.PODCAST_ID || !process.env.SIMPLECAST_API_KEY) {
+    return {
+      paths: [],
+      fallback: false,
+    }
+  }
+
   const res = await fetch(
     `https://api.simplecast.com/podcasts/${process.env.PODCAST_ID}/episodes?limit=1500&offset=0`,
     {
@@ -54,6 +62,16 @@ export async function getStaticPaths() {
     }
   )
   const episodes = await res.json()
+
+  // Handle API errors or missing data
+  if (!episodes.collection || !Array.isArray(episodes.collection)) {
+    console.warn('Failed to fetch episodes from Simplecast API')
+    return {
+      paths: [],
+      fallback: false,
+    }
+  }
+
   return {
     paths: episodes.collection.map((ep) => `/episodes/${ep.id}`),
     fallback: false,

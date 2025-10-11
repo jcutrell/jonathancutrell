@@ -98,19 +98,35 @@ export async function getArticle(articleSlug) {
 }
 
 export async function getEpisodes({ page = 1, pageSize = 20 }) {
-  const res = await fetch(
-    `https://api.simplecast.com/podcasts/${
-      process.env.PODCAST_ID
-    }/episodes?limit=${pageSize}&offset=${(page - 1) * pageSize}`,
-    {
-      headers: {
-        authorization: `Bearer ${process.env.SIMPLECAST_API_KEY}`,
-      },
-    }
-  )
-  const episodes = await res.json()
+  // If API credentials are not available, return empty collection
+  if (!process.env.PODCAST_ID || !process.env.SIMPLECAST_API_KEY) {
+    return { collection: [] }
+  }
 
-  return episodes
+  try {
+    const res = await fetch(
+      `https://api.simplecast.com/podcasts/${
+        process.env.PODCAST_ID
+      }/episodes?limit=${pageSize}&offset=${(page - 1) * pageSize}`,
+      {
+        headers: {
+          authorization: `Bearer ${process.env.SIMPLECAST_API_KEY}`,
+        },
+      }
+    )
+    const episodes = await res.json()
+
+    // Handle API errors or missing data
+    if (!episodes.collection || !Array.isArray(episodes.collection)) {
+      console.warn('Failed to fetch episodes from Simplecast API')
+      return { collection: [] }
+    }
+
+    return episodes
+  } catch (error) {
+    console.warn('Error fetching episodes from Simplecast API:', error)
+    return { collection: [] }
+  }
 }
 
 export async function getAllEpisodes() {

@@ -60,6 +60,10 @@ typings/
 
 .next
 
+# Content directory (pulled from external repo)
+content/
+.content-temp/
+
 # Mac files
 .DS_Store
 
